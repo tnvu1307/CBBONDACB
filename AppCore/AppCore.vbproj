@@ -1,0 +1,834 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{929F1E6E-6A34-47C7-B2E4-E3F13B28E243}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>AppCore</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>AppCore</RootNamespace>
+    <StartupObject>AppCore.%28None%29</StartupObject>
+    <WebReference_EnableProperties>true</WebReference_EnableProperties>
+    <WebReference_EnableSQLTypes>false</WebReference_EnableSQLTypes>
+    <WebReference_EnableLegacyEventingModel>true</WebReference_EnableLegacyEventingModel>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>Windows</MyType>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>http://localhost/AppCore/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\Deployment\Client\</OutputPath>
+    <DocumentationFile>AppCore.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\Deployment\Client\</OutputPath>
+    <DocumentationFile>AppCore.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>none</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>..\Libref\Cry\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>..\Libref\Cry\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>..\Libref\Cry\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>..\Libref\Cry\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.BonusSkins.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.Designer.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Charts.Designer.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Data.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.DataAccess.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Docs.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Docs.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Images.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Images.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v14.1.Core">
+      <HintPath>..\Libref\DevExpress\DevExpress.Office.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v14.1.Core">
+      <HintPath>..\Libref\DevExpress\DevExpress.Pdf.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v14.1.Drawing">
+      <HintPath>..\Libref\DevExpress\DevExpress.Pdf.v14.1.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v14.1.Core">
+      <HintPath>..\Libref\DevExpress\DevExpress.Printing.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v14.1.Core">
+      <HintPath>..\Libref\DevExpress\DevExpress.RichEdit.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v14.1.Core">
+      <HintPath>..\Libref\DevExpress\DevExpress.Sparkline.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Utils.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.1.UI">
+      <HintPath>..\Libref\DevExpress\DevExpress.Utils.v14.1.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Web.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XapUpdater">
+      <HintPath>..\Libref\DevExpress\DevExpress.XapUpdater.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Xpf.Core.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Xpf.Grid.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.RichEdit.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Xpf.RichEdit.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Xpo.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraBars.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.1.UI">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraCharts.v14.1.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.1.Web">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraCharts.v14.1.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraEditors.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraGrid.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraLayout.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPdfViewer.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraPdfViewer.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraPrinting.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraReports.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.1.Extensions">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraReports.v14.1.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.1.Service">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraReports.v14.1.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.1.Web">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraReports.v14.1.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraRichEdit.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraScheduler.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpreadsheet.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraSpreadsheet.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraTreeList.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraVerticalGrid.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraWizard.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libref\ExcelLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.81.0.1407, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libref\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel, Version=1.5.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libref\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="SendFiles, Version=1.0.2506.19176, Culture=neutral, PublicKeyToken=db0cffc473b0c41d">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libref\SendFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install">
+      <Name>System.Configuration.Install</Name>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
+    <Reference Include="Xceed.Editors, Version=2.5.10075.13300, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>..\Libref\Xceed.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Grid, Version=3.8.10075.13300, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>..\Libref\Xceed.Grid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.SmartUI, Version=3.5.10075.13300, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>..\Libref\Xceed.SmartUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.SmartUI.Controls, Version=3.5.10075.13300, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>..\Libref\Xceed.SmartUI.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.SmartUI.UIStyle, Version=3.5.10075.13300, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>..\Libref\Xceed.SmartUI.UIStyle.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.UI, Version=1.3.10075.13300, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>..\Libref\Xceed.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Validation, Version=1.2.10075.13300, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libref\Xceed.Validation.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="..\CommonLibrary\CommonLibrary.vbproj">
+      <Name>CommonLibrary</Name>
+      <Project>{D08773CC-EEB0-403E-B66B-D1964626F985}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BarButtonItemEx.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BarSubItemEx.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Base\DelegateUtil.vb" />
+    <Compile Include="Base\FontSize.vb" />
+    <Compile Include="Base\FormControlUtil.vb" />
+    <Compile Include="Base\RegistryUtil.vb" />
+    <Compile Include="Controls\ButtonEditCustom.Designer.vb">
+      <DependentUpon>ButtonEditCustom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ButtonEditCustom.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FormBase.Designer.vb">
+      <DependentUpon>FormBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormBase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\LinkLabelCustom.Designer.vb">
+      <DependentUpon>LinkLabelCustom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LinkLabelCustom.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\UCLoadingPage.Designer.vb">
+      <DependentUpon>UCLoadingPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCLoadingPage.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmBatch-EN.Designer.vb" />
+    <Compile Include="frmBatch-VN.Designer.vb" />
+    <Compile Include="frmLookup-EN.Designer.vb" />
+    <Compile Include="frmLookup-VN.Designer.vb" />
+    <Compile Include="frmLookup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaster-EN.Designer.vb" />
+    <Compile Include="frmMaster-VN.Designer.vb" />
+    <Compile Include="frmProcessing-EN.Designer.vb" />
+    <Compile Include="frmProcessing-VN.Designer.vb" />
+    <Compile Include="frmReportList-EN.Designer.vb" />
+    <Compile Include="frmReportList-VN.Designer.vb" />
+    <Compile Include="frmReportList_Tab.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportParameter-EN.Designer.vb" />
+    <Compile Include="frmReportParameter-VN.Designer.vb" />
+    <Compile Include="frmReportParameter__XtraReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearch-EN.Designer.vb" />
+    <Compile Include="frmSearch-VN.Designer.vb" />
+    <Compile Include="frmSearchCMP2FILE-EN.Designer.vb" />
+    <Compile Include="frmSearchCMP2FILE-VN.Designer.vb" />
+    <Compile Include="frmTransact-EN.Designer.vb" />
+    <Compile Include="frmTransact-VN.Designer.vb" />
+    <Compile Include="frmXtraApprove-EN.Designer.vb" />
+    <Compile Include="frmXtraApprove-EN1.Designer.vb" />
+    <Compile Include="frmXtraApprove-VN.Designer.vb" />
+    <Compile Include="frmXtraApprove.Designer.vb">
+      <DependentUpon>frmXtraApprove.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmXtraApprove.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXtraMaintenance.Designer.vb">
+      <DependentUpon>frmXtraMaintenance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmXtraMaintenance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXtraSearchLookup.Designer.vb">
+      <DependentUpon>frmXtraSearchLookup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmXtraSearchLookup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXtraSearch__ChooseTransaction.Designer.vb">
+      <DependentUpon>frmXtraSearch__ChooseTransaction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmXtraSearch__ChooseTransaction.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXtraTransact.Designer.vb">
+      <DependentUpon>frmXtraTransact.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmXtraTransact.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\modCommon.vb" />
+    <Compile Include="Modules\modDirect.vb" />
+    <Compile Include="Service References\HOAuthService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HOSTRptService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HOSTService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\BDSServiceStreamed.vb" />
+    <Compile Include="TextEditEx.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraFilterControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraUcCriterial.Designer.vb">
+      <DependentUpon>XtraUcCriterial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraUcCriterial.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <EmbeddedResource Include="Controls\UCLoadingPage.resx">
+      <DependentUpon>UCLoadingPage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLookup-EN.resx" />
+    <EmbeddedResource Include="frmLookup-VN.resx" />
+    <EmbeddedResource Include="frmLookup.resx">
+      <DependentUpon>frmLookup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportList_Tab-EN.resx" />
+    <EmbeddedResource Include="frmReportList_Tab-VN.resx" />
+    <EmbeddedResource Include="frmReportList_Tab.resx">
+      <DependentUpon>frmReportList_Tab.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXtraApprove-EN.resx" />
+    <EmbeddedResource Include="frmXtraApprove-VN.resx" />
+    <EmbeddedResource Include="frmXtraApprove.resx">
+      <DependentUpon>frmXtraApprove.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXtraMaintenance.resx">
+      <DependentUpon>frmXtraMaintenance.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXtraSearchLookup.resx">
+      <DependentUpon>frmXtraSearchLookup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXtraSearch__ChooseTransaction.resx">
+      <DependentUpon>frmXtraSearch__ChooseTransaction.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXtraTransact.resx">
+      <DependentUpon>frmXtraTransact.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraUcCriterial.resx">
+      <DependentUpon>XtraUcCriterial.vb</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasedXtraReport.Designer.vb">
+      <DependentUpon>BasedXtraReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BasedXtraReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ComboBoxEx.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExcelLib.vb" />
+    <Compile Include="frmSearchCMP2FILE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FlexMaskEditBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmBatch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaintenance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcessing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportParameter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSignature.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransact.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXtraSearch.Designer.vb">
+      <DependentUpon>frmXtraSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmXtraSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GridCheckMarksSelection.vb" />
+    <Compile Include="GridCheckSelection.vb" />
+    <Compile Include="GridEx.vb">
+      <SubType>Control</SubType>
+    </Compile>
+    <Compile Include="IForm.vb" />
+    <Compile Include="LabelControlEx.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LookUpEditEx.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MenuItemsEx.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="modCoreLib.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="modXtraLib.vb" />
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RptLayout.vb" />
+    <Compile Include="ServiceManagement.vb" />
+    <EmbeddedResource Include="BasedXtraReport.resx">
+      <DependentUpon>BasedXtraReport.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComboBoxEx.resx">
+      <DependentUpon>ComboBoxEx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchCMP2FILE-EN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchCMP2FILE-VN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchCMP2FILE.resx">
+      <DependentUpon>frmSearchCMP2FILE.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FlexMaskEditBox.resx">
+      <DependentUpon>FlexMaskEditBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBatch-EN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBatch-VN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBatch.resx">
+      <DependentUpon>frmBatch.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaintenance.resx">
+      <DependentUpon>frmMaintenance.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaster-EN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaster-VN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaster.resx">
+      <DependentUpon>frmMaster.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcessing-EN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcessing-VN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcessing.resx">
+      <DependentUpon>frmProcessing.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportList-EN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportList-VN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportList.resx">
+      <DependentUpon>frmReportList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportParameter-EN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportParameter-VN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportParameter.resx">
+      <DependentUpon>frmReportParameter.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportView.resx">
+      <DependentUpon>frmReportView.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearch-EN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearch-VN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearch.resx">
+      <DependentUpon>frmSearch.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSignature.resx">
+      <DependentUpon>frmSignature.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransact-EN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransact-VN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransact.resx">
+      <DependentUpon>frmTransact.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXtraSearch.resx">
+      <DependentUpon>frmXtraSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXtraSearch.vi-VN.resx">
+      <DependentUpon>frmXtraSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuItemsEx.resx">
+      <DependentUpon>MenuItemsEx.vb</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Service References\HOAuthService\AppCore.HOAuthService.DoWorkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOAuthService\AppCore.HOAuthService.GetAuthorizationTicketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOAuthService\AppCore.HOAuthService.GetLeftAdjustMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOAuthService\AppCore.HOAuthService.GetLeftMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOAuthService\AppCore.HOAuthService.GetTellerProfileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOAuthService\HOAuthService.wsdl" />
+    <None Include="Service References\HOAuthService\HOAuthService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HOAuthService\HOAuthService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HOAuthService\HOAuthService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HOSTRptService\AppCore.HOSTRptService.DoWorkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOSTRptService\AppCore.HOSTRptService.MessageByteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOSTRptService\AppCore.HOSTRptService.MessageStringResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOSTRptService\HOSTRptService.wsdl" />
+    <None Include="Service References\HOSTRptService\HOSTRptService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HOSTRptService\HOSTRptService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HOSTService\AppCore.HOSTService.DoWorkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOSTService\AppCore.HOSTService.GetFlagSignatureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOSTService\AppCore.HOSTService.MessageByteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOSTService\AppCore.HOSTService.MessageStringResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOSTService\AppCore.HOSTService.OMessageByteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOSTService\AppCore.HOSTService.OMessageStringResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOSTService\HOSTService.wsdl" />
+    <None Include="Service References\HOSTService\HOSTService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HOSTService\HOSTService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HOSTService\HOSTService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\DataSources\CommonLibrary.CTellerProfile.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
+    <Folder Include="UC\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\HOAuthService\" />
+    <WCFMetadataStorage Include="Service References\HOSTRptService\" />
+    <WCFMetadataStorage Include="Service References\HOSTService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HOAuthService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HOAuthService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HOAuthService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HOSTRptService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HOSTRptService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HOSTRptService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HOSTService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HOSTService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HOSTService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

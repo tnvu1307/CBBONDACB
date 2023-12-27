@@ -1,0 +1,154 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <SccProjectName></SccProjectName>
+    <SccLocalPath></SccLocalPath>
+    <SccAuxPath></SccAuxPath>
+    <SccProvider></SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>HOSTService.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <IncludeIisSettings>false</IncludeIisSettings>
+    <LegacyPublishPropertiesPageEnabled>true</LegacyPublishPropertiesPageEnabled>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DefineDebug>false</DefineDebug>
+    <OutputPath>..\Deployment\HOSTService\</OutputPath>
+    <DocumentationFile>HOSTService.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <RegisterForComInterop>false</RegisterForComInterop>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="App_Data\**" />
+    <Compile Remove="Properties\**" />
+    <Content Remove="App_Data\**" />
+    <Content Remove="Properties\**" />
+    <EmbeddedResource Remove="App_Data\**" />
+    <EmbeddedResource Remove="Properties\**" />
+    <None Remove="App_Data\**" />
+    <None Remove="Properties\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="log4net.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="log4net.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.81.0.1407, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libref\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="SendFiles, Version=1.0.2506.19176, Culture=neutral, PublicKeyToken=db0cffc473b0c41d">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libref\SendFiles.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HOSTRptService.svc" />
+    <Content Include="HOSTService.svc" />
+    <Content Include="HostServiceStreamed.svc" />
+    <Content Update="app.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Update="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="HOAuthService.svc.vb">
+      <DependentUpon>HOAuthService.svc</DependentUpon>
+    </Compile>
+    <Compile Update="HOSTRptService.svc.vb">
+      <DependentUpon>HOSTRptService.svc</DependentUpon>
+    </Compile>
+    <Compile Update="HOSTService.svc.vb">
+      <DependentUpon>HOSTService.svc</DependentUpon>
+    </Compile>
+    <Compile Update="HostServiceStreamed.svc.vb">
+      <DependentUpon>HostServiceStreamed.svc</DependentUpon>
+    </Compile>
+    <Compile Update="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HOAuthService.svc" />
+    <None Update="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Update="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BA\BA.vbproj" />
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.vbproj" />
+    <ProjectReference Include="..\HostCommonLibrary\HostCommonLibrary.vbproj" />
+    <ProjectReference Include="..\HOSTReport\HOSTReport.vbproj" />
+    <ProjectReference Include="..\Host\Host.vbproj" />
+    <ProjectReference Include="..\SA\SA.vbproj" />
+    <ProjectReference Include="..\ST\ST.vbproj" />
+    <ProjectReference Include="..\SY\SY.vbproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CoreWCF.Http" Version="1.4.1" />
+    <PackageReference Include="CoreWCF.Primitives" Version="1.4.1" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.DirectoryServices" Version="7.0.1" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" />
+  </ItemGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+</Project>

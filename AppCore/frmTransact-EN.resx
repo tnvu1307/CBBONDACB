@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="frmTransact.lblTransCode" xml:space="preserve">
+    <value>Transaction code:</value>
+  </data>
+	<data name="frmTransact.lblCaption" xml:space="preserve">
+    <value>Transaction screen</value>
+  </data>
+	<data name="frmTransact.btnOK" xml:space="preserve">
+    <value>&amp;OK</value>
+  </data>
+	<data name="frmTransact.btnCANCEL" xml:space="preserve">
+    <value>&amp;Cancel</value>
+  </data>
+	<data name="frmTransact" xml:space="preserve">
+    <value>Enter transaction</value>
+  </data>
+	<data name="ERR_LOOKUP_VALUE" xml:space="preserve">
+    <value>Invalid input value!</value>
+  </data>
+	<data name="frmTransact.btnAdjust" xml:space="preserve">
+    <value>A&amp;djust</value>
+  </data>
+	<data name="frmTransact.btnEntries" xml:space="preserve">
+    <value>&amp;Postmap</value>
+  </data>
+	<data name="lblTransCode" xml:space="preserve">
+    <value>Trans code:</value>
+  </data>
+	<data name="ERR_TLTXCD_NOTFOUND" xml:space="preserve">
+    <value>Transaction code not found</value>
+  </data>
+	<data name="frmTransact.btnReject" xml:space="preserve">
+    <value>&amp;Reject</value>
+  </data>
+	<data name="frmTransact.btnApprove" xml:space="preserve">
+    <value>&amp;Approve</value>
+  </data>
+	<data name="frmTransact.ApproveSuccessful" xml:space="preserve">
+    <value>Approve Successful!</value>
+  </data>
+	<data name="frmTransact.CanNotShowNext" xml:space="preserve">
+    <value>This is the last pending transaction!</value>
+  </data>
+	<data name="frmTransact.PostMapEmpty" xml:space="preserve">
+    <value>Post Map, VAT voucher should not be all empty!</value>
+  </data>
+	<data name="frmTransact.RejectedSuccessful" xml:space="preserve">
+    <value>Reject successful!</value>
+  </data>
+	<data name="ERR_NULL_VALUE" xml:space="preserve">
+    <value>This mandatory field can not be null!</value>
+  </data>
+	<data name="ERR_NUMERIC_VALUE" xml:space="preserve">
+    <value>Invalid numerical value!</value>
+  </data>
+	<data name="ERR_DATE_VALUE" xml:space="preserve">
+    <value>Invalid date value!</value>
+  </data>
+	<data name="ERR_INVALID_NUMERIC_NUMBER" xml:space="preserve">
+    <value>Invalid numeric value for numeric required field!</value>
+  </data>
+	<data name="ERR_OVER_DBL_VALUE" xml:space="preserve">
+    <value>Over length for  numerical value, length should be smaller tham 20 characters!</value>
+  </data>
+	<data name="tabAccountEntry" xml:space="preserve">
+    <value>Account Entry</value>
+  </data>
+	<data name="tabFixedAssest" xml:space="preserve">
+    <value>Fixed Assest</value>
+  </data>
+	<data name="tabVATVoucher" xml:space="preserve">
+    <value>VAT Voucher</value>
+  </data>
+	<data name="frmTransact.btnRefuse" xml:space="preserve">
+    <value>Re&amp;fuse</value>
+  </data>
+	<data name="frmTransact.RefuseMessage" xml:space="preserve">
+    <value>Refuse successful</value>
+  </data>
+	<data name="BUSDATE_AFTER_CURRDATE" xml:space="preserve">
+    <value>Posting date should before current date!</value>
+  </data>
+	<data name="BUSDATE_NOT_VALID" xml:space="preserve">
+    <value>Posting date is not valid!</value>
+  </data>
+	<data name="POSTING_DATE_CAPTION" xml:space="preserve">
+    <value>Posting date</value>
+  </data>
+	<data name="frmTransact.RejectComment" xml:space="preserve">
+    <value>Please enter your comment!</value>
+  </data>
+	<data name="PrintConfirm" xml:space="preserve">
+    <value>Are you sure to print voucher</value>
+  </data>
+	<data name="TxDateBusDate" xml:space="preserve">
+    <value>Date on this client and date on branch are diffirent, please logout and login!</value>
+  </data>
+	<data name="frmTransact.DeleteSuccessful" xml:space="preserve">
+    <value>Delete Successful!</value>
+  </data>
+	<data name="ERR_INVALID_POSTING_DATE" xml:space="preserve">
+    <value>ERR_INVALID_POSTING_DATE</value>
+  </data>
+	<data name="ERR_POSTING_DATE_MUST_BE_WORK_DATE" xml:space="preserve">
+    <value>Posting date must be work date!</value>
+  </data>
+	<data name="ACCOUNTENTRY_EN" xml:space="preserve">
+    <value>Account entries</value>
+  </data>
+	<data name="SUBTXNO_EN" xml:space="preserve">
+    <value>No</value>
+  </data>
+	<data name="CCYCD_EN" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+	<data name="DORC_EN" xml:space="preserve">
+    <value>Debit/Credit</value>
+  </data>
+	<data name="ACCOUNT_EN" xml:space="preserve">
+    <value>Account</value>
+  </data>
+	<data name="AMOUNT_EN" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+	<data name="DRAMT_EN" xml:space="preserve">
+    <value>Debit</value>
+  </data>
+	<data name="CRAMT_EN" xml:space="preserve">
+    <value>Credit</value>
+  </data>
+	<data name="FEEDETAIL_EN" xml:space="preserve">
+    <value>Fee details</value>
+  </data>
+	<data name="FEECD_EN" xml:space="preserve">
+    <value>Fee code</value>
+  </data>
+	<data name="FEENAME_EN" xml:space="preserve">
+    <value>Fee name</value>
+  </data>
+	<data name="GLACCTNO_EN" xml:space="preserve">
+    <value>Fee Account</value>
+  </data>
+	<data name="FORP_EN" xml:space="preserve">
+    <value>Fee type</value>
+  </data>
+	<data name="FEEAMT_EN" xml:space="preserve">
+    <value>Fee amount</value>
+  </data>
+	<data name="FEERATE_EN" xml:space="preserve">
+    <value>Fee rate</value>
+  </data>
+	<data name="MINVAL_EN" xml:space="preserve">
+    <value>Min amount</value>
+  </data>
+	<data name="MAXVAL_EN" xml:space="preserve">
+    <value>Max amount</value>
+  </data>
+	<data name="VATRATE_EN" xml:space="preserve">
+    <value>VAT rate</value>
+  </data>
+	<data name="frmTransact.btnVoucher" xml:space="preserve">
+    <value>Print &amp;Voucher</value>
+  </data>
+	<data name="ERR_CF_AFMAST_MRSTYPE_INVALID" xml:space="preserve">
+    <value>Margin type does not permit of this transaction.</value>
+  </data>
+	<data name="FileNotExists" xml:space="preserve">
+    <value>File voucher template not exists!</value>
+  </data>
+	<data name="ERR_CUSTODYCD_INVALID_LENGTH" xml:space="preserve">
+    <value>Length of custody code is invalid</value>
+  </data>
+	<data name="ERR_CUSTODYCD_INVALID_PCFLAG_PC" xml:space="preserve">
+    <value>Invalid custody code format</value>
+  </data>
+	<data name="ERR_DATA_NOTFOUND" xml:space="preserve">
+    <value>Data not found</value>
+  </data>
+	<data name="TXNUM_EMPTY" xml:space="preserve">
+    <value>Transact num is empty! </value>
+  </data>
+	<data name="CANNOTEXCUTETRANSACT" xml:space="preserve">
+    <value>Giao dịch này là giao dịch của hệ thống chạy cuối ngày nên không thể thực thi từ màn hình !</value>
+  </data>
+	<data name="ERR_NULL_COMBOEX" xml:space="preserve">
+    <value>Not enough information to do the transaction!</value>
+  </data>
+	<data name="ERR_NULL_COMBO" xml:space="preserve">
+    <value>Field {FIELDNAME} : Invalid Input value</value>
+  </data>
+	<data name="STATUSBAR_ACCINFO" xml:space="preserve">
+    <value>Press F9 for more account/ authorize account infomation</value>
+  </data>
+</root>

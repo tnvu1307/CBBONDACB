@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6</TargetFramework>
+		<OutputType>Library</OutputType>
+		<StartupObject></StartupObject>
+		<MyType>Empty</MyType>
+		<SccProjectName></SccProjectName>
+		<SccLocalPath></SccLocalPath>
+		<SccAuxPath></SccAuxPath>
+		<SccProvider></SccProvider>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DocumentationFile>ST.xml</DocumentationFile>
+		<NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DefineDebug>false</DefineDebug>
+		<DocumentationFile>ST.xml</DocumentationFile>
+		<NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+	</PropertyGroup>
+	<ItemGroup>
+		<Import Include="System.Drawing" />
+		<Import Include="System.Windows.Forms" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\CoreBusiness\CoreBusiness.vbproj" />
+		<ProjectReference Include="..\DataAccessLayer\DataAccessLayer.vbproj" />
+		<ProjectReference Include="..\HostCommonLibrary\HostCommonLibrary.vbproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+		<PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+	</ItemGroup>
+</Project>

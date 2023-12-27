@@ -1,0 +1,307 @@
+<ObjectMessage 
+	LOCAL="Y" 
+	MSGTYPE="O" 
+	OBJNAME="SA.FLDMASTER" 
+	ACTIONFLAG="INQUIRY" 
+	CLAUSE="upper(OBJNAME) = '0070' ORDER BY ODRNUM">
+	
+	<ObjData>
+		<entry fldname="MODCODE" fldtype="System.String" oldval="CF">CF</entry>
+		<entry fldname="FLDNAME" fldtype="System.String" oldval="01">01</entry>
+		<entry fldname="OBJNAME" fldtype="System.String" oldval="0070                                              ">0070                                              </entry>
+		<entry fldname="DEFNAME" fldtype="System.String" oldval="CFID">CFID</entry>
+		<entry fldname="CAPTION" fldtype="System.String" oldval="Ma khach hang">Ma khach hang</entry>
+		<entry fldname="ODRNUM" fldtype="System.Int16" oldval="0">0</entry>
+		<entry fldname="FLDTYPE" fldtype="System.String" oldval="C">C</entry>
+		<entry fldname="FLDMASK" fldtype="System.String" oldval="9999.999999">9999.999999</entry>
+		<entry fldname="FLDFORMAT" fldtype="System.String" oldval="9999.999999">9999.999999</entry>
+		<entry fldname="FLDLEN" fldtype="System.Decimal" oldval="10">10</entry>
+		<entry fldname="LLIST" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LCHK" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="DEFVAL" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VISIBLE" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="DISABLE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="MANDATORY" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="AMTEXP" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VALIDTAG" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LOOKUP" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="DATATYPE" fldtype="System.String" oldval="C">C</entry>
+		<entry fldname="EN_CAPTION" fldtype="System.String" oldval="Customer code">Customer code</entry>
+	</ObjData>
+	<ObjData>
+		<entry fldname="MODCODE" fldtype="System.String" oldval="CF">CF</entry>
+		<entry fldname="FLDNAME" fldtype="System.String" oldval="02">02</entry>
+		<entry fldname="OBJNAME" fldtype="System.String" oldval="0070                                              ">0070                                              </entry>
+		<entry fldname="DEFNAME" fldtype="System.String" oldval="ACTYPE">ACTYPE</entry>
+		<entry fldname="CAPTION" fldtype="System.String" oldval="Ma loai hinh">Ma loai hinh</entry>
+		<entry fldname="ODRNUM" fldtype="System.Int16" oldval="1">1</entry>
+		<entry fldname="FLDTYPE" fldtype="System.String" oldval="C">C</entry>
+		<entry fldname="FLDMASK" fldtype="System.String" oldval="9999">9999</entry>
+		<entry fldname="FLDFORMAT" fldtype="System.String" oldval="9999">9999</entry>
+		<entry fldname="FLDLEN" fldtype="System.Decimal" oldval="4">4</entry>
+		<entry fldname="LLIST" fldtype="System.String" oldval="SELECT ACTYPE VALUE, TYPENAME DISPLAY, DESCRIPTION FROM AFTYPE ORDER BY ACTYPE">SELECT ACTYPE VALUE, TYPENAME DISPLAY, DESCRIPTION FROM AFTYPE ORDER BY ACTYPE</entry>
+		<entry fldname="LCHK" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="DEFVAL" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VISIBLE" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="DISABLE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="MANDATORY" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="AMTEXP" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VALIDTAG" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LOOKUP" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="DATATYPE" fldtype="System.String" oldval="C">C</entry>
+		<entry fldname="EN_CAPTION" fldtype="System.String" oldval="Application product code">Application product code</entry>
+	</ObjData>
+	<ObjData>
+		<entry fldname="MODCODE" fldtype="System.String" oldval="CF">CF</entry>
+		<entry fldname="FLDNAME" fldtype="System.String" oldval="03">03</entry>
+		<entry fldname="OBJNAME" fldtype="System.String" oldval="0070                                              ">0070                                              </entry>
+		<entry fldname="DEFNAME" fldtype="System.String" oldval="APPLID">APPLID</entry>
+		<entry fldname="CAPTION" fldtype="System.String" oldval="So hop dong">So hop dong</entry>
+		<entry fldname="ODRNUM" fldtype="System.Int16" oldval="2">2</entry>
+		<entry fldname="FLDTYPE" fldtype="System.String" oldval="C">C</entry>
+		<entry fldname="FLDMASK" fldtype="System.String" oldval="9999.999999">9999.999999</entry>
+		<entry fldname="FLDFORMAT" fldtype="System.String" oldval="9999.999999">9999.999999</entry>
+		<entry fldname="FLDLEN" fldtype="System.Decimal" oldval="10">10</entry>
+		<entry fldname="LLIST" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LCHK" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="DEFVAL" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VISIBLE" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="DISABLE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="MANDATORY" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="AMTEXP" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VALIDTAG" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LOOKUP" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="DATATYPE" fldtype="System.String" oldval="C">C</entry>
+		<entry fldname="EN_CAPTION" fldtype="System.String" oldval="Application number">Application number</entry>
+	</ObjData>
+	<ObjData>
+		<entry fldname="MODCODE" fldtype="System.String" oldval="CF">CF</entry>
+		<entry fldname="FLDNAME" fldtype="System.String" oldval="10">10</entry>
+		<entry fldname="OBJNAME" fldtype="System.String" oldval="0070                                              ">0070                                              </entry>
+		<entry fldname="DEFNAME" fldtype="System.String" oldval="MARGINLIMIT">MARGINLIMIT</entry>
+		<entry fldname="CAPTION" fldtype="System.String" oldval="Han muc Margin">Han muc Margin</entry>
+		<entry fldname="ODRNUM" fldtype="System.Int16" oldval="3">3</entry>
+		<entry fldname="FLDTYPE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="FLDMASK" fldtype="System.String" oldval="999g999g999g999g999">999g999g999g999g999</entry>
+		<entry fldname="FLDFORMAT" fldtype="System.String" oldval="999g999g999g999g999">999g999g999g999g999</entry>
+		<entry fldname="FLDLEN" fldtype="System.Decimal" oldval="19">19</entry>
+		<entry fldname="LLIST" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LCHK" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="DEFVAL" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VISIBLE" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="DISABLE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="MANDATORY" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="AMTEXP" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VALIDTAG" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LOOKUP" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="DATATYPE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="EN_CAPTION" fldtype="System.String" oldval="Margin limit">Margin limit</entry>
+	</ObjData>
+	<ObjData>
+		<entry fldname="MODCODE" fldtype="System.String" oldval="CF">CF</entry>
+		<entry fldname="FLDNAME" fldtype="System.String" oldval="11">11</entry>
+		<entry fldname="OBJNAME" fldtype="System.String" oldval="0070                                              ">0070                                              </entry>
+		<entry fldname="DEFNAME" fldtype="System.String" oldval="REPOLIMIT">REPOLIMIT</entry>
+		<entry fldname="CAPTION" fldtype="System.String" oldval="Han muc Repo">Han muc Repo</entry>
+		<entry fldname="ODRNUM" fldtype="System.Int16" oldval="4">4</entry>
+		<entry fldname="FLDTYPE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="FLDMASK" fldtype="System.String" oldval="999g999g999g999g999">999g999g999g999g999</entry>
+		<entry fldname="FLDFORMAT" fldtype="System.String" oldval="999g999g999g999g999">999g999g999g999g999</entry>
+		<entry fldname="FLDLEN" fldtype="System.Decimal" oldval="19">19</entry>
+		<entry fldname="LLIST" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LCHK" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="DEFVAL" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VISIBLE" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="DISABLE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="MANDATORY" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="AMTEXP" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VALIDTAG" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LOOKUP" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="DATATYPE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="EN_CAPTION" fldtype="System.String" oldval="Repo limit">Repo limit</entry>
+	</ObjData>
+	<ObjData>
+		<entry fldname="MODCODE" fldtype="System.String" oldval="CF">CF</entry>
+		<entry fldname="FLDNAME" fldtype="System.String" oldval="12">12</entry>
+		<entry fldname="OBJNAME" fldtype="System.String" oldval="0070                                              ">0070                                              </entry>
+		<entry fldname="DEFNAME" fldtype="System.String" oldval="ADVANCELIMIT">ADVANCELIMIT</entry>
+		<entry fldname="CAPTION" fldtype="System.String" oldval="Han muc ung truoc">Han muc ung truoc</entry>
+		<entry fldname="ODRNUM" fldtype="System.Int16" oldval="5">5</entry>
+		<entry fldname="FLDTYPE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="FLDMASK" fldtype="System.String" oldval="999g999g999g999g999">999g999g999g999g999</entry>
+		<entry fldname="FLDFORMAT" fldtype="System.String" oldval="999g999g999g999g999">999g999g999g999g999</entry>
+		<entry fldname="FLDLEN" fldtype="System.Decimal" oldval="19">19</entry>
+		<entry fldname="LLIST" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LCHK" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="DEFVAL" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VISIBLE" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="DISABLE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="MANDATORY" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="AMTEXP" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VALIDTAG" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LOOKUP" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="DATATYPE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="EN_CAPTION" fldtype="System.String" oldval="Advance limit">Advance limit</entry>
+	</ObjData>
+	<ObjData>
+		<entry fldname="MODCODE" fldtype="System.String" oldval="CF">CF</entry>
+		<entry fldname="FLDNAME" fldtype="System.String" oldval="13">13</entry>
+		<entry fldname="OBJNAME" fldtype="System.String" oldval="0070                                              ">0070                                              </entry>
+		<entry fldname="DEFNAME" fldtype="System.String" oldval="DEPOSITLIMIT">DEPOSITLIMIT</entry>
+		<entry fldname="CAPTION" fldtype="System.String" oldval="Han muc tien gui">Han muc tien gui</entry>
+		<entry fldname="ODRNUM" fldtype="System.Int16" oldval="6">6</entry>
+		<entry fldname="FLDTYPE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="FLDMASK" fldtype="System.String" oldval="999g999g999g999g999">999g999g999g999g999</entry>
+		<entry fldname="FLDFORMAT" fldtype="System.String" oldval="999g999g999g999g999">999g999g999g999g999</entry>
+		<entry fldname="FLDLEN" fldtype="System.Decimal" oldval="19">19</entry>
+		<entry fldname="LLIST" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LCHK" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="DEFVAL" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VISIBLE" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="DISABLE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="MANDATORY" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="AMTEXP" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VALIDTAG" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LOOKUP" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="DATATYPE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="EN_CAPTION" fldtype="System.String" oldval="Deposit limit">Deposit limit</entry>
+	</ObjData>
+	<ObjData>
+		<entry fldname="MODCODE" fldtype="System.String" oldval="CF">CF</entry>
+		<entry fldname="FLDNAME" fldtype="System.String" oldval="14">14</entry>
+		<entry fldname="OBJNAME" fldtype="System.String" oldval="0070                                              ">0070                                              </entry>
+		<entry fldname="DEFNAME" fldtype="System.String" oldval="FLOORLIMIT">FLOORLIMIT</entry>
+		<entry fldname="CAPTION" fldtype="System.String" oldval="Han muc GD tai san">Han muc GD tai san</entry>
+		<entry fldname="ODRNUM" fldtype="System.Int16" oldval="7">7</entry>
+		<entry fldname="FLDTYPE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="FLDMASK" fldtype="System.String" oldval="999g999g999g999g999">999g999g999g999g999</entry>
+		<entry fldname="FLDFORMAT" fldtype="System.String" oldval="999g999g999g999g999">999g999g999g999g999</entry>
+		<entry fldname="FLDLEN" fldtype="System.Decimal" oldval="19">19</entry>
+		<entry fldname="LLIST" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LCHK" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="DEFVAL" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VISIBLE" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="DISABLE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="MANDATORY" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="AMTEXP" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VALIDTAG" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LOOKUP" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="DATATYPE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="EN_CAPTION" fldtype="System.String" oldval="Floor limit">Floor limit</entry>
+	</ObjData>
+	<ObjData>
+		<entry fldname="MODCODE" fldtype="System.String" oldval="CF">CF</entry>
+		<entry fldname="FLDNAME" fldtype="System.String" oldval="15">15</entry>
+		<entry fldname="OBJNAME" fldtype="System.String" oldval="0070                                              ">0070                                              </entry>
+		<entry fldname="DEFNAME" fldtype="System.String" oldval="BRANCHLIMIT">BRANCHLIMIT</entry>
+		<entry fldname="CAPTION" fldtype="System.String" oldval="Han muc GD tai CN">Han muc GD tai CN</entry>
+		<entry fldname="ODRNUM" fldtype="System.Int16" oldval="8">8</entry>
+		<entry fldname="FLDTYPE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="FLDMASK" fldtype="System.String" oldval="999g999g999g999g999">999g999g999g999g999</entry>
+		<entry fldname="FLDFORMAT" fldtype="System.String" oldval="999g999g999g999g999">999g999g999g999g999</entry>
+		<entry fldname="FLDLEN" fldtype="System.Decimal" oldval="19">19</entry>
+		<entry fldname="LLIST" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LCHK" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="DEFVAL" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VISIBLE" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="DISABLE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="MANDATORY" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="AMTEXP" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VALIDTAG" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LOOKUP" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="DATATYPE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="EN_CAPTION" fldtype="System.String" oldval="Branch limit">Branch limit</entry>
+	</ObjData>
+	<ObjData>
+		<entry fldname="MODCODE" fldtype="System.String" oldval="CF">CF</entry>
+		<entry fldname="FLDNAME" fldtype="System.String" oldval="16">16</entry>
+		<entry fldname="OBJNAME" fldtype="System.String" oldval="0070                                              ">0070                                              </entry>
+		<entry fldname="DEFNAME" fldtype="System.String" oldval="TELELIMIT">TELELIMIT</entry>
+		<entry fldname="CAPTION" fldtype="System.String" oldval="Han muc GD qua dien thoai">Han muc GD qua dien thoai</entry>
+		<entry fldname="ODRNUM" fldtype="System.Int16" oldval="9">9</entry>
+		<entry fldname="FLDTYPE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="FLDMASK" fldtype="System.String" oldval="999g999g999g999g999">999g999g999g999g999</entry>
+		<entry fldname="FLDFORMAT" fldtype="System.String" oldval="999g999g999g999g999">999g999g999g999g999</entry>
+		<entry fldname="FLDLEN" fldtype="System.Decimal" oldval="19">19</entry>
+		<entry fldname="LLIST" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LCHK" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="DEFVAL" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VISIBLE" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="DISABLE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="MANDATORY" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="AMTEXP" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VALIDTAG" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LOOKUP" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="DATATYPE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="EN_CAPTION" fldtype="System.String" oldval="Tele limit">Tele limit</entry>
+	</ObjData>
+	<ObjData>
+		<entry fldname="MODCODE" fldtype="System.String" oldval="CF">CF</entry>
+		<entry fldname="FLDNAME" fldtype="System.String" oldval="17">17</entry>
+		<entry fldname="OBJNAME" fldtype="System.String" oldval="0070                                              ">0070                                              </entry>
+		<entry fldname="DEFNAME" fldtype="System.String" oldval="ONLINELIMIT">ONLINELIMIT</entry>
+		<entry fldname="CAPTION" fldtype="System.String" oldval="Han muc giao dich truc tuyen">Han muc giao dich truc tuyen</entry>
+		<entry fldname="ODRNUM" fldtype="System.Int16" oldval="10">10</entry>
+		<entry fldname="FLDTYPE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="FLDMASK" fldtype="System.String" oldval="999g999g999g999g999">999g999g999g999g999</entry>
+		<entry fldname="FLDFORMAT" fldtype="System.String" oldval="999g999g999g999g999">999g999g999g999g999</entry>
+		<entry fldname="FLDLEN" fldtype="System.Decimal" oldval="19">19</entry>
+		<entry fldname="LLIST" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LCHK" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="DEFVAL" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VISIBLE" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="DISABLE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="MANDATORY" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="AMTEXP" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VALIDTAG" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LOOKUP" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="DATATYPE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="EN_CAPTION" fldtype="System.String" oldval="Online limit">Online limit</entry>
+	</ObjData>
+	<ObjData>
+		<entry fldname="MODCODE" fldtype="System.String" oldval="CF">CF</entry>
+		<entry fldname="FLDNAME" fldtype="System.String" oldval="31">31</entry>
+		<entry fldname="OBJNAME" fldtype="System.String" oldval="0070                                              ">0070                                              </entry>
+		<entry fldname="DEFNAME" fldtype="System.String" oldval="AUTOOPEN">AUTOOPEN</entry>
+		<entry fldname="CAPTION" fldtype="System.String" oldval="Tu dong mo TK SE">Tu dong mo TK SE</entry>
+		<entry fldname="ODRNUM" fldtype="System.Int16" oldval="11">11</entry>
+		<entry fldname="FLDTYPE" fldtype="System.String" oldval="C">C</entry>
+		<entry fldname="FLDMASK" fldtype="System.String" oldval="&gt;A">&gt;A</entry>
+		<entry fldname="FLDFORMAT" fldtype="System.String" oldval="&gt;A">&gt;A</entry>
+		<entry fldname="FLDLEN" fldtype="System.Decimal" oldval="1">1</entry>
+		<entry fldname="LLIST" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LCHK" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="DEFVAL" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="VISIBLE" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="DISABLE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="MANDATORY" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="AMTEXP" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VALIDTAG" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LOOKUP" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="DATATYPE" fldtype="System.String" oldval="C">C</entry>
+		<entry fldname="EN_CAPTION" fldtype="System.String" oldval="Auto open SE account">Auto open SE account</entry>
+	</ObjData>
+	<ObjData>
+		<entry fldname="MODCODE" fldtype="System.String" oldval="CF">CF</entry>
+		<entry fldname="FLDNAME" fldtype="System.String" oldval="30">30</entry>
+		<entry fldname="OBJNAME" fldtype="System.String" oldval="0070                                              ">0070                                              </entry>
+		<entry fldname="DEFNAME" fldtype="System.String" oldval="DESC">DESC</entry>
+		<entry fldname="CAPTION" fldtype="System.String" oldval="Mo ta">Mo ta</entry>
+		<entry fldname="ODRNUM" fldtype="System.Int16" oldval="12">12</entry>
+		<entry fldname="FLDTYPE" fldtype="System.String" oldval="C">C</entry>
+		<entry fldname="FLDMASK" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="FLDFORMAT" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="FLDLEN" fldtype="System.Decimal" oldval="250">250</entry>
+		<entry fldname="LLIST" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LCHK" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="DEFVAL" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VISIBLE" fldtype="System.String" oldval="Y">Y</entry>
+		<entry fldname="DISABLE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="MANDATORY" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="AMTEXP" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="VALIDTAG" fldtype="System.String" oldval=" "></entry>
+		<entry fldname="LOOKUP" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="DATATYPE" fldtype="System.String" oldval="N">N</entry>
+		<entry fldname="EN_CAPTION" fldtype="System.String" oldval="Description">Description</entry>
+	</ObjData>
+</ObjectMessage>

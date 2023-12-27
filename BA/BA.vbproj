@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6</TargetFramework>
+		<OutputType>Library</OutputType>
+		<MyType>Empty</MyType>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DocumentationFile>BA.xml</DocumentationFile>
+		<NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DefineDebug>false</DefineDebug>
+		<DocumentationFile>BA.xml</DocumentationFile>
+		<NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\CoreBusiness\CoreBusiness.vbproj" />
+		<ProjectReference Include="..\DataAccessLayer\DataAccessLayer.vbproj" />
+		<ProjectReference Include="..\HostCommonLibrary\HostCommonLibrary.vbproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+		<PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+	</ItemGroup>
+</Project>

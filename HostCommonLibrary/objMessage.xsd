@@ -1,0 +1,46 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:annotation>
+		<xsd:documentation>FPT.FSS.FBF object message schema</xsd:documentation>
+	</xsd:annotation>
+	<xsd:element name="objmessage" type="messageType" />
+	<xsd:complexType name="messageType">
+		<xsd:sequence>
+			<xsd:element name="fieldentry" type="fieldType" minOccurs="0" />
+		</xsd:sequence>
+		<xsd:sequence>
+			<xsd:element name="keyentry" type="fieldType" minOccurs="0" />
+		</xsd:sequence>
+		<xsd:attribute name="msgtype" type="xsd:string" use="required"/>
+		<xsd:attribute name="local" type="xsd:string" use="required"/>
+		<xsd:attribute name="txdate" type="xsd:string" use="required" />
+		<xsd:attribute name="txtime" type="xsd:string" use="required" />
+		<xsd:attribute name="brid" type="xsd:string" use="required" />
+		<xsd:attribute name="tlid" type="xsd:string" use="required" />
+		<xsd:attribute name="objname" type="xsd:string" use="required" />
+		<xsd:attribute name="actionflag" type="actionflagType" use="required" />
+	</xsd:complexType>
+	<xsd:complexType name="fieldType">
+		<xsd:sequence>
+			<xsd:element name="fldname" type="xsd:string" />
+			<xsd:element name="fldtype" type="dataType" />
+			<xsd:element name="curvalue" type="xsd:string" />
+			<xsd:element name="newvalue" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="actionflagType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="INQ" />
+			<xsd:enumeration value="ADD" />
+			<xsd:enumeration value="UPD" />
+			<xsd:enumeration value="DEL" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="dataType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="C" />
+			<xsd:enumeration value="D" />
+			<xsd:enumeration value="N" />
+			<xsd:enumeration value="B" />
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,61 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:annotation>
+	<xsd:documentation>FPT.FSS.FBF transaction message schema</xsd:documentation>
+</xsd:annotation>
+
+ <xsd:element name="TransactMessage" type="messageType"/>
+
+ <xsd:complexType name="messageType">
+ <xsd:sequence>
+   <xsd:element name="fields" type="fieldType" minOccurs="0" maxOccurs="50"/>
+   <xsd:element name="posting" type="postingType" minOccurs="0" maxOccurs="20"/>
+ </xsd:sequence>  
+  <xsd:attribute name="msgtype" type="xsd:string" use="required"/>
+   <xsd:attribute name="txtype" type="xsd:string" use="required"/>
+   <xsd:attribute name="nosubmit" type="xsd:string" use="required"/>
+   <xsd:attribute name="tltxcd" type="xsd:string" use="required"/>
+   <xsd:attribute name="status" type="xsd:string" use="required"/>
+   <xsd:attribute name="deltd" type="xsd:string" use="required"/>
+   <xsd:attribute name="ovrrqs" type="xsd:string" use="optional"/>
+   <xsd:attribute name="updatemode" type="xsd:string" use="optional"/>
+   <xsd:attribute name="local" type="xsd:string" use="optional"/>
+ 
+   <xsd:attribute name="brid" type="xsd:string" use="required"/>
+   <xsd:attribute name="tlid" type="xsd:string" use="required"/>
+   <xsd:attribute name="offid" type="xsd:string" use="optional"/>
+   <xsd:attribute name="chkid" type="xsd:string" use="optional"/>
+   <xsd:attribute name="chid" type="xsd:string" use="optional"/>
+   <xsd:attribute name="ibt" type="xsd:string" use="required"/>
+   <xsd:attribute name="brid2" type="xsd:string" use="optional"/>
+   <xsd:attribute name="tlid2" type="xsd:string" use="optional"/>
+
+   <xsd:attribute name="txnum" type="xsd:string" use="required"/>
+   <xsd:attribute name="txdate" type="xsd:string" use="required"/>
+   <xsd:attribute name="txtime" type="xsd:string" use="required"/>
+   <xsd:attribute name="brdate" type="xsd:string" use="required"/>
+   <xsd:attribute name="busdate" type="xsd:string" use="required"/>
+   <xsd:attribute name="ccyusage" type="xsd:string" use="required"/>
+   <xsd:attribute name="offline" type="xsd:string" use="required"/>
+   <xsd:attribute name="txdesc" type="xsd:string" use="required"/>
+ </xsd:complexType>
+
+ <xsd:complexType name="postingType">
+  <xsd:sequence>
+   <xsd:element name="subtxno"  type="xsd:byte"/>
+   <xsd:element name="dorc" type="xsd:string"/>
+   <xsd:element name="ccycd" type="xsd:string"/>
+   <xsd:element name="acctno" type="xsd:string"/>
+   <xsd:element name="amt" type="xsd:double"/>
+  </xsd:sequence>
+ </xsd:complexType>
+
+ <xsd:complexType name="fieldType">
+  <xsd:sequence>
+   <xsd:element name="fldname"  type="xsd:string"/>
+   <xsd:element name="fldtype" type="xsd:string"/>
+   <xsd:element name="fldvalue" type="xsd:string"/>
+  </xsd:sequence>
+ </xsd:complexType>
+
+</xsd:schema>
+

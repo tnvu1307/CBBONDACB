@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EMAILLOGMESSAGE" xml:space="preserve">
+    <value>&lt;ObjectMessage TXDATE="" TXNUM="" TXTIME="" TLID="0001" BRID="0001" LOCAL="N" MSGTYPE="O" OBJNAME="SA.EMAILSMSLOG" ACTIONFLAG="ADD" CMDINQUIRY="" CLAUSE="" FUNCTIONNAME="" AUTOID="Y" REFERENCE="" RESERVER="" IPADDRESS="" CMDTYPE="T" PARENTOBJNAME="" PARENTCLAUSE=""&gt;&lt;ObjData&gt;&lt;Entry fldname="TXDATE" fldtype="System.Date" oldval="[TXDATE]"&gt;[TXDATE]&lt;/Entry&gt;&lt;Entry fldname="TXTIME" fldtype="System.String" oldval="[TXTIME]"&gt;[TXTIME]&lt;/Entry&gt;&lt;Entry fldname="ACCTNO" fldtype="System.String" oldval="[ACCTNO]"&gt;[ACCTNO]&lt;/Entry&gt;&lt;Entry fldname="REPORTNAME" fldtype="System.String" oldval="[REPORTNAME]"&gt;[REPORTNAME]&lt;/Entry&gt;&lt;Entry fldname="NOTE" fldtype="System.String" oldval=""&gt;[NOTE]&lt;/Entry&gt;&lt;/ObjData&gt;&lt;/ObjectMessage&gt;</value>
+  </data>
+  <data name="ERR_CANNOT_FORCE_SELL_DEAL" xml:space="preserve">
+    <value>Deal không có chứng khoán sẵn sàng để bán</value>
+  </data>
+  <data name="ExecuteFlag.AddNew" xml:space="preserve">
+    <value>&amp;Add new</value>
+  </data>
+  <data name="ExecuteFlag.Delete" xml:space="preserve">
+    <value>&amp;Delete</value>
+  </data>
+  <data name="ExecuteFlag.Edit" xml:space="preserve">
+    <value>&amp;Edit</value>
+  </data>
+  <data name="ExecuteFlag.SendSMS" xml:space="preserve">
+    <value>S&amp;MS</value>
+  </data>
+  <data name="ExecuteFlag.View" xml:space="preserve">
+    <value>&amp;View</value>
+  </data>
+  <data name="frmSearch.bbiExport" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="frmSearch.bbiFullScreen" xml:space="preserve">
+    <value>Hide/Show Criterial</value>
+  </data>
+  <data name="frmSearch.bbiPreview" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="frmSearch.bbiSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="frmSearch.bciCheckAll" xml:space="preserve">
+    <value>All Page</value>
+  </data>
+  <data name="frmSearch.bciExecuteAll" xml:space="preserve">
+    <value>Execute All</value>
+  </data>
+  <data name="frmSearch.btnAdd" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="frmSearch.btnBACK" xml:space="preserve">
+    <value>&amp;Back</value>
+  </data>
+  <data name="frmSearch.btnEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="frmSearch.btnExport" xml:space="preserve">
+    <value>E&amp;xport</value>
+  </data>
+  <data name="frmSearch.btnNEXT" xml:space="preserve">
+    <value>&amp;Next</value>
+  </data>
+  <data name="frmSearch.btnRemove" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="frmSearch.btnRemoveAll" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="frmSearch.btnSearch" xml:space="preserve">
+    <value>&amp;Search</value>
+  </data>
+  <data name="frmSearch.btnSendSMS" xml:space="preserve">
+    <value>S&amp;MS</value>
+  </data>
+  <data name="frmSearch.Criterial" xml:space="preserve">
+    <value>Criterial</value>
+  </data>
+  <data name="frmSearch.DelConfirm" xml:space="preserve">
+    <value>Are you sure to delete this data row?</value>
+  </data>
+  <!--<data name="frmSearch.DelSuccess" xml:space="preserve">
+    <value>Data delete successful!</value>
+  </data>-->
+  <data name="frmSearch.DelSuccess" xml:space="preserve">
+    <value>This transaction need to be approved</value>
+  </data>
+  <data name="frmSearch.DisposeConfirm" xml:space="preserve">
+    <value>Are you sure to delete this data row?</value>
+  </data>
+  <data name="frmSearch.DisposeDescInput" xml:space="preserve">
+    <value>Description of delete</value>
+  </data>
+  <data name="frmSearch.ExportSuccessful" xml:space="preserve">
+    <value>Export data successful!</value>
+  </data>
+  <data name="frmSearch.Footer" xml:space="preserve">
+    <value>This is the footer of result grid. Cannot view, edit or delete data!</value>
+  </data>
+  <data name="frmSearch.grbCondition" xml:space="preserve">
+    <value>Condition:</value>
+  </data>
+  <data name="frmSearch.grbConditionList" xml:space="preserve">
+    <value>Condition list:</value>
+  </data>
+  <data name="frmSearch.grbSearchFilter" xml:space="preserve">
+    <value>Search condition:</value>
+  </data>
+  <data name="frmSearch.grbSearchResult" xml:space="preserve">
+    <value>Search result:</value>
+  </data>
+  <data name="frmSearch.lblField" xml:space="preserve">
+    <value>Field:</value>
+  </data>
+  <data name="frmSearch.lblOperator" xml:space="preserve">
+    <value>Operator:</value>
+  </data>
+  <data name="frmSearch.lblValue" xml:space="preserve">
+    <value>Value:</value>
+  </data>
+  <data name="frmSearch.NothingToCompare" xml:space="preserve">
+    <value>No data to compare!</value>
+  </data>
+  <data name="frmSearch.NothingToExport" xml:space="preserve">
+    <value>There is nothing to export!</value>
+  </data>
+  <data name="frmSearch.NothingToPrint" xml:space="preserve">
+    <value>Nothing to print</value>
+  </data>
+  <data name="frmSearch.NotSelected" xml:space="preserve">
+    <value>You must select row of data to view, edit or delete!</value>
+  </data>
+  <data name="frmSearch.Searching" xml:space="preserve">
+    <value>Searching...</value>
+  </data>
+  <data name="frmSearch.SearchResults" xml:space="preserve">
+    <value>Search Results</value>
+  </data>
+  <data name="frmSearch.SMSSuccess" xml:space="preserve">
+    <value>Logged SMS successfully</value>
+  </data>
+  <data name="frmSearch.EmailSuccess" xml:space="preserve">
+    <value>Logged Email successfully</value>
+  </data>
+  <data name="frmSearch.tbnAdd" xml:space="preserve">
+    <value>&amp;Add</value>
+  </data>
+  <data name="frmSearch.tbnApprove" xml:space="preserve">
+    <value>A&amp;pprove</value>
+  </data>
+  <data name="frmSearch.tbnCompare" xml:space="preserve">
+    <value>Compare</value>
+  </data>
+  <data name="frmSearch.tbnDelete" xml:space="preserve">
+    <value>&amp;Delete</value>
+  </data>
+  <data name="frmSearch.tbnDispose" xml:space="preserve">
+    <value>&amp;Delete</value>
+  </data>
+  <data name="frmSearch.tbnDisposeC" xml:space="preserve">
+    <value>Change ST</value>
+  </data>
+  <data name="frmSearch.tbnEdit" xml:space="preserve">
+    <value>&amp;Edit</value>
+  </data>
+  <data name="frmSearch.tbnExecute" xml:space="preserve">
+    <value>&amp;Execute</value>
+  </data>
+  <data name="frmSearch.tbnExit" xml:space="preserve">
+    <value>&amp;Close</value>
+  </data>
+  <data name="frmSearch.tbnPrint" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="frmSearch.tbnView" xml:space="preserve">
+    <value>&amp;View</value>
+  </data>
+  <data name="GridEx.FooterRow" xml:space="preserve">
+    <value>Sum of records: </value>
+  </data>
+  <data name="GridEx.FooterRowFrom" xml:space="preserve">
+    <value>From row </value>
+  </data>
+  <data name="GridEx.FooterRowIn" xml:space="preserve">
+    <value>in @ row(s).</value>
+  </data>
+  <data name="GridEx.FooterRowTo" xml:space="preserve">
+    <value>to row </value>
+  </data>
+  <data name="GridEx.GroupByRow" xml:space="preserve">
+    <value>Drag and drop column which should be grouped! (F6: Focus to grid)</value>
+  </data>
+  <data name="ISSUER_MEMBER" xml:space="preserve">
+    <value>Mr/Mrs: &lt;&lt;FULLNAME&gt;&gt;  is Issuer Member</value>
+  </data>
+  <data name="REQUIRE_SEARCHFILTER" xml:space="preserve">
+    <value>Filter fields request: </value>
+  </data>
+  <data name="frmSearch.bbiCompare" xml:space="preserve">
+    <value>Compare</value>
+  </data>
+  <data name="ERR_CHOOSE_RECORD_TO_EXECUTE" xml:space="preserve">
+    <value>Please choose record to execute!</value>
+  </data>
+  <data name="frmSearch.NothingExtension" xml:space="preserve">
+    <value>Must enter the format of the output file!</value>
+  </data>
+  <data name="AddSuccess" xml:space="preserve">
+    <value>Add successfully!</value>
+  </data>
+</root>

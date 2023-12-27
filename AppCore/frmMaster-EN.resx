@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="frmMaster" xml:space="preserve">
+    <value>Maintainance screen</value>
+  </data>
+  <data name="InitDialogFailed" xml:space="preserve">
+    <value>Initialize dialog is failded</value>
+  </data>
+  <data name="AddSuccess" xml:space="preserve">
+    <value>Add new @ successfully</value>
+  </data>
+  <data name="EditSuccess" xml:space="preserve">
+    <value>Change the information for @ successfully</value>
+  </data>
+  <data name="DeleteSuccess" xml:space="preserve">
+    <value>The information for @ is deleted successfully</value>
+  </data>
+  <data name="ERR_MANDATORY_FIELD" xml:space="preserve">
+    <value>@: The field is mandatory</value>
+  </data>
+  <data name="ERR_INVALID_VALUE" xml:space="preserve">
+    <value>@: The  value is invalid</value>
+  </data>
+  <data name="ERR_COMBOBOX_SELECTVALUE" xml:space="preserve">
+    <value>@: The value @ isn't true!</value>
+  </data>
+  <data name="ERR_NUMERIC_VALUE" xml:space="preserve">
+    <value>@: The numeric value is invalid</value>
+  </data>
+  <data name="ERR_OVER_DBL_VALUE" xml:space="preserve">
+    <value>@: Too big value for numeric field</value>
+  </data>
+  <data name="ERR_DATE_VALUE" xml:space="preserve">
+    <value>@: The date value is invalid</value>
+  </data>
+  <data name="ERR_LOOKUP_VALUE" xml:space="preserve">
+    <value>@: The value is not in list</value>
+  </data>
+  <data name="CaptionAdd" xml:space="preserve">
+    <value>Create new information:</value>
+  </data>
+  <data name="CaptionEdit" xml:space="preserve">
+    <value>Change current information</value>
+  </data>
+  <data name="CaptionView" xml:space="preserve">
+    <value>View current information</value>
+  </data>
+  <data name="btnOK" xml:space="preserve">
+    <value>&amp;OK</value>
+  </data>
+  <data name="btnApply" xml:space="preserve">
+    <value>&amp;Apply</value>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>&amp;Close</value>
+  </data>
+  <data name="btnReject" xml:space="preserve">
+    <value>&amp;Reject</value>
+  </data>
+  <data name="btnApprove" xml:space="preserve">
+    <value>&amp;Approve</value>
+  </data>
+  <data name="btnNavigate" xml:space="preserve">
+    <value>&amp;Navigate</value>
+  </data>
+  <data name="btnExternal" xml:space="preserve">
+    <value>&amp;External</value>
+  </data>
+  <data name="btnSubRefresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="btnSubView" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="btnSubInsert" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="btnSubEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="btnSubDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="btnSubFirst" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="btnSubPrevious" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="btnSubNext" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="btnSubLast" xml:space="preserve">
+    <value>Last</value>
+  </data>
+  <data name="ExecuteFlag.AddNew" xml:space="preserve">
+    <value>&amp;Add new</value>
+  </data>
+  <data name="ExecuteFlag.View" xml:space="preserve">
+    <value>&amp;View</value>
+  </data>
+  <data name="ExecuteFlag.Edit" xml:space="preserve">
+    <value>&amp;Edit</value>
+  </data>
+  <data name="ExecuteFlag.Delete" xml:space="preserve">
+    <value>&amp;Delete</value>
+  </data>
+  <data name="DelConfirm" xml:space="preserve">
+    <value>Do you want to delete all selected data?</value>
+  </data>
+  <data name="ApproveSuccessful" xml:space="preserve">
+    <value>Approve data successfull</value>
+  </data>
+  <data name="ApproveConfirm" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn duyệt bảng kê?</value>
+  </data>
+  <data name="ERR_INVALID_STATUS_01" xml:space="preserve">
+    <value>Not allowed to change information while browsing on hold!</value>
+  </data>
+  <data name="ERR_INVALID_STATUS_02" xml:space="preserve">
+    <value>Already exists a stage done right the same type and the same stocks closing date. Do you want to continue to add new one? (Press &lt;OK&gt; to continue to add new, &lt;CANCEL&gt; to exit)</value>
+  </data>
+  <data name="ERR_CFOTHERACC_DIFFERENCE_INFO" xml:space="preserve">
+    <value>Receive customer is different from send customer!</value>
+  </data>
+  <data name="ERR_CFOTHERACC_BANKACC_NOT_LINK" xml:space="preserve">
+    <value>Bank account  not link with PHS</value>
+  </data>
+  <data name="btnSubExport" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="frmMaster.ExportSuccessful" xml:space="preserve">
+    <value>Export data successful!</value>
+  </data>
+  <data name="frmMaster.NothingToExport" xml:space="preserve">
+    <value>There is nothing to export!</value>
+  </data>
+  <data name="EXPORT" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="Downloadfail" xml:space="preserve">
+    <value>Print failed!</value>
+  </data>
+  <data name="DownloadSuccessful" xml:space="preserve">
+    <value>Print successfully!</value>
+  </data>
+  <data name="PREVIEWPRINT" xml:space="preserve">
+    <value>Print preview</value>
+  </data>
+</root>

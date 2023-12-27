@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EMAILLOGMESSAGE" xml:space="preserve">
+    <value>&lt;ObjectMessage TXDATE="" TXNUM="" TXTIME="" TLID="0001" BRID="0001" LOCAL="N" MSGTYPE="O" OBJNAME="SA.EMAILSMSLOG" ACTIONFLAG="ADD" CMDINQUIRY="" CLAUSE="" FUNCTIONNAME="" AUTOID="Y" REFERENCE="" RESERVER="" IPADDRESS="" CMDTYPE="T" PARENTOBJNAME="" PARENTCLAUSE=""&gt;&lt;ObjData&gt;&lt;Entry fldname="TXDATE" fldtype="System.Date" oldval="[TXDATE]"&gt;[TXDATE]&lt;/Entry&gt;&lt;Entry fldname="TXTIME" fldtype="System.String" oldval="[TXTIME]"&gt;[TXTIME]&lt;/Entry&gt;&lt;Entry fldname="ACCTNO" fldtype="System.String" oldval="[ACCTNO]"&gt;[ACCTNO]&lt;/Entry&gt;&lt;Entry fldname="REPORTNAME" fldtype="System.String" oldval="[REPORTNAME]"&gt;[REPORTNAME]&lt;/Entry&gt;&lt;Entry fldname="NOTE" fldtype="System.String" oldval=""&gt;[NOTE]&lt;/Entry&gt;&lt;/ObjData&gt;&lt;/ObjectMessage&gt;</value>
+  </data>
+  <data name="ERR_CANNOT_FORCE_SELL_DEAL" xml:space="preserve">
+    <value>Deal không có chứng khoán sẵn sàng để bán</value>
+  </data>
+  <data name="ExecuteFlag.AddNew" xml:space="preserve">
+    <value>Thêm mới</value>
+  </data>
+  <data name="ExecuteFlag.Delete" xml:space="preserve">
+    <value>Xoá</value>
+  </data>
+  <data name="ExecuteFlag.Edit" xml:space="preserve">
+    <value>Sửa</value>
+  </data>
+  <data name="ExecuteFlag.Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ExecuteFlag.SendSMS" xml:space="preserve">
+    <value>S&amp;MS</value>
+  </data>
+  <data name="ExecuteFlag.View" xml:space="preserve">
+    <value>Xem</value>
+  </data>
+  <data name="frmSearch.bbiExport" xml:space="preserve">
+    <value>Kết xuất</value>
+  </data>
+  <data name="frmSearch.bbiFullScreen" xml:space="preserve">
+    <value>Ẩn/Hiện điều kiện</value>
+  </data>
+  <data name="frmSearch.bbiPreview" xml:space="preserve">
+    <value>Thông tin sửa</value>
+  </data>
+  <data name="frmSearch.bbiSearch" xml:space="preserve">
+    <value>Tìm</value>
+  </data>
+  <data name="frmSearch.bciCheckAll" xml:space="preserve">
+    <value>Không phân trang</value>
+  </data>
+  <data name="frmSearch.bciExecuteAll" xml:space="preserve">
+    <value>Thực hiện hết</value>
+  </data>
+  <data name="frmSearch.BlockedClosedCannotEdit" xml:space="preserve">
+    <value>Không thể Sửa hoặc Duyệt vì trạng thái không hợp lệ</value>
+  </data>
+  <data name="frmSearch.btnAdd" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="frmSearch.btnBACK" xml:space="preserve">
+    <value>Trước</value>
+  </data>
+  <data name="frmSearch.btnBankINQ" xml:space="preserve">
+    <value>Lấy số dư NH</value>
+  </data>
+  <data name="frmSearch.btnEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="frmSearch.btnExport" xml:space="preserve">
+    <value>&amp;Kết xuất</value>
+  </data>
+  <data name="frmSearch.btnNEXT" xml:space="preserve">
+    <value>Sau</value>
+  </data>
+  <data name="frmSearch.btnRemove" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="frmSearch.btnRemoveAll" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="frmSearch.btnSearch" xml:space="preserve">
+    <value>&amp;Tìm kiếm</value>
+  </data>
+  <data name="frmSearch.btnSendSMS" xml:space="preserve">
+    <value>S&amp;MS</value>
+  </data>
+  <data name="frmSearch.ChooseVoucher" xml:space="preserve">
+    <value>Chọn &lt;Yes&gt; để in UNC BIDV. Chọn &lt;No&gt; để in UNC NH khác. Chọn &lt;Cancel&gt; để thoát.</value>
+  </data>
+  <data name="frmSearch.Criterial" xml:space="preserve">
+    <value>Điều kiện tìm kiếm</value>
+  </data>
+  <data name="frmSearch.DelConfirm" xml:space="preserve">
+    <value>Đồng ý xoá dữ liệu?</value>
+  </data>
+  <data name="frmSearch.DelSuccess" xml:space="preserve">
+    <value>Xoá dữ liệu thành công!</value>
+  </data>
+  <data name="frmSearch.DisposeConfirm" xml:space="preserve">
+    <value>Đồng ý xóa dòng bảng kê?</value>
+  </data>
+  <data name="frmSearch.DisposeDescInput" xml:space="preserve">
+    <value>Nhập mô tả lý do xóa</value>
+  </data>
+  <data name="frmSearch.ExportSuccessful" xml:space="preserve">
+    <value>Kết xuất dữ liệu thành công!</value>
+  </data>
+  <data name="frmSearch.Footer" xml:space="preserve">
+    <value>Đây là footer, không thể xem, sửa, xoá dữ liệu!</value>
+  </data>
+  <data name="frmSearch.grbCondition" xml:space="preserve">
+    <value>Điều kiện:</value>
+  </data>
+  <data name="frmSearch.grbConditionList" xml:space="preserve">
+    <value>Danh sách điều kiện tìm kiếm:</value>
+  </data>
+  <data name="frmSearch.grbSearchFilter" xml:space="preserve">
+    <value>Điều kiện tìm kiếm:</value>
+  </data>
+  <data name="frmSearch.grbSearchResult" xml:space="preserve">
+    <value>Kết quả tìm kiếm:</value>
+  </data>
+  <data name="frmSearch.lblField" xml:space="preserve">
+    <value>Tiêu chí:</value>
+  </data>
+  <data name="frmSearch.lblOperator" xml:space="preserve">
+    <value>Phép toán:</value>
+  </data>
+  <data name="frmSearch.lblValue" xml:space="preserve">
+    <value>Giá trị:</value>
+  </data>
+  <data name="frmSearch.NothingToCompare" xml:space="preserve">
+    <value>Không có dữ liệu để đối chiếu!</value>
+  </data>
+  <data name="frmSearch.NothingToExport" xml:space="preserve">
+    <value>Không có dữ liệu để kết xuất!</value>
+  </data>
+  <data name="frmSearch.NothingToInquiry" xml:space="preserve">
+    <value>Không có thông tin để truy vấn thông tin sang ngân hàng!</value>
+  </data>
+  <data name="frmSearch.NothingToPrint" xml:space="preserve">
+    <value>Phải chọn dòng dữ liệu cần in</value>
+  </data>
+  <data name="frmSearch.NotSelected" xml:space="preserve">
+    <value>Phải chọn dòng thông tin cần xem, sửa, xoá!</value>
+  </data>
+  <data name="frmSearch.Searching" xml:space="preserve">
+    <value>Đang thực hiện tìm kiếm...</value>
+  </data>
+  <data name="frmSearch.SearchResults" xml:space="preserve">
+    <value>Kết quả tìm kiếm</value>
+  </data>
+  <data name="frmSearch.SMSSuccess" xml:space="preserve">
+    <value>Đã đẩy SMS thành công</value>
+  </data>
+  <data name="frmSearch.EmailSuccess" xml:space="preserve">
+    <value>Đã đẩy Email thành công</value>
+  </data>
+  <data name="frmSearch.tbnAdd" xml:space="preserve">
+    <value>Thêm mớ&amp;i</value>
+  </data>
+  <data name="frmSearch.tbnApprove" xml:space="preserve">
+    <value>&amp;Duyệt</value>
+  </data>
+  <data name="frmSearch.tbnCompare" xml:space="preserve">
+    <value>Đối chiếu</value>
+  </data>
+  <data name="frmSearch.tbnDelete" xml:space="preserve">
+    <value>&amp;Xoá</value>
+  </data>
+  <data name="frmSearch.tbnDispose" xml:space="preserve">
+    <value>&amp;Xóa</value>
+  </data>
+  <data name="frmSearch.tbnDisposeC" xml:space="preserve">
+    <value>Đổi TT</value>
+  </data>
+  <data name="frmSearch.tbnEdit" xml:space="preserve">
+    <value>&amp;Sửa</value>
+  </data>
+  <data name="frmSearch.tbnExecute" xml:space="preserve">
+    <value>Thực &amp;hiện</value>
+  </data>
+  <data name="frmSearch.tbnExit" xml:space="preserve">
+    <value>Th&amp;oát</value>
+  </data>
+  <data name="frmSearch.tbnPrint" xml:space="preserve">
+    <value>In</value>
+  </data>
+  <data name="frmSearch.tbnView" xml:space="preserve">
+    <value>X&amp;em</value>
+  </data>
+  <data name="GridEx.FooterRow" xml:space="preserve">
+    <value>Tổng số bản ghi tìm kiếm: </value>
+  </data>
+  <data name="GridEx.FooterRowFrom" xml:space="preserve">
+    <value>Từ dòng</value>
+  </data>
+  <data name="GridEx.FooterRowIn" xml:space="preserve">
+    <value>trong @ kết quả</value>
+  </data>
+  <data name="GridEx.FooterRowTo" xml:space="preserve">
+    <value>đến dòng</value>
+  </data>
+  <data name="GridEx.GroupByRow" xml:space="preserve">
+    <value>Hãy kéo cột cần nhóm vào đây! (F6: Focus to grid, F7: Prev, F8: Next, F9: Choose)</value>
+  </data>
+  <data name="ISSUER_MEMBER" xml:space="preserve">
+    <value>Ông/Bà: &lt;&lt;FULLNAME&gt;&gt;  là Thành viên quản trị của TCPH</value>
+  </data>
+  <data name="REQUIRE_SEARCHFILTER" xml:space="preserve">
+    <value>Cần nhập các điều kiện tìm kiếm: </value>
+  </data>
+  <data name="frmSearch.bbiCompare" xml:space="preserve">
+    <value>Đối chiếu</value>
+  </data>
+  <data name="ERR_CHOOSE_RECORD_TO_EXECUTE" xml:space="preserve">
+    <value>Vui lòng chọn dữ liệu cần thực hiện!</value>
+  </data>
+  <data name="frmSearch.NothingExtension" xml:space="preserve">
+    <value>Phải nhập định dạng của file kết xuất!</value>
+  </data>
+  <data name="AddSuccess" xml:space="preserve">
+    <value>Thêm thành công!</value>
+  </data>
+</root>
