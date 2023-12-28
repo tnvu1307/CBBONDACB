@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ACCOUNT_ACTYPE" xml:space="preserve">
+    <value>Actype</value>
+  </data>
+  <data name="ACCOUNT_AFACCTNO" xml:space="preserve">
+    <value>Afacctno</value>
+  </data>
+  <data name="ACCOUNT_AFAMT" xml:space="preserve">
+    <value>AF Amt</value>
+  </data>
+  <data name="ACCOUNT_AVAILAFAMT" xml:space="preserve">
+    <value>Beneficiary Acc. Number:</value>
+  </data>
+  <data name="ACCOUNT_FEEAMT" xml:space="preserve">
+    <value>Transaction fees</value>
+  </data>
+  <data name="ACCOUNT_STATUS_DESC" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ACCOUNT_VATAMT" xml:space="preserve">
+    <value>Vat Amt</value>
+  </data>
+  <data name="btnApply" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>CANCEL</value>
+  </data>
+  <data name="btnPrint" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="btnSubPrint" xml:space="preserve">
+    <value>SubPrint</value>
+  </data>
+  <data name="CANNOT_FOUND_RPT_FILE" xml:space="preserve">
+    <value>Cannot found RPT file</value>
+  </data>
+  <data name="ConfirmApply" xml:space="preserve">
+    <value>Agreed to conduct transactions &lt;&lt;TXDESC&gt;&gt; ?</value>
+  </data>
+  <data name="frmTransactEx" xml:space="preserve">
+    <value>Sub-account transactions</value>
+  </data>
+  <data name="grbCFInfo" xml:space="preserve">
+    <value>Customer Information</value>
+  </data>
+  <data name="grbExternalTransfer" xml:space="preserve">
+    <value>Information transfer money out of bank</value>
+  </data>
+  <data name="grbInternalTransfer" xml:space="preserve">
+    <value>Transaction information internal transfer</value>
+  </data>
+  <data name="INTERNALTRANSFER_DESC" xml:space="preserve">
+    <value>Internal transfers (to sub-account)</value>
+  </data>
+  <data name="INVALIDAMOUNT" xml:space="preserve">
+    <value>The amount entered is not valid!</value>
+  </data>
+  <data name="INVALIDCUSTINFO" xml:space="preserve">
+    <value>Transaction information required in!</value>
+  </data>
+  <data name="INVALIDCUSTODYCD" xml:space="preserve">
+    <value>Depository account number is invalid!</value>
+  </data>
+  <data name="INVALID_BENEFACCT" xml:space="preserve">
+    <value>INVALID_BENEFACCT</value>
+  </data>
+  <data name="INVALID_BENEFBANK" xml:space="preserve">
+    <value>INVALID_BENEFBANK</value>
+  </data>
+  <data name="INVALID_BENEFCUSTNAME" xml:space="preserve">
+    <value>INVALID_BENEFCUSTNAME</value>
+  </data>
+  <data name="INVALID_FEECD" xml:space="preserve">
+    <value>INVALID_FEECD</value>
+  </data>
+  <data name="INVALID_NUMERIC" xml:space="preserve">
+    <value>INVALID_NUMERIC</value>
+  </data>
+  <data name="lblADDRESS" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="lblADDRESS2" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="lblAFACCTNO2" xml:space="preserve">
+    <value>Acctno2</value>
+  </data>
+  <data name="lblAMT" xml:space="preserve">
+    <value>AMT</value>
+  </data>
+  <data name="lblAVAILAMT" xml:space="preserve">
+    <value>Max. amount:</value>
+  </data>
+  <data name="lblBENEFACCT" xml:space="preserve">
+    <value>Beneficiary Acc. Number:</value>
+  </data>
+  <data name="lblBENEFBANK" xml:space="preserve">
+    <value>Beneficiary bank name:</value>
+  </data>
+  <data name="lblBENEFCUSTNAME" xml:space="preserve">
+    <value>Beneficiary Cus. Name:</value>
+  </data>
+  <data name="lblCUSTODYCD" xml:space="preserve">
+    <value>Custodycd</value>
+  </data>
+  <data name="lblCUSTODYCD2" xml:space="preserve">
+    <value>Custodycd two</value>
+  </data>
+  <data name="lblDESC" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="lblETAMT" xml:space="preserve">
+    <value>Et Amt</value>
+  </data>
+  <data name="lblFEEAMT" xml:space="preserve">
+    <value>Fee Amt</value>
+  </data>
+  <data name="lblFEECD" xml:space="preserve">
+    <value>Feecd</value>
+  </data>
+  <data name="lblIDCODE" xml:space="preserve">
+    <value>Id Code</value>
+  </data>
+  <data name="lblIDCODE2" xml:space="preserve">
+    <value>Id Code</value>
+  </data>
+  <data name="lblIDDATE" xml:space="preserve">
+    <value>Id date</value>
+  </data>
+  <data name="lblIDDATE2" xml:space="preserve">
+    <value>Id date</value>
+  </data>
+  <data name="lblIDPLACE" xml:space="preserve">
+    <value>Place</value>
+  </data>
+  <data name="lblIDPLACE2" xml:space="preserve">
+    <value>Place</value>
+  </data>
+  <data name="lblIORO" xml:space="preserve">
+    <value>Io Ro</value>
+  </data>
+  <data name="lblREFID" xml:space="preserve">
+    <value>Res Id</value>
+  </data>
+  <data name="lblREMAINAMT" xml:space="preserve">
+    <value>Remainamt</value>
+  </data>
+  <data name="lblRQSNAME" xml:space="preserve">
+    <value>Rqs. Name</value>
+  </data>
+  <data name="lblVATAMT" xml:space="preserve">
+    <value>Vat Amt</value>
+  </data>
+  <data name="TransactionSuccessful" xml:space="preserve">
+    <value>Transaction  Successful</value>
+  </data>
+  <data name="TRANSFER2BANK_DESC" xml:space="preserve">
+    <value>A bank transfer (to sub-account)</value>
+  </data>
+  <data name="TXNUM" xml:space="preserve">
+    <value>Txnum</value>
+  </data>
+  <data name="WITHDRAWN_DESC" xml:space="preserve">
+    <value>Withdraw money (to sub-account)</value>
+  </data>
+</root>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/GetStock/StockTicker" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/GetStock/StockTicker" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/GetStock/StockTicker">
+      <s:element name="StartSTCAdapter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="v_strMARKET" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="v_strOPTION" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartSTCAdapterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartSTCAdapterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderBook">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetOrderBookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderBookResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTradeBook">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTradeBookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTradeBookResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStockTicker">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetStockTickerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStockTickerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MarketWatch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="v_strMessageListOfSymbol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="v_strTotalMarket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MarketWatchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MarketWatchResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="v_strMessageListOfSymbol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="v_strTotalMarket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MarketDeep">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="v_strMessageListOfSymbol" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MarketDeepResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MarketDeepResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="v_strMessageListOfSymbol" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="StartSTCAdapterSoapIn">
+    <wsdl:part name="parameters" element="tns:StartSTCAdapter" />
+  </wsdl:message>
+  <wsdl:message name="StartSTCAdapterSoapOut">
+    <wsdl:part name="parameters" element="tns:StartSTCAdapterResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderBookSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderBook" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderBookSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTradeBookSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTradeBook" />
+  </wsdl:message>
+  <wsdl:message name="GetTradeBookSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTradeBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStockTickerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStockTicker" />
+  </wsdl:message>
+  <wsdl:message name="GetStockTickerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStockTickerResponse" />
+  </wsdl:message>
+  <wsdl:message name="MarketWatchSoapIn">
+    <wsdl:part name="parameters" element="tns:MarketWatch" />
+  </wsdl:message>
+  <wsdl:message name="MarketWatchSoapOut">
+    <wsdl:part name="parameters" element="tns:MarketWatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="MarketDeepSoapIn">
+    <wsdl:part name="parameters" element="tns:MarketDeep" />
+  </wsdl:message>
+  <wsdl:message name="MarketDeepSoapOut">
+    <wsdl:part name="parameters" element="tns:MarketDeepResponse" />
+  </wsdl:message>
+  <wsdl:portType name="StockTickerSoap">
+    <wsdl:operation name="StartSTCAdapter">
+      <wsdl:input message="tns:StartSTCAdapterSoapIn" />
+      <wsdl:output message="tns:StartSTCAdapterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderBook">
+      <wsdl:input message="tns:GetOrderBookSoapIn" />
+      <wsdl:output message="tns:GetOrderBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTradeBook">
+      <wsdl:input message="tns:GetTradeBookSoapIn" />
+      <wsdl:output message="tns:GetTradeBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStockTicker">
+      <wsdl:input message="tns:GetStockTickerSoapIn" />
+      <wsdl:output message="tns:GetStockTickerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MarketWatch">
+      <wsdl:input message="tns:MarketWatchSoapIn" />
+      <wsdl:output message="tns:MarketWatchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MarketDeep">
+      <wsdl:input message="tns:MarketDeepSoapIn" />
+      <wsdl:output message="tns:MarketDeepSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="StockTickerSoap" type="tns:StockTickerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="StartSTCAdapter">
+      <soap:operation soapAction="http://tempuri.org/GetStock/StockTicker/StartSTCAdapter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderBook">
+      <soap:operation soapAction="http://tempuri.org/GetStock/StockTicker/GetOrderBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTradeBook">
+      <soap:operation soapAction="http://tempuri.org/GetStock/StockTicker/GetTradeBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockTicker">
+      <soap:operation soapAction="http://tempuri.org/GetStock/StockTicker/GetStockTicker" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarketWatch">
+      <soap:operation soapAction="http://tempuri.org/GetStock/StockTicker/MarketWatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarketDeep">
+      <soap:operation soapAction="http://tempuri.org/GetStock/StockTicker/MarketDeep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="StockTicker">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/" />
+    <wsdl:port name="StockTickerSoap" binding="tns:StockTickerSoap">
+      <soap:address location="http://localhost/GetStock/StockTicker.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

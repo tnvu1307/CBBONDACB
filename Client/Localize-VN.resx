@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="   " xml:space="preserve">
+    <value>Tìm tất cả!</value>
+  </data>
+  <data name="SEARCH_MSG_CONDITION" xml:space="preserve">
+    <value>Tìm theo điều kiện!</value>
+  </data>
+  <data name="=" xml:space="preserve">
+    <value>Bằng</value>
+  </data>
+  <data name="&gt;" xml:space="preserve">
+    <value>Lớn hơn</value>
+  </data>
+  <data name="&lt;" xml:space="preserve">
+    <value>Nhỏ hơn</value>
+  </data>
+  <data name="&lt;&gt;" xml:space="preserve">
+    <value>Trong khoảng</value>
+  </data>
+  <data name="BEGIN_WITH" xml:space="preserve">
+    <value>Bắt đầu bằng</value>
+  </data>
+  <data name="END_WITH" xml:space="preserve">
+    <value>Kết thúc bằng</value>
+  </data>
+  <data name="WORD_APPEAR" xml:space="preserve">
+    <value>Có xuất hiện</value>
+  </data>
+  <data name="WHOLE_WORD" xml:space="preserve">
+    <value>Đúng bằng</value>
+  </data>
+  <data name="DURATION_TODATE" xml:space="preserve">
+    <value>Trong ngày</value>
+  </data>
+  <data name="DURATION_WEEK" xml:space="preserve">
+    <value>Trong tuần</value>
+  </data>
+  <data name="DURATION_LAST_2_WEEK" xml:space="preserve">
+    <value>2 tuần trước</value>
+  </data>
+  <data name="DURATION_LAST_4_WEEK" xml:space="preserve">
+    <value>4 tuần trước</value>
+  </data>
+  <data name="DURATION_LAST_30_DAYS" xml:space="preserve">
+    <value>30 ngày trước</value>
+  </data>
+  <data name="DURATION_MONTH" xml:space="preserve">
+    <value>Trong tháng</value>
+  </data>
+  <data name="DURATION_LAST_3_MONTH" xml:space="preserve">
+    <value>3 tháng trước</value>
+  </data>
+  <data name="DURATION_LAST_6_MONTH" xml:space="preserve">
+    <value>6 tháng trước</value>
+  </data>
+  <data name="DURATION_YEAR" xml:space="preserve">
+    <value>Trong năm</value>
+  </data>
+  <data name="DURATION_FROM_DATE_TO_DATE" xml:space="preserve">
+    <value>Từ ngày ... đến ngày ...</value>
+  </data>
+  <data name="DURATION_TO_DATE" xml:space="preserve">
+    <value>Đến ngày ...</value>
+  </data>
+  <data name="DURATION_ALL" xml:space="preserve">
+    <value>--Tất cả--</value>
+  </data>
+  <data name="SYS-000004" xml:space="preserve">
+    <value>Không kết nối được đến máy chủ ứng dụng.</value>
+  </data>
+  <data name="SYS-000002" xml:space="preserve">
+    <value>Lỗi tại máy chủ ứng dụng.</value>
+  </data>
+  <data name="SYS-000003" xml:space="preserve">
+    <value>Hãy liên hệ với quản trị hệ thống.</value>
+  </data>
+  <data name="SYS-000005" xml:space="preserve">
+    <value>Hãy kiểm tra kết nối đến máy chủ ứng dụng và thử lại.</value>
+  </data>
+  <data name="SYS-000006" xml:space="preserve">
+    <value>Mã truy cập hoặc mật khẩu không hợp lệ.
+
+</value>
+  </data>
+  <data name="SYS-000007" xml:space="preserve">
+    <value>Vui lòng nhập lại thông tin!</value>
+  </data>
+  <data name="SYS-000008" xml:space="preserve">
+    <value>Lỗi không xác định.</value>
+  </data>
+  <data name="The_username_and_password_must_be_supplied" xml:space="preserve">
+    <value>Bạn phải nhập vào mã truy cập và mật khẩu!</value>
+  </data>
+  <data name="SYS-000009" xml:space="preserve">
+    <value>Kiểm tra event log để biết thông tin chi tiết.</value>
+  </data>
+  <data name="SYS-000001" xml:space="preserve">
+    <value>File cấu hình của ứng dụng chứa URL không hợp lệ!</value>
+  </data>
+  <data name="STATUS_WORKING" xml:space="preserve">
+    <value>Đang làm việc trong hệ thống.</value>
+  </data>
+  <data name="frmMDIMain.mnuSys" xml:space="preserve">
+    <value>&amp;Hệ thống</value>
+  </data>
+  <data name="frmMDIMain.mnuSysLogin" xml:space="preserve">
+    <value>Vào hệ thống</value>
+  </data>
+  <data name="frmMDIMain.mnuSysLogout" xml:space="preserve">
+    <value>Ra khỏi hệ thống</value>
+  </data>
+  <data name="frmMDIMain.mnuSysChangePassword" xml:space="preserve">
+    <value>Đổi mật khẩu...</value>
+  </data>
+  <data name="frmMDIMain.mnuSysExit" xml:space="preserve">
+    <value>Thoát khỏi chương trình</value>
+  </data>
+  <data name="frmMDIMain.mnuLanguage" xml:space="preserve">
+    <value>&amp;Ngôn ngữ</value>
+  </data>
+  <data name="frmMDIMain.mnuLangVietnamese" xml:space="preserve">
+    <value>Tiếng Việt</value>
+  </data>
+  <data name="frmMDIMain.mnuLangEnglish" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="frmMDIMain.mnuHelp" xml:space="preserve">
+    <value>&amp;Trợ giúp</value>
+  </data>
+  <data name="frmMDIMain.mnuHelpUserManual" xml:space="preserve">
+    <value>Hướng dẫn sử dụng</value>
+  </data>
+  <data name="frmMDIMain.mnuHelpAbout" xml:space="preserve">
+    <value>Thông tin chương trình...</value>
+  </data>
+  <data name="frmMDIMain.sbrPanelBranch" xml:space="preserve">
+    <value>Chi nhánh</value>
+  </data>
+  <data name="frmMDIMain.sbrPanelUser" xml:space="preserve">
+    <value>Người sử dụng</value>
+  </data>
+  <data name="frmMDIMain.sbrPanelStatus" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
+  <data name="frmMDIMain.sbrPanelDateTime" xml:space="preserve">
+    <value>Ngày, giờ hệ thống</value>
+  </data>
+  <data name="STATUS_LOADING_MENU" xml:space="preserve">
+    <value>Đang khởi tạo cây menu. Xin vui lòng chờ trong giây lát...</value>
+  </data>
+  <data name="STATUS_LOADING_PARAMS" xml:space="preserve">
+    <value>Đang khởi tạo các tham số hệ thống. Xin vui lòng chờ trong giây lát...</value>
+  </data>
+  <data name="TRANSACTION_CODE" xml:space="preserve">
+    <value>Mã giao dịch:</value>
+  </data>
+  <data name="EXIT_CONFIRMATION" xml:space="preserve">
+    <value>Bạn muốn thoát khỏi chương trình?</value>
+  </data>
+  <data name="LOGOUT_CONFIRMATION" xml:space="preserve">
+    <value>Bạn muốn ra khỏi chương trình?</value>
+  </data>
+  <data name="CHANGE_LANGUAGE_CONFIRMATION" xml:space="preserve">
+    <value>Bạn muốn chuyển ngôn ngữ hệ thống từ Tiếng Việt sang English? Bạn phải khởi động lại ứng dụng sau khi chuyển!</value>
+  </data>
+  <data name="ACTIVE_HOST_CONFIRMATION" xml:space="preserve">
+    <value>Bạn muốn bắt đầu ngày làm việc cho hội sở?</value>
+  </data>
+  <data name="DEACTIVE_HOST_CONFIRMATION" xml:space="preserve">
+    <value>Bạn muốn đóng ngày làm việc cho hội sở?</value>
+  </data>
+  <data name="ACTIVE_BDS_CONFIRMATION" xml:space="preserve">
+    <value>Bạn muốn bắt đầu ngày làm việc cho chi nhánh?</value>
+  </data>
+  <data name="DEACTIVE_BDS_CONFIRMATION" xml:space="preserve">
+    <value>Bạn muốn đóng ngày làm việc cho chi nhánh?</value>
+  </data>
+  <data name="MSG_APPUPDATE" xml:space="preserve">
+    <value>Chương trình sẽ cập nhật bảng mới,nhấn OK tiếp tục.</value>
+  </data>
+  <data name="TransViaGenaralView" xml:space="preserve">
+    <value>Chức năng không tồn tại, không được gọi trực tiếp hoặc bạn không đủ quyền sử dụng chức năng này!</value>
+  </data>
+  <data name="SRRFunctionNotBuild" xml:space="preserve">
+    <value>Xin lỗi quý vị, hiện tại chức năng này chưa được xây dựng!</value>
+  </data>
+  <data name="NotAllowTrans" xml:space="preserve">
+    <value>Bạn không có quyền thực hiện giao dịch này, liên hệ quản trị hệ thống !</value>
+  </data>
+  <data name="MSG_UPDATESRPTRING" xml:space="preserve">
+    <value>Chương trình tự động cập nhật báo cáo mới
+Phiên bản báo cáo hiện tại: {0}
+Phiên bản báo cáo mới nhất: {1}
+Nhấn OK tiếp tục.</value>
+  </data>
+  <data name="MSG_UPDATESTRING" xml:space="preserve">
+    <value>Chương trình tự động cập nhật bản mới
+Phiên bản hiện tại: {0}
+Phiên bản mới nhất: {1}
+Nhấn OK tiếp tục.</value>
+  </data>
+  <data name="MSG_FILEPATH" xml:space="preserve">
+    <value>Vui lòng chọn đường dẫn đến file.xsl cần đọc!</value>
+  </data>
+  <data name="SEARCH_MSG_ALL" xml:space="preserve">
+    <value>Tìm tất cả !</value>
+  </data>
+  <data name="XTRA_TAB_PAGE__HOME" xml:space="preserve">
+    <value>Trang chủ</value>
+  </data>
+  <data name="closeall" xml:space="preserve">
+    <value>Đóng tất cả tab</value>
+  </data>
+  <data name="tabclose" xml:space="preserve">
+    <value>Đóng tab</value>
+  </data>
+  <data name="tabcloseother" xml:space="preserve">
+    <value>Đóng các tab khác</value>
+  </data>
+  <data name="tabcloseright" xml:space="preserve">
+    <value>Đóng tab phía bên phải</value>
+  </data>
+</root>

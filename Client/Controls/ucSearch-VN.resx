@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GridEx.GroupByRow" xml:space="preserve">
+    <value>Hãy kéo cột cần nhóm vào đây!</value>
+  </data>
+  <data name="GridEx.FooterRow" xml:space="preserve">
+    <value>Tổng số bản ghi tìm kiếm: </value>
+  </data>
+  <data name="ucSearch.grbSearchResult" xml:space="preserve">
+    <value>Kết quả tìm kiếm:</value>
+  </data>
+  <data name="frmMDIMain.tbnAdd" xml:space="preserve">
+    <value>Thêm mới</value>
+  </data>
+  <data name="frmMDIMain.tbnView" xml:space="preserve">
+    <value>Xem</value>
+  </data>
+  <data name="frmMDIMain.tbnEdit" xml:space="preserve">
+    <value>Sửa</value>
+  </data>
+  <data name="frmMDIMain.tbnDelete" xml:space="preserve">
+    <value>Xoá</value>
+  </data>
+  <data name="frmMDIMain.tbnExit" xml:space="preserve">
+    <value>Thoát</value>
+  </data>
+  <data name="ucSearch.grbSearchFilter" xml:space="preserve">
+    <value>Điều kiện tìm kiếm:</value>
+  </data>
+  <data name="ucSearch.grbCondition" xml:space="preserve">
+    <value>Điều kiện:</value>
+  </data>
+  <data name="ucSearch.lblField" xml:space="preserve">
+    <value>Tiêu chí:</value>
+  </data>
+  <data name="ucSearch.lblOperator" xml:space="preserve">
+    <value>Điều kiện:</value>
+  </data>
+  <data name="ucSearch.lblValue" xml:space="preserve">
+    <value>Giá trị:</value>
+  </data>
+  <data name="ucSearch.grbConditionList" xml:space="preserve">
+    <value>Danh sách điều kiện tìm kiếm:</value>
+  </data>
+  <data name="ucSearch.btnSearch" xml:space="preserve">
+    <value>&amp;Tìm kiếm</value>
+  </data>
+  <data name="ucSearch.btnAdd" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ucSearch.btnRemove" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ucSearch.btnRemoveAll" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="ExecuteFlag.AddNew" xml:space="preserve">
+    <value>Thêm mới</value>
+  </data>
+  <data name="ExecuteFlag.View" xml:space="preserve">
+    <value>Xem</value>
+  </data>
+  <data name="ExecuteFlag.Edit" xml:space="preserve">
+    <value>Sửa</value>
+  </data>
+  <data name="ExecuteFlag.Delete" xml:space="preserve">
+    <value>Xoá</value>
+  </data>
+  <data name="ucSearch.Searching" xml:space="preserve">
+    <value>Đang thực hiện tìm kiếm...</value>
+  </data>
+  <data name="ucSearch.btnExport" xml:space="preserve">
+    <value>&amp;Kết xuất</value>
+  </data>
+  <data name="ucSearch.Footer" xml:space="preserve">
+    <value>Đây là footer, không thể xem, sửa, xoá dữ liệu!</value>
+  </data>
+  <data name="ucSearch.NotSelected" xml:space="preserve">
+    <value>Phải chọn dòng thông tin cần xem, sửa, xoá!</value>
+  </data>
+  <data name="ucSearch.DelSuccess" xml:space="preserve">
+    <value>Xoá dữ liệu thành công!</value>
+  </data>
+  <data name="ucSearch.DelConfirm" xml:space="preserve">
+    <value>Đồng ý xoá dữ liệu?</value>
+  </data>
+  <data name="ucSearch.NothingToExport" xml:space="preserve">
+    <value>Không có dữ liệu để kết xuất!</value>
+  </data>
+  <data name="ucSearch.ExportSuccessful" xml:space="preserve">
+    <value>Kết xuất dữ liệu thành công!</value>
+  </data>
+  <data name="ucSearch.ApprovedSuccessful" xml:space="preserve">
+    <value>Thực hiện Phê duyệt giao dịch thành công!</value>
+  </data>
+  <data name="ucSearch.DeletedSuccessful" xml:space="preserve">
+    <value>Thực hiện Xoá giao dịch thành công!</value>
+  </data>
+  <data name="ucSearch.RerectedSuccessful" xml:space="preserve">
+    <value>Đã thực hiện huỷ phê duyệt giao dịch thành công!</value>
+  </data>
+  <data name="ucSearch.CashieredSuccessful" xml:space="preserve">
+    <value>Đã thực hiện giao dịch qua quỹ thành công!</value>
+  </data>
+  <data name="ucSearch.ApproveConfirm" xml:space="preserve">
+    <value>Đồng ý phê duyệt giao dịch?</value>
+  </data>
+  <data name="ucSearch.RejectConfirm" xml:space="preserve">
+    <value>Đồng ý huỷ phê duyệt giao dịch?</value>
+  </data>
+  <data name="ucSearch.CashierConfirm" xml:space="preserve">
+    <value>Đồng ý thực hiện giao dịch qua quỹ?</value>
+  </data>
+  <data name="A" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="ucSearch.DeleteSuccessful" xml:space="preserve">
+    <value>Thực hiện Xoá giao dịch thành công!</value>
+  </data>
+  <data name="ucSearch.DeletingSuccessful" xml:space="preserve">
+    <value>Thực hiện Xoá giao dịch thành công!</value>
+  </data>
+  <data name="ucSearch.PrintConfirm" xml:space="preserve">
+    <value>Bạn có chắc muốn in chứng từ!</value>
+  </data>
+  <data name="ucSearch.RefuseConfirm" xml:space="preserve">
+    <value>Bạn có chắc muốn hủy bỏ giao dịch!</value>
+  </data>
+  <data name="ucSearch.RefusedSuccessful" xml:space="preserve">
+    <value>Hủy bỏ giao dịch thành công!</value>
+  </data>
+  <data name="ucSearch.RejectComment" xml:space="preserve">
+    <value>Xin vui lòng nhập lý do bạn từ chối!</value>
+  </data>
+  <data name="ucSearch.btnHistory" xml:space="preserve">
+    <value>&amp;Lịch sử</value>
+  </data>
+  <data name="tbnCashier" xml:space="preserve">
+    <value>Thủ &amp;quỹ</value>
+  </data>
+  <data name="tbnView" xml:space="preserve">
+    <value>Xe&amp;m</value>
+  </data>
+  <data name="tbnApprove" xml:space="preserve">
+    <value>&amp;Duyệt</value>
+  </data>
+  <data name="tbnReject" xml:space="preserve">
+    <value>Từ &amp;chối</value>
+  </data>
+  <data name="btnRefuse" xml:space="preserve">
+    <value>&amp;Xóa</value>
+  </data>
+  <data name="tbnDelete" xml:space="preserve">
+    <value>&amp;Xóa</value>
+  </data>
+  <data name="ERR_SPECIAL_CHARACTER" xml:space="preserve">
+    <value>Điều kiện tìm kiếm không được chứa các ký tự đặc biệt như ' ^ ! </value>
+  </data>
+  <data name="ucSearch.ApprovedCountSuccessful" xml:space="preserve">
+    <value>Có {0} giao dịch được phê duyệt giao dịch thành công!</value>
+  </data>
+  <data name="ucSearch.ErrorApprove" xml:space="preserve">
+    <value>Chỉ có nhân viên {0} được phép duyệt giao dịch này!</value>
+  </data>
+  <data name="ucSearch.ErrorDelete" xml:space="preserve">
+    <value>Chỉ có nhân viên thực hiện {0} được phép xóa giao dịch này!</value>
+  </data>
+  <data name="ERR_WRONG_CONDITION" xml:space="preserve">
+    <value>Điều kiện tìm kiếm không hợp lệ, cần phải tìm kiếm theo ngày chứng từ hoặc ngày giao dịch !</value>
+  </data>
+  <data name="ucSearch.SelectionRowIsNull" xml:space="preserve">
+    <value>Vui lòng chọn dòng dữ liệu</value>
+  </data>
+  <data name="ucSearch.AllowWhenStatusDeletingOrNotComplete" xml:space="preserve">
+    <value>Chỉ cho phép thực hiện khi giao dịch chưa hoàn tất hoặc đang ở trạng thái deleting</value>
+  </data>
+  <data name="ucSearch.RejectWhenPending" xml:space="preserve">
+    <value>Giao dịch phải là trạng thái Pending</value>
+  </data>
+  <data name="ucSearch.NothingExtension" xml:space="preserve">
+    <value>Phải nhập định dạng của file kết xuất!</value>
+  </data>
+  <data name="bciCheckAllPage" xml:space="preserve">
+    <value>Không phân trang</value>
+  </data>
+  <data name="tbnCancel" xml:space="preserve">
+    <value>&amp;Xóa</value>
+  </data>
+  <data name="tbnNext" xml:space="preserve">
+    <value>Trang tiếp</value>
+  </data>
+  <data name="tbnPrev" xml:space="preserve">
+    <value>Trang trước</value>
+  </data>
+  <data name="ucSearch.ApproveListConfirm" xml:space="preserve">
+    <value>Đồng ý phê duyệt danh sách giao dịch?</value>
+  </data>
+  <data name="ucSearch.RejectListConfirm" xml:space="preserve">
+    <value>Đồng ý từ chối danh sách giao dịch?</value>
+  </data>
+  <data name="ucSearch.TxstatusInvalid" xml:space="preserve">
+    <value>Trạng thái giao dịch không hợp lệ!</value>
+  </data>
+  <data name="rpgAudit" xml:space="preserve">
+    <value>Kiểm soát</value>
+  </data>
+</root>

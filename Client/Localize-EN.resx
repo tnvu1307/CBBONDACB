@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SEARCH_MSG_ALL" xml:space="preserve">
+    <value>Search all!</value>
+  </data>
+  <data name="SEARCH_MSG_CONDITION" xml:space="preserve">
+    <value>Search with condition !</value>
+  </data>
+  <data name="=" xml:space="preserve">
+    <value>Equal</value>
+  </data>
+  <data name="&gt;" xml:space="preserve">
+    <value>Greater than</value>
+  </data>
+  <data name="&lt;" xml:space="preserve">
+    <value>Less than</value>
+  </data>
+  <data name="&lt;&gt;" xml:space="preserve">
+    <value>Beetwen</value>
+  </data>
+  <data name="BEGIN_WITH" xml:space="preserve">
+    <value>Begin with</value>
+  </data>
+  <data name="END_WITH" xml:space="preserve">
+    <value>End with</value>
+  </data>
+  <data name="WORD_APPEAR" xml:space="preserve">
+    <value>Appear</value>
+  </data>
+  <data name="WHOLE_WORD" xml:space="preserve">
+    <value>Entire word</value>
+  </data>
+  <data name="DURATION_TODATE" xml:space="preserve">
+    <value>In day</value>
+  </data>
+  <data name="DURATION_WEEK" xml:space="preserve">
+    <value>In week</value>
+  </data>
+  <data name="DURATION_LAST_2_WEEK" xml:space="preserve">
+    <value>2 week ago</value>
+  </data>
+  <data name="DURATION_LAST_4_WEEK" xml:space="preserve">
+    <value>4 week ago</value>
+  </data>
+  <data name="DURATION_LAST_30_DAYS" xml:space="preserve">
+    <value>30 day ago</value>
+  </data>
+  <data name="DURATION_MONTH" xml:space="preserve">
+    <value>In month</value>
+  </data>
+  <data name="DURATION_LAST_3_MONTH" xml:space="preserve">
+    <value>3 month ago</value>
+  </data>
+  <data name="DURATION_LAST_6_MONTH" xml:space="preserve">
+    <value>6 month ago</value>
+  </data>
+  <data name="DURATION_YEAR" xml:space="preserve">
+    <value>In year</value>
+  </data>
+  <data name="DURATION_FROM_DATE_TO_DATE" xml:space="preserve">
+    <value>From date ... To date ...</value>
+  </data>
+  <data name="DURATION_TO_DATE" xml:space="preserve">
+    <value>To date ...</value>
+  </data>
+  <data name="DURATION_ALL" xml:space="preserve">
+    <value>--All--</value>
+  </data>
+  <data name="SYS-000004" xml:space="preserve">
+    <value>The remote server is unreachable.</value>
+  </data>
+  <data name="SYS-000002" xml:space="preserve">
+    <value>An error has orcurred at application server.</value>
+  </data>
+  <data name="SYS-000003" xml:space="preserve">
+    <value>Please contact your network administrator.</value>
+  </data>
+  <data name="SYS-000005" xml:space="preserve">
+    <value>Please check your connection and try again.</value>
+  </data>
+  <data name="SYS-000006" xml:space="preserve">
+    <value>The username or password is incorrect.</value>
+  </data>
+  <data name="SYS-000007" xml:space="preserve">
+    <value>Please re-type your information!</value>
+  </data>
+  <data name="SYS-000008" xml:space="preserve">
+    <value>An unknown error has orcurred.</value>
+  </data>
+  <data name="The_username_and_password_must_be_supplied" xml:space="preserve">
+    <value>You must input username and password !</value>
+  </data>
+  <data name="SYS-000009" xml:space="preserve">
+    <value>Please review the event log for more information.</value>
+  </data>
+  <data name="SYS-000001" xml:space="preserve">
+    <value>The application configuration file contains invalid URL!</value>
+  </data>
+  <data name="STATUS_WORKING" xml:space="preserve">
+    <value>Working....</value>
+  </data>
+  <data name="frmMDIMain.mnuSys" xml:space="preserve">
+    <value>&amp;System</value>
+  </data>
+  <data name="frmMDIMain.mnuSysLogin" xml:space="preserve">
+    <value>LogIn</value>
+  </data>
+  <data name="frmMDIMain.mnuSysLogout" xml:space="preserve">
+    <value>LogOut</value>
+  </data>
+  <data name="frmMDIMain.mnuSysChangePassword" xml:space="preserve">
+    <value>Change password...</value>
+  </data>
+  <data name="frmMDIMain.mnuSysExit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="frmMDIMain.mnuLanguage" xml:space="preserve">
+    <value>&amp;Language</value>
+  </data>
+  <data name="frmMDIMain.mnuLangVietnamese" xml:space="preserve">
+    <value>Vietnamese</value>
+  </data>
+  <data name="frmMDIMain.mnuLangEnglish" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="frmMDIMain.mnuHelp" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="frmMDIMain.mnuHelpUserManual" xml:space="preserve">
+    <value>User's Guide</value>
+  </data>
+  <data name="frmMDIMain.mnuHelpAbout" xml:space="preserve">
+    <value>About...</value>
+  </data>
+  <data name="frmMDIMain.sbrPanelBranch" xml:space="preserve">
+    <value>Branch</value>
+  </data>
+  <data name="frmMDIMain.sbrPanelUser" xml:space="preserve">
+    <value>Current user</value>
+  </data>
+  <data name="frmMDIMain.sbrPanelStatus" xml:space="preserve">
+    <value>System status</value>
+  </data>
+  <data name="frmMDIMain.sbrPanelDateTime" xml:space="preserve">
+    <value>System date, time</value>
+  </data>
+  <data name="STATUS_LOADING_MENU" xml:space="preserve">
+    <value>Loading menu. Please wait...</value>
+  </data>
+  <data name="STATUS_LOADING_PARAMS" xml:space="preserve">
+    <value>Loading parameters. Please wait...</value>
+  </data>
+  <data name="TRANSACTION_CODE" xml:space="preserve">
+    <value>Enter transaction code:</value>
+  </data>
+  <data name="EXIT_CONFIRMATION" xml:space="preserve">
+    <value>Are you sure to quit program?</value>
+  </data>
+  <data name="LOGOUT_CONFIRMATION" xml:space="preserve">
+    <value>Are you sure to log out program?</value>
+  </data>
+  <data name="CHANGE_LANGUAGE_CONFIRMATION" xml:space="preserve">
+    <value>Are you sure to change system language from English to Tiếng Việt? You must restart your application!</value>
+  </data>
+  <data name="ACTIVE_HOST_CONFIRMATION" xml:space="preserve">
+    <value>Are you sure to active host?</value>
+  </data>
+  <data name="DEACTIVE_HOST_CONFIRMATION" xml:space="preserve">
+    <value>Are you sure to deactive host?</value>
+  </data>
+  <data name="ACTIVE_BDS_CONFIRMATION" xml:space="preserve">
+    <value>Are you sure to active branch?</value>
+  </data>
+  <data name="DEACTIVE_BDS_CONFIRMATION" xml:space="preserve">
+    <value>Are you sure to deactive branch?</value>
+  </data>
+  <data name="MSG_APPUPDATE" xml:space="preserve">
+    <value>Program will auto update, press OK to continue!</value>
+  </data>
+  <data name="TransViaGenaralView" xml:space="preserve">
+    <value>The requested function is invalid!</value>
+  </data>
+  <data name="SRRFunctionNotBuild" xml:space="preserve">
+    <value>Sorry you, now this function has not been built!</value>
+  </data>
+  <data name="NotAllowTrans" xml:space="preserve">
+    <value>You can not make this transaction, contact your system administrator!</value>
+  </data>
+  <data name="MSG_UPDATESRPTRING" xml:space="preserve">
+    <value>Report will auto update
+Current report version: {0}
+New report version: {1}
+Press ok to continue.</value>
+  </data>
+  <data name="MSG_UPDATESTRING" xml:space="preserve">
+    <value>Program will auto update
+Current version: {0}
+New version: {1}
+Press ok to continue.</value>
+  </data>
+  <data name="MSG_FILEPATH" xml:space="preserve">
+    <value>Please choose path .xsl file !</value>
+  </data>
+  <data name="XTRA_TAB_PAGE__HOME" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="closeall" xml:space="preserve">
+    <value>Close all tab</value>
+  </data>
+  <data name="tabclose" xml:space="preserve">
+    <value>Close tab</value>
+  </data>
+  <data name="tabcloseother" xml:space="preserve">
+    <value>Close other tab</value>
+  </data>
+  <data name="tabcloseright" xml:space="preserve">
+    <value>Close tab to the right</value>
+  </data>
+</root>

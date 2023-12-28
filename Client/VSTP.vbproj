@@ -1,0 +1,1030 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AC2E4047-9529-49C7-B34D-5408DEE94B96}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>_VSTP.My.MyApplication</StartupObject>
+    <RootNamespace>_VSTP</RootNamespace>
+    <AssemblyName>VSTP</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\Deployment\Client\</OutputPath>
+    <DocumentationFile>VSTP.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Deployment\Client\</OutputPath>
+    <DocumentationFile>VSTP.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>true</Prefer32Bit>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>application-gateway.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CryptoUtil">
+      <HintPath>..\Libref\CryptoUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>..\Libref\Cry\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>..\Libref\Cry\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>..\Libref\Cry\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>..\Libref\Cry\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.BonusSkins.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.Designer.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Charts.Designer.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Data.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.DataAccess.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Docs.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Docs.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Images.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Images.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v14.1.Core">
+      <HintPath>..\Libref\DevExpress\DevExpress.Office.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v14.1.Core">
+      <HintPath>..\Libref\DevExpress\DevExpress.Pdf.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v14.1.Drawing">
+      <HintPath>..\Libref\DevExpress\DevExpress.Pdf.v14.1.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v14.1.Core">
+      <HintPath>..\Libref\DevExpress\DevExpress.Printing.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v14.1.Core">
+      <HintPath>..\Libref\DevExpress\DevExpress.RichEdit.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v14.1.Core">
+      <HintPath>..\Libref\DevExpress\DevExpress.Sparkline.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Utils.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.1.UI">
+      <HintPath>..\Libref\DevExpress\DevExpress.Utils.v14.1.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Web.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XapUpdater">
+      <HintPath>..\Libref\DevExpress\DevExpress.XapUpdater.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Xpf.Core.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Xpf.Grid.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.RichEdit.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Xpf.RichEdit.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.Xpo.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraBars.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.1.UI">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraCharts.v14.1.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.1.Web">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraCharts.v14.1.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraEditors.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraGrid.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraLayout.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPdfViewer.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraPdfViewer.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraPrinting.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraReports.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.1.Extensions">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraReports.v14.1.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.1.Service">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraReports.v14.1.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.1.Web">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraReports.v14.1.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraRichEdit.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraScheduler.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpreadsheet.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraSpreadsheet.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraTreeList.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraVerticalGrid.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v14.1">
+      <HintPath>..\Libref\DevExpress\DevExpress.XtraWizard.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelLibrary">
+      <HintPath>..\Libref\ExcelLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="HTMLEditorControl">
+      <HintPath>..\Libref\HTMLEditorControl.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\Libref\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.BITCEnvelop">
+      <HintPath>..\Libref\Interop.BITCEnvelop.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <HintPath>..\Libref\Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.SHDocVw">
+      <HintPath>..\Libref\Interop.SHDocVw.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\Libref\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libref\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libref\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="netchartdir">
+      <HintPath>..\Libref\netchartdir.dll</HintPath>
+    </Reference>
+    <Reference Include="quickfix_net">
+      <HintPath>..\Libref\quickfix_net.dll</HintPath>
+    </Reference>
+    <Reference Include="SendFiles">
+      <HintPath>..\Libref\SendFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="SocketServer">
+      <HintPath>..\Libref\SocketServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Aop">
+      <HintPath>..\Libref\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core">
+      <HintPath>..\Libref\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data">
+      <HintPath>..\Libref\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Serialization" />
+    <Reference Include="Xceed.Editors, Version=2.5.10075.13300, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libref\Xceed.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Grid, Version=3.8.10075.13300, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libref\Xceed.Grid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.SmartUI, Version=3.5.10075.13300, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libref\Xceed.SmartUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.SmartUI.Controls, Version=3.5.10075.13300, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libref\Xceed.SmartUI.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.SmartUI.UIStyle, Version=3.5.10075.13300, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libref\Xceed.SmartUI.UIStyle.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.UI, Version=1.3.10075.13300, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libref\Xceed.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Validation, Version=1.2.10075.13300, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libref\Xceed.Validation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="AssemblyInfo.vb" />
+    <Compile Include="Components\BasedEvent.vb" />
+    <Compile Include="Components\CacheOnSQLite.vb" />
+    <Compile Include="Components\CBusLayer.vb" />
+    <Compile Include="Components\ServiceManagement.vb" />
+    <Compile Include="Controls\ImageViewer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\usSeach.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XtraSearch.designer.vb">
+      <DependentUpon>XtraSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XtraSearch.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmApprove-EN.Designer.vb" />
+    <Compile Include="frmApprove-VN.Designer.vb" />
+    <Compile Include="frmBatchMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCSVCompare-EN.Designer.vb" />
+    <Compile Include="frmCSVCompare-VN.Designer.vb" />
+    <Compile Include="frmCSVCompare.Designer.vb">
+      <DependentUpon>frmCSVCompare.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCSVCompare.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delivery.vb" />
+    <Compile Include="frmAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminMessages.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmApprove.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmApprv-EN.Designer.vb" />
+    <Compile Include="frmApprv-VN.Designer.vb" />
+    <Compile Include="frmApprv.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalendar-EN.Designer.vb" />
+    <Compile Include="frmCalendar-VN.Designer.vb" />
+    <Compile Include="frmCalendar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePassword-EN.Designer.vb" />
+    <Compile Include="frmChangePassword-VN.Designer.vb" />
+    <Compile Include="frmChangePassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDefineCLDR-EN.Designer.vb" />
+    <Compile Include="frmDefineCLDR-VN.Designer.vb" />
+    <Compile Include="frmDefineCLDR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFuncAssign-EN.Designer.vb" />
+    <Compile Include="frmFuncAssign-VN.Designer.vb" />
+    <Compile Include="frmFuncAssign.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLookup_Tab-EN.Designer.vb" />
+    <Compile Include="frmLookup_Tab-VN.Designer.vb" />
+    <Compile Include="frmLookup_Tab.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaintenanceMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMDIMain-EN.Designer.vb" />
+    <Compile Include="frmMDIMain-VN.Designer.vb" />
+    <Compile Include="frmMDIMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReadFile-EN.Designer.vb" />
+    <Compile Include="frmReadFile-VN.Designer.vb" />
+    <Compile Include="frmReadFile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReadFilecv.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportMaster_Tab.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRequestMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRightAssignment-EN.Designer.vb" />
+    <Compile Include="frmRightAssignment-VN.Designer.vb" />
+    <Compile Include="frmRightAssignment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRptAssign-EN.Designer.vb" />
+    <Compile Include="frmRptAssign-VN.Designer.vb" />
+    <Compile Include="frmRptAssign.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchCMP2FILETab-EN.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>frmSearchCMP2FILETab-EN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchCMP2FILETab-VN.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>frmSearchCMP2FILETab-VN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchCMP2FILETab.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransactEx-EN.Designer.vb" />
+    <Compile Include="frmTransactEx-VN.Designer.vb" />
+    <Compile Include="frmTransactEx.Designer.vb">
+      <DependentUpon>frmTransactEx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransactEx.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransactMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransAssign-EN.Designer.vb" />
+    <Compile Include="frmTransAssign-VN.Designer.vb" />
+    <Compile Include="frmTransAssign.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXtraCriterial.designer.vb">
+      <DependentUpon>frmXtraCriterial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmXtraCriterial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXtraLOGIN-EN.Designer.vb" />
+    <Compile Include="frmXtraLOGIN-VN.Designer.vb" />
+    <Compile Include="frmXtraLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXtraTransactMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Localize-EN.Designer.vb" />
+    <Compile Include="Localize-VN.Designer.vb" />
+    <Compile Include="MaintenanceForms\frmBRGRP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceForms\frmCALLAPIVMONEY.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceForms\frmCHANGESECRET.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceForms\frmFILEUPLOAD.Designer.vb">
+      <DependentUpon>frmFILEUPLOAD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceForms\frmFILEUPLOAD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceForms\frmGROUPUSERS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceForms\frmRIGHTCOPY.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceForms\frmTLGROUPS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceForms\frmTLPROFILES.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\modCommon.vb" />
+    <Compile Include="Modules\modDirect.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Service References\HOAuthService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HOSTRptService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HOSTService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service\BDSServiceStreamed.vb" />
+    <Compile Include="WaitForm1.Designer.vb">
+      <DependentUpon>WaitForm1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WaitForm1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Web References\StockTicker\Reference.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\ImageViewer.resx">
+      <DependentUpon>ImageViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucSearch-EN.resx" />
+    <EmbeddedResource Include="Controls\ucSearch-VN.resx" />
+    <EmbeddedResource Include="Controls\usSeach.resx">
+      <DependentUpon>usSeach.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XtraSearch.resx">
+      <DependentUpon>XtraSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBatchMaster.resx">
+      <DependentUpon>frmBatchMaster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCSVCompare-EN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmCSVCompare-EN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCSVCompare-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmCSVCompare-VN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCSVCompare.resx">
+      <DependentUpon>frmCSVCompare.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDefineCLDR-EN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmDefineCLDR-EN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDefineCLDR-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmDefineCLDR-VN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDefineCLDR.resx">
+      <DependentUpon>frmDefineCLDR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLookup_Tab-EN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmLookup_Tab-EN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLookup_Tab-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmLookup_Tab-VN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLookup_Tab.resx">
+      <DependentUpon>frmLookup_Tab.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMDIMain.resx">
+      <DependentUpon>frmMDIMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminMessages.resx">
+      <DependentUpon>frmAdminMessages.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmApprove-EN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmApprove-EN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmApprove-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmApprove-VN1.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmApprove.resx">
+      <DependentUpon>frmApprove.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmApprv-EN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmApprv-EN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmApprv-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmApprv-VN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmApprv.resx">
+      <DependentUpon>frmApprv.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalendar-EN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmCalendar-EN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalendar-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmCalendar-VN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalendar.resx">
+      <DependentUpon>frmCalendar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePassword-EN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmChangePassword-EN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePassword-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmChangePassword-VN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFuncAssign-EN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmFuncAssign-EN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFuncAssign-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmFuncAssign-VN1.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFuncAssign.resx">
+      <DependentUpon>frmFuncAssign.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaintenanceMaster.resx">
+      <DependentUpon>frmMaintenanceMaster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMDIMain-EN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmMDIMain-EN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMDIMain-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmMDIMain-VN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReadFile-EN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmReadFile-EN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReadFile-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmReadFile-VN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReadFile.resx">
+      <DependentUpon>frmReadFile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReadFilecv.resx">
+      <DependentUpon>frmReadFilecv.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRightAssignment-EN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmRightAssignment-EN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRightAssignment-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmRightAssignment-VN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRightAssignment.resx">
+      <DependentUpon>frmRightAssignment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRptAssign-EN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmRptAssign-EN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRptAssign-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmRptAssign-VN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRptAssign.resx">
+      <DependentUpon>frmRptAssign.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchCMP2FILETab-EN.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmSearchCMP2FILETab-EN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchCMP2FILETab-VN.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmSearchCMP2FILETab-VN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchCMP2FILETab.resx">
+      <DependentUpon>frmSearchCMP2FILETab.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplash.resx">
+      <DependentUpon>frmSplash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransactEx-EN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmTransactEx-EN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransactEx-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmTransactEx-VN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransactEx.resx">
+      <DependentUpon>frmTransactEx.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransactMaster.resx">
+      <DependentUpon>frmTransactMaster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransAssign-EN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmTransAssign-EN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransAssign-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmTransAssign-VN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransAssign.resx">
+      <DependentUpon>frmTransAssign.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXtraCriterial.resx">
+      <DependentUpon>frmXtraCriterial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXtraLOGIN-EN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmXtraLOGIN-EN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXtraLOGIN-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmXtraLOGIN-VN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXtraLogin.resx">
+      <DependentUpon>frmXtraLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localize-EN.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localize-EN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localize-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localize-VN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceForms\frmBRGRP-EN.resx" />
+    <EmbeddedResource Include="MaintenanceForms\frmBRGRP-VN.resx" />
+    <EmbeddedResource Include="MaintenanceForms\frmBRGRP.resx">
+      <DependentUpon>frmBRGRP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceForms\frmCALLAPIVMONEY-EN.resx" />
+    <EmbeddedResource Include="MaintenanceForms\frmCALLAPIVMONEY-VN.resx" />
+    <EmbeddedResource Include="MaintenanceForms\frmCALLAPIVMONEY.resx">
+      <DependentUpon>frmCALLAPIVMONEY.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceForms\frmCHANGESECRET-EN.resx" />
+    <EmbeddedResource Include="MaintenanceForms\frmCHANGESECRET-VN.resx" />
+    <EmbeddedResource Include="MaintenanceForms\frmCHANGESECRET.resx">
+      <DependentUpon>frmCHANGESECRET.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceForms\frmFILEUPLOAD-EN.resx" />
+    <EmbeddedResource Include="MaintenanceForms\frmFILEUPLOAD-VN.resx" />
+    <EmbeddedResource Include="MaintenanceForms\frmFILEUPLOAD.resx">
+      <DependentUpon>frmFILEUPLOAD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceForms\frmGROUPUSERS-EN.resx" />
+    <EmbeddedResource Include="MaintenanceForms\frmGROUPUSERS-VN.resx" />
+    <EmbeddedResource Include="MaintenanceForms\frmGROUPUSERS.resx">
+      <DependentUpon>frmGROUPUSERS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceForms\frmRIGHTCOPY-EN.resx" />
+    <EmbeddedResource Include="MaintenanceForms\frmRIGHTCOPY-VN.resx" />
+    <EmbeddedResource Include="MaintenanceForms\frmRIGHTCOPY.resx">
+      <DependentUpon>frmRIGHTCOPY.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceForms\frmTLGROUPS-EN.resx" />
+    <EmbeddedResource Include="MaintenanceForms\frmTLGROUPS-VN.resx" />
+    <EmbeddedResource Include="MaintenanceForms\frmTLGROUPS.resx">
+      <DependentUpon>frmTLGROUPS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceForms\frmTLPROFILES-EN.resx" />
+    <EmbeddedResource Include="MaintenanceForms\frmTLPROFILES-VN.resx" />
+    <EmbeddedResource Include="MaintenanceForms\frmTLPROFILES.resx">
+      <DependentUpon>frmTLPROFILES.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\XtraResources.resx" />
+    <EmbeddedResource Include="WaitForm1.resx">
+      <DependentUpon>WaitForm1.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Release\%40DIRECT.exe.config" />
+    <None Include="bin\Release\CBPlus.exe.config" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\CommonLibrary.CTellerProfile.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HOAuthService\HOAuthService.wsdl" />
+    <None Include="Service References\HOAuthService\HOAuthService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HOAuthService\HOAuthService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HOAuthService\HOAuthService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HOAuthService\_VSTP.HOAuthService.DoWorkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOAuthService\_VSTP.HOAuthService.GetAuthorizationTicketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOAuthService\_VSTP.HOAuthService.GetLeftAdjustMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOAuthService\_VSTP.HOAuthService.GetLeftMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOAuthService\_VSTP.HOAuthService.GetTellerProfileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOSTRptService\HOSTRptService.wsdl" />
+    <None Include="Service References\HOSTRptService\HOSTRptService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HOSTRptService\HOSTRptService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HOSTRptService\_VSTP.HOSTRptService.DoWorkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOSTRptService\_VSTP.HOSTRptService.MessageByteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOSTRptService\_VSTP.HOSTRptService.MessageStringResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOSTService\HOSTService.wsdl" />
+    <None Include="Service References\HOSTService\HOSTService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HOSTService\HOSTService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HOSTService\HOSTService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HOSTService\_VSTP.HOSTService.DoWorkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOSTService\_VSTP.HOSTService.GetFlagSignatureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOSTService\_VSTP.HOSTService.MessageByteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOSTService\_VSTP.HOSTService.MessageStringResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOSTService\_VSTP.HOSTService.OMessageByteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HOSTService\_VSTP.HOSTService.OMessageStringResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Web References\StockTicker\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+    </None>
+    <None Include="Web References\StockTicker\StockTicker.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="application-gateway.ico" />
+    <Content Include="bin\Release\%40DIRECT.exe" />
+    <Content Include="bin\Release\%40DIRECT.pdb" />
+    <Content Include="bin\Release\CBPlus.exe" />
+    <Content Include="bin\Release\CBPlus.pdb" />
+    <Content Include="CB.ico" />
+    <Content Include="CBPlus icon Final.ico" />
+    <Content Include="CBPlus-Final-256.ico" />
+    <Content Include="FlexIcon.ico" />
+    <None Include="Resources\new_sh.png" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\logo %281%29.png" />
+    <None Include="Resources\new_sh1.png" />
+    <Content Include="My Project\new_sh.png" />
+    <Content Include="Resources\picSplash.Image.png" />
+    <Content Include="Resources\picSplash.Image2.png" />
+    <None Include="Resources\Shinhan_Bank-logo-05BA468620-seeklogo.com.png" />
+    <None Include="Resources\Shinhan_Bank-logo-05BA468620-seeklogo.com1.png" />
+    <None Include="Service References\HOAuthService\configuration91.svcinfo" />
+    <None Include="Service References\HOAuthService\configuration.svcinfo" />
+    <None Include="Service References\HOAuthService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\HOSTRptService\configuration91.svcinfo" />
+    <None Include="Service References\HOSTRptService\configuration.svcinfo" />
+    <None Include="Service References\HOSTRptService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\HOSTService\configuration91.svcinfo" />
+    <None Include="Service References\HOSTService\configuration.svcinfo" />
+    <None Include="Service References\HOSTService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="Web References\StockTicker\StockTicker.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppCore\AppCore.vbproj">
+      <Project>{929f1e6e-6a34-47c7-b2e4-e3f13b28e243}</Project>
+      <Name>AppCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonLibrary\CommonLibrary.vbproj">
+      <Project>{d08773cc-eeb0-403e-b66b-d1964626f985}</Project>
+      <Name>CommonLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\updateclient\updateclient.vbproj">
+      <Project>{fcb78396-a204-44c6-9449-96705299dd2d}</Project>
+      <Name>updateclient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\update\update.csproj">
+      <Project>{19dbdec2-ce4b-4344-af68-fd769a2b65a7}</Project>
+      <Name>update</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="D:\Projects\HSV\WIP\Source code\Development\%40DIRECT\%40DIRECT_BK\Web References\StockTicker\StockTicker.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\StockTicker\</RelPath>
+      <UpdateFromURL>D:\Projects\HSV\WIP\Source code\Development\%40DIRECT\%40DIRECT_BK\Web References\StockTicker\StockTicker.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\" />
+    <Folder Include="obj\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\HOAuthService\" />
+    <WCFMetadataStorage Include="Service References\HOSTRptService\" />
+    <WCFMetadataStorage Include="Service References\HOSTService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
