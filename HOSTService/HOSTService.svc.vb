@@ -6,9 +6,48 @@ Public Class HOSTService
     Implements IHOSTService
 
     Dim LogError As LogError = New LogError()
+    Public Property Text As Object
 
     Public Sub DoWork() Implements IHOSTService.DoWork
     End Sub
+
+    Public Function GetVersion(ByRef pv_arrByteMessage() As Byte) As Long Implements IHOSTService.GetVersion
+        Dim v_lngErrCode As Long = ERR_SYSTEM_OK
+        Dim v_strErrorSource As String = "Host.brRouter.GetVersion", v_strErrorMessage As String
+        Dim v_xmlDocument As New XmlDocumentEx
+        Dim v_xmlDoc As New XmlDocumentEx
+        Dim v_lngErr As Long = 0
+        Try
+            Dim v_strSQL As String
+            v_strSQL = "SELECT * FROM VERSION ORDER BY ACTUALVERSION DESC FETCH FIRST 1 ROW ONLY"
+
+
+            Dim v_nodeList As Xml.XmlNodeList
+            Dim v_strValue, v_strFLDNAME As String
+            Dim v_NewVersion As String
+            Dim v_strObjMsg As String = ""
+            v_strObjMsg = BuildXMLObjMsg(, , , , gc_IsNotLocalMsg, gc_MsgTypeObj, OBJNAME_SA_SYSVAR, gc_ActionInquiry, v_strSQL)
+            v_xmlDocument.LoadXml(v_strObjMsg)
+            v_lngErr = (New Host.objRouter()).Transfer(v_strObjMsg)
+
+
+            v_xmlDoc.LoadXml(v_strObjMsg)
+            v_xmlDoc.DocumentElement.Attributes.RemoveNamedItem(modCommond.gc_AtributeSignature)
+            v_strObjMsg = v_xmlDoc.OuterXml
+
+            LogError.Write("::MessageByte:: [END]" & v_strObjMsg)
+
+            ''Compress message
+            v_strObjMsg = TripleDesEncryptData(v_strObjMsg)
+            pv_arrByteMessage = ZetaCompressionLibrary.CompressionHelper.CompressString(v_strObjMsg)
+
+            Return v_lngErr
+
+        Catch ex As Exception
+            LogError.WriteException(ex)
+            Throw ex
+        End Try
+    End Function
 
 
     Public Function MessageByte(ByRef pv_arrByteMessage() As Byte) As Long Implements IHOSTService.MessageByte

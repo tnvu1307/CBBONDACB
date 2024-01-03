@@ -30,6 +30,12 @@ Namespace HOSTService
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHOSTService/MessageByte", ReplyAction:="http://tempuri.org/IHOSTService/MessageByteResponse")>  _
         Function MessageByteAsync(ByVal request As HOSTService.MessageByteRequest) As System.Threading.Tasks.Task(Of HOSTService.MessageByteResponse)
         
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHOSTService/GetVersion", ReplyAction:="http://tempuri.org/IHOSTService/GetVersionResponse")>  _
+        Function GetVersion(ByVal request As HOSTService.GetVersionRequest) As HOSTService.GetVersionResponse
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHOSTService/GetVersion", ReplyAction:="http://tempuri.org/IHOSTService/GetVersionResponse")>  _
+        Function GetVersionAsync(ByVal request As HOSTService.GetVersionRequest) As System.Threading.Tasks.Task(Of HOSTService.GetVersionResponse)
+        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHOSTService/MessageString", ReplyAction:="http://tempuri.org/IHOSTService/MessageStringResponse")>  _
         Function MessageString(ByVal request As HOSTService.MessageStringRequest) As HOSTService.MessageStringResponse
         
@@ -113,6 +119,46 @@ Namespace HOSTService
         Public Sub New(ByVal MessageByteResult As Long, ByVal pv_arrByteMessage() As Byte)
             MyBase.New
             Me.MessageByteResult = MessageByteResult
+            Me.pv_arrByteMessage = pv_arrByteMessage
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(WrapperName:="GetVersion", WrapperNamespace:="http://tempuri.org/", IsWrapped:=true)>  _
+    Partial Public Class GetVersionRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public pv_arrByteMessage() As Byte
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal pv_arrByteMessage() As Byte)
+            MyBase.New
+            Me.pv_arrByteMessage = pv_arrByteMessage
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(WrapperName:="GetVersionResponse", WrapperNamespace:="http://tempuri.org/", IsWrapped:=true)>  _
+    Partial Public Class GetVersionResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public GetVersionResult As Long
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=1)>  _
+        Public pv_arrByteMessage() As Byte
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal GetVersionResult As Long, ByVal pv_arrByteMessage() As Byte)
+            MyBase.New
+            Me.GetVersionResult = GetVersionResult
             Me.pv_arrByteMessage = pv_arrByteMessage
         End Sub
     End Class
@@ -302,6 +348,14 @@ Namespace HOSTService
         
         Public Function MessageByteAsync(ByVal request As HOSTService.MessageByteRequest) As System.Threading.Tasks.Task(Of HOSTService.MessageByteResponse) Implements HOSTService.IHOSTService.MessageByteAsync
             Return MyBase.Channel.MessageByteAsync(request)
+        End Function
+        
+        Public Function GetVersion(ByVal request As HOSTService.GetVersionRequest) As HOSTService.GetVersionResponse Implements HOSTService.IHOSTService.GetVersion
+            Return MyBase.Channel.GetVersion(request)
+        End Function
+        
+        Public Function GetVersionAsync(ByVal request As HOSTService.GetVersionRequest) As System.Threading.Tasks.Task(Of HOSTService.GetVersionResponse) Implements HOSTService.IHOSTService.GetVersionAsync
+            Return MyBase.Channel.GetVersionAsync(request)
         End Function
         
         Public Function MessageString(ByVal request As HOSTService.MessageStringRequest) As HOSTService.MessageStringResponse Implements HOSTService.IHOSTService.MessageString

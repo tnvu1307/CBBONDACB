@@ -26,6 +26,12 @@
   <wsdl:message name="IHOSTService_MessageByte_OutputMessage">
     <wsdl:part name="parameters" element="tns:MessageByteResponse" />
   </wsdl:message>
+  <wsdl:message name="IHOSTService_GetVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersion" />
+  </wsdl:message>
+  <wsdl:message name="IHOSTService_GetVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersionResponse" />
+  </wsdl:message>
   <wsdl:message name="IHOSTService_MessageString_InputMessage">
     <wsdl:part name="parameters" element="tns:MessageString" />
   </wsdl:message>
@@ -59,6 +65,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IHOSTService/MessageByte" message="tns:IHOSTService_MessageByte_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHOSTService/MessageByteResponse" message="tns:IHOSTService_MessageByte_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetVersion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHOSTService/GetVersion" message="tns:IHOSTService_GetVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHOSTService/GetVersionResponse" message="tns:IHOSTService_GetVersion_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="MessageString">
       <wsdl:input wsaw:Action="http://tempuri.org/IHOSTService/MessageString" message="tns:IHOSTService_MessageString_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHOSTService/MessageStringResponse" message="tns:IHOSTService_MessageString_OutputMessage" />
@@ -90,6 +100,15 @@
     </wsdl:operation>
     <wsdl:operation name="MessageByte">
       <soap12:operation soapAction="http://tempuri.org/IHOSTService/MessageByte" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersion">
+      <soap12:operation soapAction="http://tempuri.org/IHOSTService/GetVersion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

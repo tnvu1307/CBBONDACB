@@ -5473,6 +5473,15 @@ Public Class brRouter
 
     End Function
 
+
+    Private Sub Close()
+        Throw New NotImplementedException()
+    End Sub
+
+    Private Function Text() As Object
+        Throw New NotImplementedException()
+    End Function
+
     Public Function GetKeyFldVal(ByVal pv_strTxMsg As String, ByVal pv_KeyFld As String) As String
         Dim v_lngErrCode As Long = ERR_SYSTEM_OK
         Dim v_strErrorSource As String = "Host.brRouter.GetKeyFldVal", v_strErrorMessage As String

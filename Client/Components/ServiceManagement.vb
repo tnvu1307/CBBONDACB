@@ -31,6 +31,41 @@ Public Class BDSDeliveryManagement
         End If
     End Sub
 
+    Public Function GetVersion(ByRef pv_strMessage As String) As Long
+        Dim lngError As Long = ERR_SYSTEM_OK
+        'Dim ws As New AuthService.AuthServiceClient
+        Dim ws As New HOSTService.HOSTServiceClient
+        Try
+            'If mv_flagSignature = "Y" Then
+            'pv_strMessage = RSA.signXml(pv_strMessage, mv_keySignature, mv_tagSignature)
+            'End If
+
+            pv_strMessage = TripleDesEncryptData(pv_strMessage)
+
+            Dim pv_arrByteMessage() As Byte
+            pv_arrByteMessage = ZetaCompressionLibrary.CompressionHelper.CompressString(pv_strMessage)
+
+            'Send to host
+            Dim request As HOSTService.GetVersionRequest = New HOSTService.GetVersionRequest
+            request.pv_arrByteMessage = pv_arrByteMessage
+
+            Dim response As HOSTService.GetVersionResponse = ws.GetVersion(request)
+            pv_arrByteMessage = response.pv_arrByteMessage
+
+            'Decompress
+            pv_strMessage = ZetaCompressionLibrary.CompressionHelper.DecompressString(pv_arrByteMessage)
+
+            pv_strMessage = TripleDesDecryptData(pv_strMessage)
+            Return lngError
+        Catch ex As Exception
+            ws.Abort()
+            Throw ex
+        Finally
+            ws.Close()
+        End Try
+    End Function
+
+
     Public Function Message(ByRef pv_strMessage As String) As Long
         Dim lngError As Long = ERR_SYSTEM_OK
         Dim ws As New HOSTService.HOSTServiceClient
@@ -107,6 +142,9 @@ Public Class BDSDeliveryLongTimeOutManagement
 
         End If
     End Sub
+
+
+
 
     Public Function Message(ByRef pv_strMessage As String) As Long
         Dim lngError As Long = ERR_SYSTEM_OK

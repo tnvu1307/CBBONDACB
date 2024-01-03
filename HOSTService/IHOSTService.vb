@@ -10,6 +10,9 @@ Public Interface IHOSTService
     <OperationContract()> _
     Function MessageByte(ByRef pv_arrByteMessage As Byte()) As Long
 
+    <OperationContract()>
+    Function GetVersion(ByRef pv_arrByteMessage() As Byte) As Long
+
     <OperationContract()> _
     Function MessageString(ByRef pv_strMessage As String) As Long
 
