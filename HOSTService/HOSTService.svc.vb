@@ -1,5 +1,6 @@
 ﻿Imports System.Xml
 Imports HostCommonLibrary
+Imports System.Configuration
 ' NOTE: If you change the class name "HOSTService" here, you must also update the reference to "HOSTService" in Web.config and in the associated .svc file.
 
 Public Class HOSTService

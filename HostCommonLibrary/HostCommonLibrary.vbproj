@@ -1,83 +1,49 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net6</TargetFramework>
-    <ProjectType>Local</ProjectType>
-    <AssemblyKeyContainerName></AssemblyKeyContainerName>
-    <AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
-    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
-    <DefaultClientScript>JScript</DefaultClientScript>
-    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
-    <DefaultTargetSchema>IE50</DefaultTargetSchema>
-    <DelaySign>false</DelaySign>
-    <OutputType>Library</OutputType>
-    <StartupObject></StartupObject>
-    <MyType>Empty</MyType>
-    <PublishUrl>http://localhost/CommonLibrary/</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
-    <UpdateEnabled>true</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
-    <SccProjectName></SccProjectName>
-    <SccLocalPath></SccLocalPath>
-    <SccAuxPath></SccAuxPath>
-    <SccProvider></SccProvider>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>..\Deployment\HOST\</OutputPath>
-    <DocumentationFile>CommonLibrary.xml</DocumentationFile>
-    <BaseAddress>285212672</BaseAddress>
-    <ConfigurationOverrideFile></ConfigurationOverrideFile>
-    <DefineConstants></DefineConstants>
-    <RegisterForComInterop>False</RegisterForComInterop>
-    <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Remove="My Project\**" />
-    <EmbeddedResource Remove="My Project\**" />
-    <None Remove="My Project\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="ICSharpCode.SharpZipLib, Version=0.81.0.1407, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libref\ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
-    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libref\Ionic.Zip.dll</HintPath>
-    </Reference>
-    <Reference Include="SendFiles, Version=1.0.2506.19176, Culture=neutral, PublicKeyToken=db0cffc473b0c41d">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libref\SendFiles.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="objMessage.xsd" />
-    <Content Include="objMessageExample.xml" />
-    <Content Include="txMessage.xsd" />
-    <Content Include="txMessageExample.xml" />
-    <None Update="objMessage.xsx">
-      <DependentUpon>objMessage.xsd</DependentUpon>
-    </None>
-    <None Update="txMessage.xsx">
-      <DependentUpon>txMessage.xsd</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="BouncyCastle.NetCoreSdk" Version="1.9.7" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="8.0.0" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
-  </ItemGroup>
-  <PropertyGroup />
+	<PropertyGroup>
+		<RootNamespace>HostCommonLibrary</RootNamespace>
+		<TargetFramework>net6</TargetFramework>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>none</DebugType>
+		<DefineDebug>True</DefineDebug>
+		<OutputPath>.\bin\Debug</OutputPath>
+		<DefineTrace>False</DefineTrace>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>none</DebugType>
+		<OutputPath>..\Deployment\HOST</OutputPath>
+		<DefineTrace>False</DefineTrace>
+		<GenerateDependencyFile>false</GenerateDependencyFile>
+	</PropertyGroup>
+    <ItemGroup>
+        <Reference Include="ICSharpCode.SharpZipLib, Version=0.81.0.1407, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>..\Libref\ICSharpCode.SharpZipLib.dll</HintPath>
+        </Reference>
+        <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>..\Libref\Ionic.Zip.dll</HintPath>
+        </Reference>
+        <Reference Include="SendFiles, Version=1.0.2506.19176, Culture=neutral, PublicKeyToken=db0cffc473b0c41d">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>..\Libref\SendFiles.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="objMessage.xsd" />
+        <Content Include="objMessageExample.xml" />
+        <Content Include="txMessage.xsd" />
+        <Content Include="txMessageExample.xml" />
+        <None Update="objMessage.xsx">
+            <DependentUpon>objMessage.xsd</DependentUpon>
+        </None>
+        <None Update="txMessage.xsx">
+        <DependentUpon>txMessage.xsd</DependentUpon>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="BouncyCastle.NetCoreSdk" Version="1.9.7" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="8.0.0" />
+        <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+    </ItemGroup>
 </Project>

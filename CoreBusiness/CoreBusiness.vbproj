@@ -1,62 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net6</TargetFramework>
-    <ProjectType>Local</ProjectType>
-    <AssemblyKeyContainerName></AssemblyKeyContainerName>
-    <AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
-    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
-    <DefaultClientScript>JScript</DefaultClientScript>
-    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
-    <DefaultTargetSchema>IE50</DefaultTargetSchema>
-    <DelaySign>false</DelaySign>
-    <OutputType>Library</OutputType>
-    <StartupObject></StartupObject>
-    <MyType>Empty</MyType>
-    <PublishUrl>http://localhost/CoreBusiness/</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
-    <UpdateEnabled>true</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
-    <SccProjectName></SccProjectName>
-    <SccLocalPath></SccLocalPath>
-    <SccAuxPath></SccAuxPath>
-    <SccProvider></SccProvider>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>..\Deployment\HOST\</OutputPath>
-    <DocumentationFile>CoreBusiness.xml</DocumentationFile>
-    <BaseAddress>285212672</BaseAddress>
-    <ConfigurationOverrideFile></ConfigurationOverrideFile>
-    <DefineConstants></DefineConstants>
-    <DefineDebug>false</DefineDebug>
-    <RegisterForComInterop>false</RegisterForComInterop>
-    <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
-    <DebugType>none</DebugType>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Remove="My Project\**" />
-    <EmbeddedResource Remove="My Project\**" />
-    <None Remove="My Project\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="SendFiles, Version=1.0.2506.19176, Culture=neutral, PublicKeyToken=db0cffc473b0c41d">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libref\SendFiles.dll</HintPath>
-    </Reference>
-    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.vbproj" />
-    <ProjectReference Include="..\HostCommonLibrary\HostCommonLibrary.vbproj" />
-  </ItemGroup>
-  <PropertyGroup />
+    <PropertyGroup>
+		<RootNamespace>CoreBusiness</RootNamespace>
+		<TargetFramework>net6</TargetFramework>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>none</DebugType>
+		<DefineDebug>True</DefineDebug>
+		<OutputPath>.\bin\Debug</OutputPath>
+		<DefineTrace>False</DefineTrace>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>none</DebugType>
+		<OutputPath>..\Deployment\HOST</OutputPath>
+		<DefineTrace>False</DefineTrace>
+		<GenerateDependencyFile>false</GenerateDependencyFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="SendFiles, Version=1.0.2506.19176, Culture=neutral, PublicKeyToken=db0cffc473b0c41d">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>..\Libref\SendFiles.dll</HintPath>
+		</Reference>
+		<ProjectReference Include="..\DataAccessLayer\DataAccessLayer.vbproj" />
+		<ProjectReference Include="..\HostCommonLibrary\HostCommonLibrary.vbproj" />
+	</ItemGroup>
 </Project>

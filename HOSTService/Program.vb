@@ -8,6 +8,7 @@ Imports CoreWCF.Channels
 Imports System.IO
 Imports Microsoft.AspNetCore.Http
 Imports Microsoft.Extensions.Logging
+Imports System.Configuration
 
 Public Class Program
     Public Shared Sub Main(args As String())

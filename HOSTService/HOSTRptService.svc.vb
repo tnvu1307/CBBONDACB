@@ -1,9 +1,7 @@
-﻿Imports System
-Imports System.Transactions
+﻿Imports System.Transactions
 Imports System.Xml
 Imports HostCommonLibrary
-Imports System.ServiceModel
-Imports log4net
+Imports System.Configuration
 
 ' NOTE: If you change the class name "HOSTRptService" here, you must also update the reference to "HOSTRptService" in Web.config and in the associated .svc file.
 

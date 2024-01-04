@@ -1,28 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
+		<RootNamespace>ST</RootNamespace>
 		<TargetFramework>net6</TargetFramework>
-		<OutputType>Library</OutputType>
-		<StartupObject></StartupObject>
-		<MyType>Empty</MyType>
-		<SccProjectName></SccProjectName>
-		<SccLocalPath></SccLocalPath>
-		<SccAuxPath></SccAuxPath>
-		<SccProvider></SccProvider>
-		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-		<DocumentationFile>ST.xml</DocumentationFile>
-		<NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>none</DebugType>
+		<DefineDebug>True</DefineDebug>
+		<OutputPath>.\bin\Debug</OutputPath>
+		<DefineTrace>False</DefineTrace>
 	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-		<DefineDebug>false</DefineDebug>
-		<DocumentationFile>ST.xml</DocumentationFile>
-		<NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>none</DebugType>
+		<OutputPath>..\Deployment\HOST</OutputPath>
+		<DefineTrace>False</DefineTrace>
+		<GenerateDependencyFile>false</GenerateDependencyFile>
 	</PropertyGroup>
-	<ItemGroup>
-		<Import Include="System.Drawing" />
-		<Import Include="System.Windows.Forms" />
-	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\CoreBusiness\CoreBusiness.vbproj" />
 		<ProjectReference Include="..\DataAccessLayer\DataAccessLayer.vbproj" />

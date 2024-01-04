@@ -1,18 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
+		<RootNamespace>BA</RootNamespace>
 		<TargetFramework>net6</TargetFramework>
-		<OutputType>Library</OutputType>
-		<MyType>Empty</MyType>
-		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-		<DocumentationFile>BA.xml</DocumentationFile>
-		<NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>none</DebugType>
+		<DefineDebug>True</DefineDebug>
+		<OutputPath>.\bin\Debug</OutputPath>
+		<DefineTrace>False</DefineTrace>
 	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-		<DefineDebug>false</DefineDebug>
-		<DocumentationFile>BA.xml</DocumentationFile>
-		<NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>none</DebugType>
+		<OutputPath>..\Deployment\HOST</OutputPath>
+		<DefineTrace>False</DefineTrace>
+		<GenerateDependencyFile>false</GenerateDependencyFile>
 	</PropertyGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\CoreBusiness\CoreBusiness.vbproj" />
