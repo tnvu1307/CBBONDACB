@@ -7,7 +7,6 @@ Public Class HOSTService
     Implements IHOSTService
 
     Dim LogError As LogError = New LogError()
-    Public Property Text As Object
 
     Public Sub DoWork() Implements IHOSTService.DoWork
     End Sub
