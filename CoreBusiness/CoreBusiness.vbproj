@@ -13,14 +13,14 @@
 		<DebugType>none</DebugType>
 		<OutputPath>..\Deployment\HOST</OutputPath>
 		<DefineTrace>False</DefineTrace>
-		<GenerateDependencyFile>false</GenerateDependencyFile>
 	</PropertyGroup>
 	<ItemGroup>
-		<Reference Include="SendFiles, Version=1.0.2506.19176, Culture=neutral, PublicKeyToken=db0cffc473b0c41d">
-			<SpecificVersion>False</SpecificVersion>
-			<HintPath>..\Libref\SendFiles.dll</HintPath>
-		</Reference>
 		<ProjectReference Include="..\DataAccessLayer\DataAccessLayer.vbproj" />
 		<ProjectReference Include="..\HostCommonLibrary\HostCommonLibrary.vbproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Reference Include="SendFiles">
+	    <HintPath>..\Libref\SendFiles.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 </Project>

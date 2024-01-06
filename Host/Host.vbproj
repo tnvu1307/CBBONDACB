@@ -13,7 +13,6 @@
 		<DebugType>none</DebugType>
 		<OutputPath>..\Deployment\HOST</OutputPath>
 		<DefineTrace>False</DefineTrace>
-		<GenerateDependencyFile>false</GenerateDependencyFile>
 	</PropertyGroup>
     <ItemGroup>
         <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching">

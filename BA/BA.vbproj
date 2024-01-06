@@ -13,7 +13,6 @@
 		<DebugType>none</DebugType>
 		<OutputPath>..\Deployment\HOST</OutputPath>
 		<DefineTrace>False</DefineTrace>
-		<GenerateDependencyFile>false</GenerateDependencyFile>
 	</PropertyGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\CoreBusiness\CoreBusiness.vbproj" />

@@ -390,9 +390,6 @@
     <Compile Include="frmReadFile.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReadFilecv.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmReportMaster.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -667,9 +664,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReadFile.resx">
       <DependentUpon>frmReadFile.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmReadFilecv.resx">
-      <DependentUpon>frmReadFilecv.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRightAssignment-EN.resx">
       <Generator>ResXFileCodeGenerator</Generator>

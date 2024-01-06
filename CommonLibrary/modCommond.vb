@@ -4716,12 +4716,12 @@ oQIDAQAB
     End Function
 
     Public Function ZipString(ByVal pv_strIn As String) As String
-        Dim v_btIn() As Byte = ZetaCompressionLibrary.CompressionHelper.CompressString(pv_strIn)
-        Dim v_strRet As String = ""
-        If Not v_btIn Is Nothing Then
-            v_strRet = Convert.ToBase64String(v_btIn)
-        End If
-        Return v_strRet
+        'Dim v_btIn() As Byte = ZetaCompressionLibrary.CompressionHelper.CompressString(pv_strIn)
+        'Dim v_strRet As String = ""
+        'If Not v_btIn Is Nothing Then
+        '    v_strRet = Convert.ToBase64String(v_btIn)
+        'End If
+        Return pv_strIn
     End Function
     Public Function GetMd5Hash(ByVal md5Hash As MD5, ByVal input As String) As String
 
@@ -4744,12 +4744,12 @@ oQIDAQAB
 
     End Function 'GetMd5Hash
     Public Function UnzipString(ByVal pv_strIn As String) As String
-        Dim v_btIn() As Byte = Convert.FromBase64String(pv_strIn)
-        Dim v_strRet As String = ""
-        If Not v_btIn Is Nothing Then
-            v_strRet = ZetaCompressionLibrary.CompressionHelper.DecompressString(v_btIn)
-        End If
-        Return v_strRet
+        'Dim v_btIn() As Byte = Convert.FromBase64String(pv_strIn)
+        'Dim v_strRet As String = ""
+        'If Not v_btIn Is Nothing Then
+        '    v_strRet = ZetaCompressionLibrary.CompressionHelper.DecompressString(v_btIn)
+        'End If
+        Return pv_strIn
     End Function
 
     '----------------------------------------------------------------------------------------------
