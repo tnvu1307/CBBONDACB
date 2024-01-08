@@ -14,14 +14,10 @@
 		<DebugType>none</DebugType>
 		<OutputPath>..\Deployment\HOST</OutputPath>
 		<DefineTrace>False</DefineTrace>
-		<OutputType>Library</OutputType>
-		<GenerateDependencyFile>false</GenerateDependencyFile>
+		<OutputType>Exe</OutputType>
+		<GenerateRuntimeConfigurationFiles>True</GenerateRuntimeConfigurationFiles>
 	</PropertyGroup>
     <ItemGroup>
-        <Reference Include="ICSharpCode.SharpZipLib, Version=0.81.0.1407, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
-            <SpecificVersion>False</SpecificVersion>
-            <HintPath>..\Libref\ICSharpCode.SharpZipLib.dll</HintPath>
-        </Reference>
         <Reference Include="SendFiles, Version=1.0.2506.19176, Culture=neutral, PublicKeyToken=db0cffc473b0c41d">
             <SpecificVersion>False</SpecificVersion>
             <HintPath>..\Libref\SendFiles.dll</HintPath>
