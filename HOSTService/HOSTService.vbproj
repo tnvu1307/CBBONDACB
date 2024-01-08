@@ -4,14 +4,12 @@
 		<TargetFramework>net6.0</TargetFramework>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-		<DebugType>none</DebugType>
 		<DefineDebug>True</DefineDebug>
 		<OutputPath>.\bin\Debug</OutputPath>
 		<DefineTrace>False</DefineTrace>
 		<OutputType>Exe</OutputType>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-		<DebugType>none</DebugType>
 		<OutputPath>..\Deployment\HOST</OutputPath>
 		<DefineTrace>False</DefineTrace>
 		<OutputType>Exe</OutputType>
