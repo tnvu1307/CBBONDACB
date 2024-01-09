@@ -2993,6 +2993,15 @@ Public Class brRouter
                             v_strRetval = Nothing
                         Else
                             v_strRetval = v_strBranchId & "|" & v_strTellerId & "|" & DataProtection.UnprotectData(v_strPIN)
+                            Try
+                                Dim currentTime As DateTime = DateTime.Now
+                                Dim updateCurrentDateLogin As String = "UPDATE TLPROFILES SET LASTLOGINDATE = TO_TIMESTAMP('" & currentTime & "', 'DD/MM/YYYY hh:mi:ss AM') WHERE TLID ='" & v_strTellerId & "'"
+                                v_bCmd.ExecuteUser = "anhdn"
+                                v_bCmd.SQLCommand = updateCurrentDateLogin
+                                Dim result As DataSet = v_dal.ExecuteSQLReturnDataset(v_bCmd)
+                            Catch ex As Exception
+                                Throw ex
+                            End Try
                         End If
                     Else    'Sử dụng LDAP để lưu mật khẩu
                         v_strRetval = v_strBranchId & "|" & v_strTellerId
@@ -3109,11 +3118,6 @@ Public Class brRouter
         Dim v_strLoginTime As String = Trim(v_XmlDocument.DocumentElement.Attributes(gc_AtributeCLAUSE).Value.ToString)
         tlProfile.LoginTime = v_strLoginTime
 
-        Dim currentTime As DateTime = DateTime.Now
-        Dim updateCurrentDateLogin As String = "UPDATE TLPROFILES SET LASTLOGINDATE = TO_TIMESTAMP('" & currentTime & "', 'DD/MM/YYYY hh:mi:ss AM') WHERE TLID ='" & TellerId & "'"
-        v_bCmd.ExecuteUser = "anhdn"
-        v_bCmd.SQLCommand = updateCurrentDateLogin
-        Dim result As DataSet = v_dal.ExecuteSQLReturnDataset(v_bCmd)
 
         Complete() 'ContextUtil.SetComplete()
         Return tlProfile
