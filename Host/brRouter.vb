@@ -3098,6 +3098,7 @@ Public Class brRouter
 
         End If
 
+
         'Get system time form database HOST
         v_strObjMsg = modCommond.BuildXMLObjMsg(Now.Date, tlProfile.BranchId, Now.Date,
             tlProfile.TellerId, modCommond.gc_IsLocalMsg, modCommond.gc_MsgTypeObj,
@@ -3107,6 +3108,12 @@ Public Class brRouter
 
         Dim v_strLoginTime As String = Trim(v_XmlDocument.DocumentElement.Attributes(gc_AtributeCLAUSE).Value.ToString)
         tlProfile.LoginTime = v_strLoginTime
+
+        Dim currentTime As DateTime = DateTime.Now
+        Dim updateCurrentDateLogin As String = "UPDATE TLPROFILES SET LASTLOGINDATE = TO_TIMESTAMP('" & currentTime & "', 'DD/MM/YYYY hh:mi:ss AM') WHERE TLID ='" & TellerId & "'"
+        v_bCmd.ExecuteUser = "anhdn"
+        v_bCmd.SQLCommand = updateCurrentDateLogin
+        Dim result As DataSet = v_dal.ExecuteSQLReturnDataset(v_bCmd)
 
         Complete() 'ContextUtil.SetComplete()
         Return tlProfile
