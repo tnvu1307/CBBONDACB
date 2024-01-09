@@ -24,6 +24,7 @@ Public Enum BusLayerResult
     UnknownFailure = 3
     ConnectionFailure = 4
     AuthenticationFailure = 5
+    AccountBlock = 6
 End Enum
 
 Public Class CBusLayer

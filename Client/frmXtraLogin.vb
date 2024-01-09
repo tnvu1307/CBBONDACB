@@ -408,14 +408,16 @@ Public Class frmXtraLogin
                 teUsername.Focus()
 
                 If blResult = BusLayerResult.ServiceFailure Then
-                    MsgBox(m_ResourceManager.GetString(gc_SYSERR_SVR_ERROR) & " " & m_ResourceManager.GetString(gc_SYSERR_CONTACT_NET_ADMIN), _
+                    MsgBox(m_ResourceManager.GetString(gc_SYSERR_SVR_ERROR) & " " & m_ResourceManager.GetString(gc_SYSERR_CONTACT_NET_ADMIN),
                         MsgBoxStyle.Information + MsgBoxStyle.OkOnly, gc_ApplicationTitle)
                 ElseIf blResult = BusLayerResult.ConnectionFailure Then
-                    MsgBox(m_ResourceManager.GetString(gc_SYSERR_SRV_UNREACHABLE) & " " & m_ResourceManager.GetString(gc_SYSERR_CHECK_CONNECTION), _
+                    MsgBox(m_ResourceManager.GetString(gc_SYSERR_SRV_UNREACHABLE) & " " & m_ResourceManager.GetString(gc_SYSERR_CHECK_CONNECTION),
                         MsgBoxStyle.Information + MsgBoxStyle.OkOnly, gc_ApplicationTitle)
                 ElseIf blResult = BusLayerResult.AuthenticationFailure Then
-                    MsgBox(m_ResourceManager.GetString(gc_SYSERR_INCORRECT_USR_OR_PWD) & " " & m_ResourceManager.GetString(gc_SYSERR_RE_TYPE), _
+                    MsgBox(m_ResourceManager.GetString(gc_SYSERR_INCORRECT_USR_OR_PWD) & " " & m_ResourceManager.GetString(gc_SYSERR_RE_TYPE),
                         MsgBoxStyle.Information + MsgBoxStyle.OkOnly, gc_ApplicationTitle)
+                ElseIf blResult = BusLayerResult.AccountBlock Then
+                    MsgBox("Tài khoản của bạn đã bị khóa. Vui lòng liên hệ admin để được hỗ trợ!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, gc_ApplicationTitle)
                 Else
                     MsgBox(m_ResourceManager.GetString(gc_SYSERR_UNKNOWN_ERROR) & " " & m_ResourceManager.GetString(gc_SYSERR_CHECK_EVENT_LOG), _
                         MsgBoxStyle.Information + MsgBoxStyle.OkOnly, gc_ApplicationTitle)

@@ -2965,13 +2965,15 @@ Public Class brRouter
 
 #Region " Authorization "
     Public Function GetAuthorizationTicket(ByVal pv_strUserName As String, Optional ByVal pv_strPassword As String = "") As String
+
         Try
             Dim v_strRetval As String
             Dim v_strTellerId, v_strBranchId, v_strPIN As String
+            Dim isLockAccount As String
 
             Dim v_bCmd As New BusinessCommand
             Dim v_strEncryPass As String
-            v_bCmd.SQLCommand = "Select BRID, TLID, PIN, SYSDATE , GENENCRYPTPASSWORD('" + pv_strPassword + "') ENCRYPASS from TLPROFILES where upper(TLNAME) = '" & UCase$(pv_strUserName) & "' And ACTIVE = 'Y'"
+            v_bCmd.SQLCommand = "Select BRID, TLID,ACTIVE, PIN, SYSDATE , GENENCRYPTPASSWORD('" + pv_strPassword + "') ENCRYPASS from TLPROFILES where upper(TLNAME) = '" & UCase$(pv_strUserName) & "' AND ACTIVE <> 'N'"
             Dim v_dal As New DataAccess
             v_dal.NewDBInstance(gc_MODULE_HOST)
 
@@ -2983,22 +2985,66 @@ Public Class brRouter
                 v_strTellerId = gf_CorrectStringField(v_ds.Tables(0).Rows(0)("TLID"))
                 v_strPIN = gf_CorrectStringField(v_ds.Tables(0).Rows(0)("PIN"))
                 v_strEncryPass = gf_CorrectStringField(v_ds.Tables(0).Rows(0)("ENCRYPASS"))
-                If v_strBranchId = String.Empty Or v_strTellerId = String.Empty Then
+                isLockAccount = gf_CorrectStringField(v_ds.Tables(0).Rows(0)("ACTIVE"))
+                If isLockAccount = "B" Then
+                    v_strRetval = 6
+                ElseIf v_strBranchId = String.Empty Or v_strTellerId = String.Empty Then
                     v_strRetval = Nothing
                 Else
                     If (pv_strPassword.Length > 0) Then     'Lưu mật khẩu trong DB
                         'If (DataProtection.UnprotectData(pv_strPassword) <> DataProtection.UnprotectData(v_strPIN)) Then
                         'Ducnv kiem tra pass ma hoa
                         If v_strPIN <> v_strEncryPass Then
+                            Try
+                                Dim wrongPasswordStr = "Select * from ENTERWRONGPASS where TLID = '" & v_strTellerId & "'"
+                                v_bCmd.ExecuteUser = "admin"
+                                v_bCmd.SQLCommand = wrongPasswordStr
+                                Dim result As DataSet = v_dal.ExecuteSQLReturnDataset(v_bCmd)
+
+                                If result.Tables(0).Rows.Count = 1 Then
+                                    Dim updateAmountStr = "UPDATE ENTERWRONGPASS SET AMOUNT = AMOUNT + 1 WHERE TLID ='" & v_strTellerId & "'"
+                                    v_bCmd.ExecuteUser = "admin"
+                                    v_bCmd.SQLCommand = updateAmountStr
+                                    Dim amount As DataSet = v_dal.ExecuteSQLReturnDataset(v_bCmd)
+                                Else
+                                    Dim insertAmountStr = "INSERT INTO ENTERWRONGPASS (TLID, AMOUNT, TLNAME, LOCKDATE) VALUES('" & v_strTellerId & "',1,'','')"
+                                    v_bCmd.ExecuteUser = "admin"
+                                    v_bCmd.SQLCommand = insertAmountStr
+                                    v_dal.ExecuteSQLReturnDataset(v_bCmd)
+                                End If
+                                Dim checkAmountStr = "SELECT * FROM ENTERWRONGPASS WHERE TLID = '" & v_strTellerId & "' AND AMOUNT = 5"
+                                v_bCmd.ExecuteUser = "admin"
+                                v_bCmd.SQLCommand = checkAmountStr
+                                Dim rs As DataSet = v_dal.ExecuteSQLReturnDataset(v_bCmd)
+                                If rs.Tables(0).Rows.Count = 1 Then
+                                    Dim updateLockStr = "UPDATE TLPROFILES SET ACTIVE = 'B' WHERE TLID = '" & v_strTellerId & "'"
+                                    v_bCmd.ExecuteUser = "admin"
+                                    v_bCmd.SQLCommand = updateLockStr
+                                    v_dal.ExecuteSQLReturnDataset(v_bCmd)
+                                    v_strRetval = 6
+                                End If
+                            Catch ex As Exception
+                                Throw ex
+                            End Try
                             v_strRetval = Nothing
                         Else
                             v_strRetval = v_strBranchId & "|" & v_strTellerId & "|" & DataProtection.UnprotectData(v_strPIN)
+                            Dim checkAmountWrong = "SELECT * FROM ENTERWRONGPASS WHERE TLID = '" & v_strTellerId & "' AND AMOUNT < 5"
+                            v_bCmd.ExecuteUser = "admin"
+                            v_bCmd.SQLCommand = checkAmountWrong
+                            Dim resultQuery As DataSet = v_dal.ExecuteSQLReturnDataset(v_bCmd)
+                            If resultQuery.Tables(0).Rows.Count = 1 Then
+                                Dim delete = "DELETE FROM ENTERWRONGPASS  WHERE TLID = '" & v_strTellerId & "'"
+                                v_bCmd.ExecuteUser = "admin"
+                                v_bCmd.SQLCommand = delete
+                                v_dal.ExecuteSQLReturnDataset(v_bCmd)
+                            End If
                             Try
                                 Dim currentTime As DateTime = DateTime.Now
-                                Dim updateCurrentDateLogin As String = "UPDATE TLPROFILES SET LASTLOGINDATE = TO_TIMESTAMP('" & currentTime & "', 'DD/MM/YYYY hh:mi:ss AM') WHERE TLID ='" & v_strTellerId & "'"
-                                v_bCmd.ExecuteUser = "anhdn"
+                                Dim updateCurrentDateLogin As String = "UPDATE TLPROFILES Set LASTLOGINDATE = TO_TIMESTAMP('" & currentTime & "', 'DD/MM/YYYY hh:mi:ss AM') WHERE TLID ='" & v_strTellerId & "'"
+                                v_bCmd.ExecuteUser = "admin"
                                 v_bCmd.SQLCommand = updateCurrentDateLogin
-                                Dim result As DataSet = v_dal.ExecuteSQLReturnDataset(v_bCmd)
+                                v_dal.ExecuteSQLReturnDataset(v_bCmd)
                             Catch ex As Exception
                                 Throw ex
                             End Try
