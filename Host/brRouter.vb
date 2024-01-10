@@ -3001,6 +3001,11 @@ Public Class brRouter
                                 v_bCmd.SQLCommand = wrongPasswordStr
                                 Dim result As DataSet = v_dal.ExecuteSQLReturnDataset(v_bCmd)
 
+                                Dim checksysvar = "Select VARVALUE from Sysvar where VARNAME = 'USERLOGINFALSE'"
+                                v_bCmd.ExecuteUser = "admin"
+                                v_bCmd.SQLCommand = checksysvar
+                                Dim checkvar As DataSet = v_dal.ExecuteSQLReturnDataset(v_bCmd)
+
                                 If result.Tables(0).Rows.Count = 1 Then
                                     Dim updateAmountStr = "UPDATE ENTERWRONGPASS SET AMOUNT = AMOUNT + 1 WHERE TLID ='" & v_strTellerId & "'"
                                     v_bCmd.ExecuteUser = "admin"
@@ -3012,7 +3017,15 @@ Public Class brRouter
                                     v_bCmd.SQLCommand = insertAmountStr
                                     v_dal.ExecuteSQLReturnDataset(v_bCmd)
                                 End If
-                                Dim checkAmountStr = "SELECT * FROM ENTERWRONGPASS WHERE TLID = '" & v_strTellerId & "' AND AMOUNT >= (SELECT VARVALUE FROM SYSVAR WHERE VARNAME = 'USERLOGINFALSE')"
+                                Dim checkAmountStr As String
+
+
+                                If String.IsNullOrEmpty(gf_CorrectStringField(checkvar.Tables(0).Rows(0)("VARVALUE"))) Then
+                                    checkAmountStr = "SELECT * FROM ENTERWRONGPASS WHERE TLID = '" & v_strTellerId & "' AND AMOUNT >= 5"
+                                Else
+                                    checkAmountStr = "SELECT * FROM ENTERWRONGPASS WHERE TLID = '" & v_strTellerId & "' AND AMOUNT >= (" & checksysvar & ")"
+                                End If
+
                                 v_bCmd.ExecuteUser = "admin"
                                 v_bCmd.SQLCommand = checkAmountStr
                                 Dim rs As DataSet = v_dal.ExecuteSQLReturnDataset(v_bCmd)
