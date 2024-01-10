@@ -2987,7 +2987,7 @@ Public Class brRouter
                 v_strEncryPass = gf_CorrectStringField(v_ds.Tables(0).Rows(0)("ENCRYPASS"))
                 isLockAccount = gf_CorrectStringField(v_ds.Tables(0).Rows(0)("ACTIVE"))
                 If isLockAccount = "B" Then
-                    v_strRetval = 6
+                    v_strRetval = "6"
                 ElseIf v_strBranchId = String.Empty Or v_strTellerId = String.Empty Then
                     v_strRetval = Nothing
                 Else
@@ -3034,7 +3034,7 @@ Public Class brRouter
                                     v_bCmd.ExecuteUser = "admin"
                                     v_bCmd.SQLCommand = updateLockStr
                                     v_dal.ExecuteSQLReturnDataset(v_bCmd)
-                                    v_strRetval = 6
+                                    v_strRetval = "6"
                                 End If
                             Catch ex As Exception
                                 LogError.WriteException(ex)
@@ -3042,27 +3042,11 @@ Public Class brRouter
                             v_strRetval = Nothing
                         Else
                             v_strRetval = v_strBranchId & "|" & v_strTellerId & "|" & DataProtection.UnprotectData(v_strPIN)
-                            Dim checkAmountWrong As String
-                            Dim checksysvar2 = "Select VARVALUE from Sysvar where VARNAME = 'USERLOGINFALSE'"
-                            v_bCmd.ExecuteUser = "admin"
-                            v_bCmd.SQLCommand = checksysvar2
-                            Dim checkvar2 As DataSet = v_dal.ExecuteSQLReturnDataset(v_bCmd)
 
-                            If String.IsNullOrEmpty(gf_CorrectStringField(checkvar2.Tables(0).Rows(0)("VARVALUE"))) Then
-                                checkAmountWrong = "SELECT * FROM ENTERWRONGPASS WHERE TLID = '" & v_strTellerId & "' AND AMOUNT >= 5"
-                            Else
-                                checkAmountWrong = "SELECT * FROM ENTERWRONGPASS WHERE TLID = '" & v_strTellerId & "' AND AMOUNT >= (" & checksysvar2 & ")"
-                            End If
-
+                            Dim delete = "DELETE FROM ENTERWRONGPASS  WHERE TLID = '" & v_strTellerId & "'"
                             v_bCmd.ExecuteUser = "admin"
-                            v_bCmd.SQLCommand = checkAmountWrong
-                            Dim resultQuery As DataSet = v_dal.ExecuteSQLReturnDataset(v_bCmd)
-                            If resultQuery.Tables(0).Rows.Count = 1 Then
-                                Dim delete = "DELETE FROM ENTERWRONGPASS  WHERE TLID = '" & v_strTellerId & "'"
-                                v_bCmd.ExecuteUser = "admin"
-                                v_bCmd.SQLCommand = delete
-                                v_dal.ExecuteSQLReturnDataset(v_bCmd)
-                            End If
+                            v_bCmd.SQLCommand = delete
+                            v_dal.ExecuteSQLReturnDataset(v_bCmd)
                             Try
                                 Dim currentTime As DateTime = DateTime.Now
                                 Dim updateCurrentDateLogin As String = "UPDATE TLPROFILES Set LASTLOGINDATE = TO_TIMESTAMP('" & currentTime & "', 'DD/MM/YYYY hh:mi:ss AM') WHERE TLID ='" & v_strTellerId & "'"

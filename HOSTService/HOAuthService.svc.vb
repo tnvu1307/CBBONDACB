@@ -104,6 +104,8 @@ Public Class HOAuthService
         If v_strUserId Is Nothing Then
             'NSD hoặc mật khẩu không đúng
             Return Nothing
+        ElseIf v_strUserId = "6" Then
+            Return v_strUserId
         End If
 
         'create the ticket

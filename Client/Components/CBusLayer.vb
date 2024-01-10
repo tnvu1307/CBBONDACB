@@ -243,6 +243,8 @@ Public Class CBusLayer
         If mv_strTicket Is Nothing Then
             'Username/password failed
             Return BusLayerResult.AuthenticationFailure
+        ElseIf mv_strTicket = "6" Then
+            Return BusLayerResult.AccountBlock
         End If
 
         Return BusLayerResult.Success
