@@ -100,6 +100,70 @@ Public Class BDSDeliveryManagement
         End Try
     End Function
 
+    Public Function GetInfoAuthorMicrosoft(ByRef pv_strMessage As String) As Long
+        Dim lngError As Long = ERR_SYSTEM_OK
+        Dim ws As New HOSTService.HOSTServiceClient
+        Try
+            If mv_flagSignature = "Y" Then
+                pv_strMessage = RSA.signXml(pv_strMessage, mv_keySignature, mv_tagSignature)
+            End If
+
+            'Compress
+            pv_strMessage = TripleDesEncryptData(pv_strMessage)
+            Dim pv_arrByteMessage() As Byte
+            pv_arrByteMessage = ZetaCompressionLibrary.CompressionHelper.CompressString(pv_strMessage)
+
+            'Send to host
+            Dim request As HOSTService.GetInfoAuthorMicrosoftRequest = New HOSTService.GetInfoAuthorMicrosoftRequest
+            request.pv_arrByteMessage = pv_arrByteMessage
+
+            Dim response As HOSTService.GetInfoAuthorMicrosoftResponse = ws.GetInfoAuthorMicrosoft(request)
+            lngError = response.GetInfoAuthorMicrosoftResult
+            pv_arrByteMessage = response.pv_arrByteMessage
+
+            'Decompress
+            pv_strMessage = ZetaCompressionLibrary.CompressionHelper.DecompressString(pv_arrByteMessage)
+            pv_strMessage = TripleDesDecryptData(pv_strMessage)
+
+            Return lngError
+        Catch ex As Exception
+            ws.Abort()
+            Throw ex
+        Finally
+            ws.Close()
+        End Try
+    End Function
+
+    Public Function InsertOrUpdateAccMicrosoft(ByRef pv_strMessage As String) As Long
+        Dim lngError As Long = ERR_SYSTEM_OK
+        Dim ws As New HOSTService.HOSTServiceClient
+        Try
+            'Compress
+            Dim pv_arrByteMessage() As Byte
+            pv_strMessage = TripleDesEncryptData(pv_strMessage)
+            pv_arrByteMessage = ZetaCompressionLibrary.CompressionHelper.CompressString(pv_strMessage)
+
+            'Send to host
+            Dim request As HOSTService.InsertOrUpdateAccMicrosoftRequest = New HOSTService.InsertOrUpdateAccMicrosoftRequest
+            request.pv_arrByteMessage = pv_arrByteMessage
+
+            Dim response As HOSTService.InsertOrUpdateAccMicrosoftResponse = ws.InsertOrUpdateAccMicrosoft(request)
+            pv_arrByteMessage = response.pv_arrByteMessage
+            lngError = response.InsertOrUpdateAccMicrosoftResult
+
+            'Decompress
+            pv_strMessage = ZetaCompressionLibrary.CompressionHelper.DecompressString(pv_arrByteMessage)
+            pv_strMessage = TripleDesDecryptData(pv_strMessage)
+
+            Return lngError
+        Catch ex As Exception
+            ws.Abort()
+            Throw ex
+        Finally
+            ws.Close()
+        End Try
+    End Function
+
 End Class
 
 Public Class BDSPalaceOrderManagement

@@ -1,5 +1,7 @@
 ﻿Imports Microsoft.Win32
 Imports CommonLibrary
+Imports Newtonsoft.Json
+Imports Newtonsoft.Json.Linq
 
 Public Class frmXtraLogin
     Inherits DevExpress.XtraEditors.XtraForm
@@ -67,6 +69,8 @@ Public Class frmXtraLogin
     Friend WithEvents sbLogin As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents PictureEdit1 As DevExpress.XtraEditors.PictureEdit
     Friend WithEvents sbCancel As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents sbLoginMicrosoft As DevExpress.XtraEditors.SimpleButton
+
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmXtraLogin))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
@@ -78,6 +82,7 @@ Public Class frmXtraLogin
         Me.sbCancel = New DevExpress.XtraEditors.SimpleButton()
         Me.PictureEdit1 = New DevExpress.XtraEditors.PictureEdit()
         Me.ceSavePassword = New DevExpress.XtraEditors.CheckEdit()
+        Me.sbLoginMicrosoft = New DevExpress.XtraEditors.SimpleButton()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.tePassword.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.teUsername.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,6 +105,7 @@ Public Class frmXtraLogin
         Me.TableLayoutPanel1.Controls.Add(Me.sbCancel, 2, 5)
         Me.TableLayoutPanel1.Controls.Add(Me.PictureEdit1, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.ceSavePassword, 1, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.sbLoginMicrosoft, 3, 3)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -110,17 +116,17 @@ Public Class frmXtraLogin
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(471, 342)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(582, 342)
         Me.TableLayoutPanel1.TabIndex = 8
         '
         'tePassword
         '
         Me.tePassword.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel1.SetColumnSpan(Me.tePassword, 3)
-        Me.tePassword.Location = New System.Drawing.Point(138, 195)
+        Me.tePassword.Location = New System.Drawing.Point(194, 195)
         Me.tePassword.Name = "tePassword"
         Me.tePassword.Properties.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.tePassword.Size = New System.Drawing.Size(330, 20)
+        Me.tePassword.Size = New System.Drawing.Size(385, 20)
         Me.tePassword.TabIndex = 3
         '
         'lcPassword
@@ -136,9 +142,9 @@ Public Class frmXtraLogin
         '
         Me.teUsername.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel1.SetColumnSpan(Me.teUsername, 3)
-        Me.teUsername.Location = New System.Drawing.Point(138, 165)
+        Me.teUsername.Location = New System.Drawing.Point(194, 165)
         Me.teUsername.Name = "teUsername"
-        Me.teUsername.Size = New System.Drawing.Size(330, 20)
+        Me.teUsername.Size = New System.Drawing.Size(385, 20)
         Me.teUsername.TabIndex = 2
         '
         'lcUsername
@@ -154,7 +160,7 @@ Public Class frmXtraLogin
         '
         Me.sbLogin.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.sbLogin.Image = CType(resources.GetObject("sbLogin.Image"), System.Drawing.Image)
-        Me.sbLogin.Location = New System.Drawing.Point(141, 301)
+        Me.sbLogin.Location = New System.Drawing.Point(197, 301)
         Me.sbLogin.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
         Me.sbLogin.Name = "sbLogin"
         Me.sbLogin.Size = New System.Drawing.Size(88, 25)
@@ -166,7 +172,7 @@ Public Class frmXtraLogin
         Me.sbCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.sbCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.sbCancel.Image = CType(resources.GetObject("sbCancel.Image"), System.Drawing.Image)
-        Me.sbCancel.Location = New System.Drawing.Point(241, 301)
+        Me.sbCancel.Location = New System.Drawing.Point(297, 301)
         Me.sbCancel.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
         Me.sbCancel.Name = "sbCancel"
         Me.sbCancel.Size = New System.Drawing.Size(88, 25)
@@ -185,25 +191,36 @@ Public Class frmXtraLogin
         Me.PictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.White
         Me.PictureEdit1.Properties.Appearance.Options.UseBackColor = True
         Me.PictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PictureEdit1.Size = New System.Drawing.Size(471, 160)
+        Me.PictureEdit1.Size = New System.Drawing.Size(582, 160)
         Me.PictureEdit1.TabIndex = 7
         '
         'ceSavePassword
         '
         Me.ceSavePassword.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel1.SetColumnSpan(Me.ceSavePassword, 2)
-        Me.ceSavePassword.Location = New System.Drawing.Point(138, 225)
+        Me.ceSavePassword.Location = New System.Drawing.Point(194, 225)
         Me.ceSavePassword.Name = "ceSavePassword"
         Me.ceSavePassword.Properties.Caption = "Lưu mật khẩu"
         Me.ceSavePassword.Size = New System.Drawing.Size(194, 19)
         Me.ceSavePassword.TabIndex = 5
+        '
+        'sbLoginMicrosoft
+        '
+        Me.sbLoginMicrosoft.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.sbLoginMicrosoft.Image = CType(resources.GetObject("sbLoginMicrosoft.Image"), System.Drawing.Image)
+        Me.sbLoginMicrosoft.Location = New System.Drawing.Point(397, 223)
+        Me.sbLoginMicrosoft.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
+        Me.sbLoginMicrosoft.Name = "sbLoginMicrosoft"
+        Me.sbLoginMicrosoft.Size = New System.Drawing.Size(179, 24)
+        Me.sbLoginMicrosoft.TabIndex = 8
+        Me.sbLoginMicrosoft.Text = "Đăng nhập bằng Microsoft"
         '
         'frmXtraLogin
         '
         Me.Appearance.Options.UseFont = True
         Me.AutoScaleBaseSize = New System.Drawing.Size(5, 14)
         Me.CancelButton = Me.sbCancel
-        Me.ClientSize = New System.Drawing.Size(471, 342)
+        Me.ClientSize = New System.Drawing.Size(582, 342)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -280,7 +297,7 @@ Public Class frmXtraLogin
         'Me.cboBusinessArea.SelectedValue = "FA"
 
 
-       
+
         '#If DEBUG Then
         Dim v_strUserName As String = String.Empty
         Dim v_strPassword As String = String.Empty
@@ -419,7 +436,7 @@ Public Class frmXtraLogin
                 ElseIf blResult = BusLayerResult.AccountBlock Then
                     MsgBox("Tài khoản của bạn đã bị khóa. Vui lòng liên hệ admin để được hỗ trợ!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, gc_ApplicationTitle)
                 Else
-                    MsgBox(m_ResourceManager.GetString(gc_SYSERR_UNKNOWN_ERROR) & " " & m_ResourceManager.GetString(gc_SYSERR_CHECK_EVENT_LOG), _
+                    MsgBox(m_ResourceManager.GetString(gc_SYSERR_UNKNOWN_ERROR) & " " & m_ResourceManager.GetString(gc_SYSERR_CHECK_EVENT_LOG),
                         MsgBoxStyle.Information + MsgBoxStyle.OkOnly, gc_ApplicationTitle)
                 End If
             End If
@@ -473,4 +490,94 @@ Public Class frmXtraLogin
         End Try
     End Sub
 
+    Private Sub sbLoginMicrosoft_Click(sender As Object, e As EventArgs) Handles sbLoginMicrosoft.Click
+        Dim v_strObjMsg, v_strErrorSource, v_strErrorMessage As String
+        Dim v_lngErr As Long
+        Dim v_ws As New BDSDeliveryManagement
+        Dim v_jsonMsg As String
+
+        ''1. Call HOSTService to get info authorization Microsoft
+        v_strObjMsg = BuildXMLObjMsg()
+        v_lngErr = v_ws.GetInfoAuthorMicrosoft(v_strObjMsg)
+
+        If v_lngErr <> ERR_SYSTEM_OK Then
+            GetErrorFromMessage(v_strObjMsg, v_strErrorSource, v_lngErr, v_strErrorMessage, m_BusLayer.AppLanguage)
+            Cursor.Current = Cursors.Default
+            MsgBox(v_strErrorMessage, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, Me.Text)
+            Me.Close()
+        End If
+
+        Dim jsonRes = JToken.Parse(v_strObjMsg)
+
+        ''2. Call API Microsoft to get access_token and user_id
+        Dim frmLoginMicrosoft As New frmLoginMicrosoft(jsonRes("urlAuthorizeCode").ToString(),
+                                                       jsonRes("urlAccessToken").ToString(),
+                                                       jsonRes("redirectUri").ToString(),
+                                                       jsonRes("clientId").ToString(),
+                                                       jsonRes("clientSecret").ToString(),
+                                                       jsonRes("scope").ToString())
+        Dim frmLoginMicrosoftResult As DialogResult = frmLoginMicrosoft.ShowDialog(Me)
+
+        If (frmLoginMicrosoftResult = DialogResult.OK) Then
+            'Get access_token and user_id successful
+            Dim authenMicrosoft = frmLoginMicrosoft.AuthenMicrosoft
+
+            ''3. Insert new account or Update accessToken account Microsoft
+            v_jsonMsg = JsonConvert.SerializeObject(authenMicrosoft)
+            v_lngErr = v_ws.InsertOrUpdateAccMicrosoft(v_jsonMsg)
+
+            If v_lngErr <> ERR_SYSTEM_OK Then
+                GetErrorFromMessage(v_strObjMsg, v_strErrorSource, v_lngErr, v_strErrorMessage, m_BusLayer.AppLanguage)
+                Cursor.Current = Cursors.Default
+                MsgBox(v_strErrorMessage, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, Me.Text)
+
+                Me.Close()
+            End If
+
+            ''4. Get info acc Microsoft + Show frmTLPROFILES (edit) if TLNAME account Microsoft is null"
+            'Get info acc Microsoft
+            Dim blResult As BusLayerResult = m_BusLayer.LoginMicrosoft(v_jsonMsg)
+
+            'If TLNAME is null => Show form fill info account
+            If blResult = BusLayerResult.Success Then
+                If String.IsNullOrEmpty(m_BusLayer.CurrentTellerProfile.TellerName) = True Then
+                    Dim v_strFullObjName As String
+
+                    Dim v_frm As Object
+                    Dim moduleCode = "SA"
+                    Dim tableName = "TLPROFILES"
+
+                    v_frm = frmSearchMaster.GetFormByName("frmTLPROFILES")
+                    v_strFullObjName = moduleCode & "." & tableName
+
+                    v_frm.ExeFlag = ExecuteFlag.Edit
+                    v_frm.UserLanguage = m_BusLayer.AppLanguage
+                    v_frm.ModuleCode = moduleCode
+                    v_frm.ObjectName = v_strFullObjName
+                    v_frm.TableName = tableName
+                    v_frm.LocalObject = "N"
+                    v_frm.Text = "Thông tin tài khoản"
+                    v_frm.TellerId = m_BusLayer.CurrentTellerProfile.TellerId
+                    v_frm.TellerRight = "YYYY"
+                    v_frm.AuthString = "YYYYY"
+                    v_frm.BranchId = m_BusLayer.CurrentTellerProfile.BranchId
+                    v_frm.Busdate = m_BusLayer.CurrentTellerProfile.BusDate
+                    v_frm.KeyFieldName = "TLID"
+                    v_frm.KeyFieldType = "C"
+                    'v_frm.Tellername = m_BusLayer.CurrentTellerProfile.TellerName
+                    v_frm.KeyFieldValue = m_BusLayer.CurrentTellerProfile.TellerId
+
+                    Dim frmResult As DialogResult = v_frm.ShowDialog()
+                End If
+
+                'm_BusLayer.CurrentTellerProfile.AccessArea = Me.cboBusinessArea.Text
+                Me.DialogResult = DialogResult.OK
+                Me.Close()
+
+            ElseIf blResult = BusLayerResult.AuthenticationFailure Then
+                MsgBox(m_ResourceManager.GetString(gc_SYSERR_INCORRECT_USR_OR_PWD) & " " & m_ResourceManager.GetString(gc_SYSERR_RE_TYPE),
+                   MsgBoxStyle.Information + MsgBoxStyle.OkOnly, gc_ApplicationTitle)
+            End If
+        End If
+    End Sub
 End Class

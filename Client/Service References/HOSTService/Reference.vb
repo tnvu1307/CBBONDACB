@@ -61,6 +61,18 @@ Namespace HOSTService
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHOSTService/GetFlagSignature", ReplyAction:="http://tempuri.org/IHOSTService/GetFlagSignatureResponse")>  _
         Function GetFlagSignatureAsync(ByVal request As HOSTService.GetFlagSignatureRequest) As System.Threading.Tasks.Task(Of HOSTService.GetFlagSignatureResponse)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHOSTService/InsertOrUpdateAccMicrosoft", ReplyAction:="http://tempuri.org/IHOSTService/InsertOrUpdateAccMicrosoftResponse")>  _
+        Function InsertOrUpdateAccMicrosoft(ByVal request As HOSTService.InsertOrUpdateAccMicrosoftRequest) As HOSTService.InsertOrUpdateAccMicrosoftResponse
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHOSTService/InsertOrUpdateAccMicrosoft", ReplyAction:="http://tempuri.org/IHOSTService/InsertOrUpdateAccMicrosoftResponse")>  _
+        Function InsertOrUpdateAccMicrosoftAsync(ByVal request As HOSTService.InsertOrUpdateAccMicrosoftRequest) As System.Threading.Tasks.Task(Of HOSTService.InsertOrUpdateAccMicrosoftResponse)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHOSTService/GetInfoAuthorMicrosoft", ReplyAction:="http://tempuri.org/IHOSTService/GetInfoAuthorMicrosoftResponse")>  _
+        Function GetInfoAuthorMicrosoft(ByVal request As HOSTService.GetInfoAuthorMicrosoftRequest) As HOSTService.GetInfoAuthorMicrosoftResponse
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHOSTService/GetInfoAuthorMicrosoft", ReplyAction:="http://tempuri.org/IHOSTService/GetInfoAuthorMicrosoftResponse")>  _
+        Function GetInfoAuthorMicrosoftAsync(ByVal request As HOSTService.GetInfoAuthorMicrosoftRequest) As System.Threading.Tasks.Task(Of HOSTService.GetInfoAuthorMicrosoftResponse)
     End Interface
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
@@ -303,6 +315,86 @@ Namespace HOSTService
         End Sub
     End Class
     
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(WrapperName:="InsertOrUpdateAccMicrosoft", WrapperNamespace:="http://tempuri.org/", IsWrapped:=true)>  _
+    Partial Public Class InsertOrUpdateAccMicrosoftRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public pv_arrByteMessage() As Byte
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal pv_arrByteMessage() As Byte)
+            MyBase.New
+            Me.pv_arrByteMessage = pv_arrByteMessage
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(WrapperName:="InsertOrUpdateAccMicrosoftResponse", WrapperNamespace:="http://tempuri.org/", IsWrapped:=true)>  _
+    Partial Public Class InsertOrUpdateAccMicrosoftResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public InsertOrUpdateAccMicrosoftResult As Long
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=1)>  _
+        Public pv_arrByteMessage() As Byte
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal InsertOrUpdateAccMicrosoftResult As Long, ByVal pv_arrByteMessage() As Byte)
+            MyBase.New
+            Me.InsertOrUpdateAccMicrosoftResult = InsertOrUpdateAccMicrosoftResult
+            Me.pv_arrByteMessage = pv_arrByteMessage
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(WrapperName:="GetInfoAuthorMicrosoft", WrapperNamespace:="http://tempuri.org/", IsWrapped:=true)>  _
+    Partial Public Class GetInfoAuthorMicrosoftRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public pv_arrByteMessage() As Byte
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal pv_arrByteMessage() As Byte)
+            MyBase.New
+            Me.pv_arrByteMessage = pv_arrByteMessage
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(WrapperName:="GetInfoAuthorMicrosoftResponse", WrapperNamespace:="http://tempuri.org/", IsWrapped:=true)>  _
+    Partial Public Class GetInfoAuthorMicrosoftResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public GetInfoAuthorMicrosoftResult As Long
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=1)>  _
+        Public pv_arrByteMessage() As Byte
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal GetInfoAuthorMicrosoftResult As Long, ByVal pv_arrByteMessage() As Byte)
+            MyBase.New
+            Me.GetInfoAuthorMicrosoftResult = GetInfoAuthorMicrosoftResult
+            Me.pv_arrByteMessage = pv_arrByteMessage
+        End Sub
+    End Class
+    
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
     Public Interface IHOSTServiceChannel
         Inherits HOSTService.IHOSTService, System.ServiceModel.IClientChannel
@@ -388,6 +480,22 @@ Namespace HOSTService
         
         Public Function GetFlagSignatureAsync(ByVal request As HOSTService.GetFlagSignatureRequest) As System.Threading.Tasks.Task(Of HOSTService.GetFlagSignatureResponse) Implements HOSTService.IHOSTService.GetFlagSignatureAsync
             Return MyBase.Channel.GetFlagSignatureAsync(request)
+        End Function
+        
+        Public Function InsertOrUpdateAccMicrosoft(ByVal request As HOSTService.InsertOrUpdateAccMicrosoftRequest) As HOSTService.InsertOrUpdateAccMicrosoftResponse Implements HOSTService.IHOSTService.InsertOrUpdateAccMicrosoft
+            Return MyBase.Channel.InsertOrUpdateAccMicrosoft(request)
+        End Function
+        
+        Public Function InsertOrUpdateAccMicrosoftAsync(ByVal request As HOSTService.InsertOrUpdateAccMicrosoftRequest) As System.Threading.Tasks.Task(Of HOSTService.InsertOrUpdateAccMicrosoftResponse) Implements HOSTService.IHOSTService.InsertOrUpdateAccMicrosoftAsync
+            Return MyBase.Channel.InsertOrUpdateAccMicrosoftAsync(request)
+        End Function
+        
+        Public Function GetInfoAuthorMicrosoft(ByVal request As HOSTService.GetInfoAuthorMicrosoftRequest) As HOSTService.GetInfoAuthorMicrosoftResponse Implements HOSTService.IHOSTService.GetInfoAuthorMicrosoft
+            Return MyBase.Channel.GetInfoAuthorMicrosoft(request)
+        End Function
+        
+        Public Function GetInfoAuthorMicrosoftAsync(ByVal request As HOSTService.GetInfoAuthorMicrosoftRequest) As System.Threading.Tasks.Task(Of HOSTService.GetInfoAuthorMicrosoftResponse) Implements HOSTService.IHOSTService.GetInfoAuthorMicrosoftAsync
+            Return MyBase.Channel.GetInfoAuthorMicrosoftAsync(request)
         End Function
     End Class
 End Namespace

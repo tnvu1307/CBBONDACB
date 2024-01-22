@@ -1,6 +1,9 @@
 ﻿Imports System.Xml
 Imports HostCommonLibrary
 Imports System.Configuration
+Imports Newtonsoft.Json
+Imports DataAccessLayer
+Imports System.Data
 ' NOTE: If you change the class name "HOSTService" here, you must also update the reference to "HOSTService" in Web.config and in the associated .svc file.
 
 Public Class HOSTService
@@ -387,6 +390,159 @@ Public Class HOSTService
             LogError.WriteException(ex)
             Return pv_lngErrorCode & " " & ex.Message
         End Try
+    End Function
+
+    Public Function GetInfoAuthorMicrosoft(ByRef pv_arrByteMessage As Byte()) As Long Implements IHOSTService.GetInfoAuthorMicrosoft
+        Dim v_lngErr = ERR_SYSTEM_OK
+        Dim v_strErrorMessage As String
+        Dim v_strErrorSource As String
+        Dim pv_strMessage As String
+        Dim v_xmlDoc As XmlDocument = New XmlDocumentEx()
+        Dim v_xmlDocumentMessage As XmlDocument = New XmlDocumentEx()
+
+        Try
+            'Decompress
+            pv_strMessage = ZetaCompressionLibrary.CompressionHelper.DecompressString(pv_arrByteMessage)
+            pv_strMessage = TripleDesDecryptData(pv_strMessage)
+
+            'Check Sign
+            v_xmlDocumentMessage.LoadXml(pv_strMessage)
+            Dim v_attrColl = v_xmlDocumentMessage.DocumentElement.Attributes
+            Dim checkSign = ConfigurationManager.AppSettings("CheckSign")
+            If checkSign = "Y" Then
+                Try
+                    Dim v_strSignature = v_attrColl.GetNamedItem(modCommond.gc_AtributeSignature).Value
+                    Dim v_key = RSA.RsaDecryptWithPrivate(v_strSignature, modCommond.Signature_PrivateKey)
+                    If v_key <> modCommond.Signature_KEY Then
+                        v_lngErr = -100
+                    End If
+                Catch ex As Exception
+                    LogError.WriteException(ex)
+                    v_lngErr = modCommond.ERR_SYSTEM_START
+                End Try
+            End If
+
+            If v_lngErr <> ERR_SYSTEM_OK Then
+                v_strErrorMessage = GetErrorMessage(v_lngErr)
+                ReplaceXMLErrorException(pv_strMessage, v_strErrorSource, v_lngErr, v_strErrorMessage)
+
+                v_xmlDoc.LoadXml(pv_strMessage)
+                v_xmlDoc.DocumentElement.Attributes.RemoveNamedItem(modCommond.gc_AtributeSignature)
+                pv_strMessage = v_xmlDoc.OuterXml
+
+                pv_strMessage = TripleDesEncryptData(pv_strMessage)
+                pv_arrByteMessage = ZetaCompressionLibrary.CompressionHelper.CompressString(pv_strMessage)
+
+                LogError.Write("::GetQueryParamsAuthorizationMicrosoft:: ERRCODE: " & v_lngErr & " ERRMSG: " & v_strErrorMessage, "EventLogEntryType.Error")
+                Return v_lngErr
+            End If
+
+            'Response
+            Dim info As New Dictionary(Of String, String)
+            info.Add("urlAuthorizeCode", ConfigurationManager.AppSettings("URLAuthorCodeMicrosoft"))
+            info.Add("urlAccessToken", ConfigurationManager.AppSettings("URLAccessTokenMicrosoft"))
+            info.Add("redirectUri", ConfigurationManager.AppSettings("RedirectUriMicrosoft"))
+            info.Add("clientId", ConfigurationManager.AppSettings("ClientIdMicrosoft"))
+            info.Add("clientSecret", ConfigurationManager.AppSettings("ClientSecretMicrosoft"))
+            info.Add("scope", ConfigurationManager.AppSettings("ScopeMicrosoftGraph"))
+
+            pv_strMessage = JsonConvert.SerializeObject(info)
+
+            'Compress message
+            pv_strMessage = TripleDesEncryptData(pv_strMessage)
+            pv_arrByteMessage = ZetaCompressionLibrary.CompressionHelper.CompressString(pv_strMessage)
+
+            Return v_lngErr
+        Catch ex As Exception
+            LogError.WriteException(ex)
+            Return modCommond.ERR_SYSTEM_START
+        End Try
+
+        Return ERR_SYSTEM_OK
+    End Function
+
+    Public Function InsertOrUpdateAccMicrosoft(ByRef pv_arrByteMessage As Byte()) As Long Implements IHOSTService.InsertOrUpdateAccMicrosoft
+        Dim pv_strMessage As String
+        Dim pv_message As ResponseAuthenMicrosoft
+        Dim v_bCmd As New BusinessCommand
+        Dim v_dal As New DataAccess
+        Dim v_ds As DataSet
+        Dim largestTLID = GetLargestTLIDFromTLPROFILES()
+        Dim defauleBRID = "0001"
+        Dim mv_strTicket As String
+
+        Try
+            'Decompress
+            pv_strMessage = ZetaCompressionLibrary.CompressionHelper.DecompressString(pv_arrByteMessage)
+            pv_strMessage = TripleDesDecryptData(pv_strMessage)
+
+            pv_message = JsonConvert.DeserializeObject(Of ResponseAuthenMicrosoft)(pv_strMessage)
+
+            v_dal.NewDBInstance(gc_MODULE_HOST)
+            v_dal.LogCommand = True
+
+            ''Get info account Microsoft
+            v_bCmd.SQLCommand = String.Format("SELECT * FROM TLPROFILES WHERE USERID = '{0}'", pv_message.user_id)
+            v_ds = v_dal.ExecuteSQLReturnDataset(v_bCmd)
+
+            'Account does not exist yet
+            If v_ds.Tables(0).Rows.Count <> 1 Then
+                v_bCmd.SQLCommand = String.Format("INSERT INTO TLPROFILES (TLID,BRID,ACTIVE,FIRSTTOKEN,USERID) VALUES ('{0}', '" & defauleBRID & "', 'Y' ,'{1}', '{2}')",
+                                             largestTLID,
+                                             pv_message.access_token,
+                                             pv_message.user_id)
+
+                v_dal.ExecuteSQLReturnDataset(v_bCmd)
+
+                mv_strTicket = Util.EncryptString(defauleBRID & "|" & largestTLID & "|")
+            Else
+
+                Dim tlid = gf_CorrectStringField(v_ds.Tables(0).Rows(0)("TLID"))
+                Dim brid = gf_CorrectStringField(v_ds.Tables(0).Rows(0)("BRID"))
+
+                v_bCmd.SQLCommand = String.Format("UPDATE TLPROFILES SET ACCESSTOKEN = '{0}' WHERE USERID = '{1}'",
+                                              pv_message.access_token,
+                                              pv_message.user_id)
+
+                v_dal.ExecuteSQLReturnDataset(v_bCmd)
+                mv_strTicket = Util.EncryptString(brid & "|" & tlid & "|")
+            End If
+
+            ''Return ticket
+            'Compress message
+            mv_strTicket = TripleDesEncryptData(mv_strTicket)
+            pv_arrByteMessage = ZetaCompressionLibrary.CompressionHelper.CompressString(mv_strTicket)
+        Catch ex As Exception
+            LogError.WriteException(ex)
+            Return modCommond.ERR_SYSTEM_START
+        End Try
+
+        Return ERR_SYSTEM_OK
+    End Function
+
+    Public Function GetLargestTLIDFromTLPROFILES() As String
+        Dim v_bCmd As New BusinessCommand
+        Dim v_dal As New DataAccess
+        Dim v_ds As DataSet
+
+        Try
+            'ExecuteSQL
+            v_bCmd.SQLCommand = "SELECT TLID FROM TLPROFILES WHERE ROWNUM=1 ORDER BY TLID DESC"
+
+            v_dal.NewDBInstance(gc_MODULE_HOST)
+            v_dal.LogCommand = True
+
+            v_ds = v_dal.ExecuteSQLReturnDataset(v_bCmd)
+
+            If v_ds.Tables(0).Rows.Count = 1 Then
+                Return Convert.ToInt32(gf_CorrectNumericField(v_ds.Tables(0).Rows(0)("TLID")) + 1).ToString("D4")
+            End If
+
+        Catch ex As Exception
+            LogError.WriteException(ex)
+        End Try
+
+        Return String.Empty
     End Function
 
 End Class

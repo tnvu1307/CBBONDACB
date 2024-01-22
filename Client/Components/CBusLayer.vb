@@ -170,6 +170,57 @@ Public Class CBusLayer
         Return ticketResult
     End Function
 
+    Public Function LoginMicrosoft(mv_strTicket As String) As BusLayerResult
+        Dim newTellerProfile As HOAuthService.CTellerProfile
+
+        'LÆ°u thÃ´ng tin cá»§a NSD hiá»‡n thá»?i
+        CurrentTellerProfile.IPAddress = GetIPAddress()
+        CurrentTellerProfile.MacAddress = GetMACAddress()
+        Dim strSessionID As String = Nothing
+
+        Try
+            strSessionID = mv_strTicket
+            Dim v_ws As New AuthManagement
+            newTellerProfile = v_ws.GetTellerProfile(mv_strTicket)
+        Catch ex As Exception
+            Return HandleException(ex)
+        End Try
+
+        If newTellerProfile Is Nothing Then
+            Return BusLayerResult.AuthenticationFailure
+        End If
+
+        'LÆ°u láº¡i thÃ´ng tin NSD
+        CurrentTellerProfile.BranchId = newTellerProfile.BranchId
+        CurrentTellerProfile.BranchName = newTellerProfile.BranchName
+        CurrentTellerProfile.Description = newTellerProfile.Description
+        CurrentTellerProfile.TellerRight = newTellerProfile.TellerRight
+        CurrentTellerProfile.TellerGroup = newTellerProfile.TellerGroup
+        CurrentTellerProfile.TellerId = newTellerProfile.TellerId
+        CurrentTellerProfile.TellerLevel = newTellerProfile.TellerLevel
+        CurrentTellerProfile.TellerName = newTellerProfile.TellerName
+        CurrentTellerProfile.TellerFullName = newTellerProfile.TellerFullName
+        'CurrentTellerProfile.TellerExtTel = newTellerProfile._tellerExtTel
+        CurrentTellerProfile.TellerPrinterName = newTellerProfile.TellerPrinterName
+        CurrentTellerProfile.TellerTitle = newTellerProfile.TellerTitle
+        CurrentTellerProfile.BusDate = newTellerProfile.BusDate
+        CurrentTellerProfile.Interval = newTellerProfile.Interval
+        CurrentTellerProfile.TellerGroupCareBy = newTellerProfile.TellerGroupCareBy
+        CurrentTellerProfile.TimeSearch = newTellerProfile.TimeSearch
+        CurrentTellerProfile.LoginTime = newTellerProfile.LoginTime
+        CurrentTellerProfile.NextDate = newTellerProfile.NextDate
+        CurrentTellerProfile.CompanyName = newTellerProfile.CompanyName
+        CurrentTellerProfile.CompanyCode = newTellerProfile.CompanyCode
+        'locpt TFLEX.SA0002
+        'CurrentTellerProfile.SessionID = strSessionID
+        'log vao common
+        SessionID = strSessionID
+        'SessionExpired = False
+        GetLocalTime(st)
+
+        Return BusLayerResult.Success
+    End Function
+
     'Public Sub BusSystemMessage(ByRef pv_strObjMsg As String)
     '    'TruongLD Comment when convert
     '    'mv_wsAuth.Message(pv_strObjMsg)

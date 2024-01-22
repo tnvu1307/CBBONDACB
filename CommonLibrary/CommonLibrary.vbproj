@@ -138,6 +138,7 @@
     <Compile Include="ReportParameters.vb">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ResponseAuthenMicrosoft.vb" />
     <Compile Include="RSA.vb" />
     <Compile Include="StoreParameter.vb">
       <SubType>Code</SubType>
