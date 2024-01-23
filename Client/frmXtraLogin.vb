@@ -2,6 +2,8 @@
 Imports CommonLibrary
 Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
+Imports DevExpress.XtraReports.Native
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView
 
 Public Class frmXtraLogin
     Inherits DevExpress.XtraEditors.XtraForm
@@ -541,15 +543,15 @@ Public Class frmXtraLogin
             'If TLNAME is null => Show form fill info account
             If blResult = BusLayerResult.Success Then
                 If String.IsNullOrEmpty(m_BusLayer.CurrentTellerProfile.TellerName) = True Then
-                    Dim v_strFullObjName As String
-
                     Dim v_frm As Object
+                    Dim v_strFullObjName As String
                     Dim moduleCode = "SA"
                     Dim tableName = "TLPROFILES"
 
                     v_frm = frmSearchMaster.GetFormByName("frmTLPROFILES")
-                    v_strFullObjName = moduleCode & "." & tableName
 
+                    v_strFullObjName = moduleCode & "." & tableName
+                    v_frm.TableName = tableName
                     v_frm.ExeFlag = ExecuteFlag.Edit
                     v_frm.UserLanguage = m_BusLayer.AppLanguage
                     v_frm.ModuleCode = moduleCode
@@ -559,18 +561,17 @@ Public Class frmXtraLogin
                     v_frm.Text = "Thông tin tài khoản"
                     v_frm.TellerId = m_BusLayer.CurrentTellerProfile.TellerId
                     v_frm.TellerRight = "YYYY"
+                    v_frm.GroupCareBy = "0001|Careby_01#0006|NHom 1#"
                     v_frm.AuthString = "YYYYY"
                     v_frm.BranchId = m_BusLayer.CurrentTellerProfile.BranchId
                     v_frm.Busdate = m_BusLayer.CurrentTellerProfile.BusDate
                     v_frm.KeyFieldName = "TLID"
                     v_frm.KeyFieldType = "C"
-                    'v_frm.Tellername = m_BusLayer.CurrentTellerProfile.TellerName
                     v_frm.KeyFieldValue = m_BusLayer.CurrentTellerProfile.TellerId
 
                     Dim frmResult As DialogResult = v_frm.ShowDialog()
                 End If
 
-                'm_BusLayer.CurrentTellerProfile.AccessArea = Me.cboBusinessArea.Text
                 Me.DialogResult = DialogResult.OK
                 Me.Close()
 

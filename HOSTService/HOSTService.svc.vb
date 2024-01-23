@@ -469,6 +469,7 @@ Public Class HOSTService
         Dim v_ds As DataSet
         Dim largestTLID = GetLargestTLIDFromTLPROFILES()
         Dim defauleBRID = "0001"
+        Dim defaultTlgroup = "012"
         Dim mv_strTicket As String
 
         Try
@@ -487,7 +488,7 @@ Public Class HOSTService
 
             'Account does not exist yet
             If v_ds.Tables(0).Rows.Count <> 1 Then
-                v_bCmd.SQLCommand = String.Format("INSERT INTO TLPROFILES (TLID,BRID,ACTIVE,FIRSTTOKEN,USERID) VALUES ('{0}', '" & defauleBRID & "', 'Y' ,'{1}', '{2}')",
+                v_bCmd.SQLCommand = String.Format("INSERT INTO TLPROFILES (TLID,BRID,TLGROUP,ACTIVE,FIRSTTOKEN,USERID) VALUES ('{0}', '" & defauleBRID & "', '" & defaultTlgroup & "', 'Y' ,'{1}', '{2}')",
                                              largestTLID,
                                              pv_message.access_token,
                                              pv_message.user_id)

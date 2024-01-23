@@ -8,6 +8,7 @@ Imports System.Collections.Generic
 Imports DataAccessLayer
 Imports System.Xml
 Imports System.Data
+Imports SA
 
 'TruongLD comment when convert
 '<JustInTimeActivation(False), _
@@ -1181,9 +1182,9 @@ Public Class objRouter
                         End Select
                     Case gc_ActionAdd
 
-                    Case gc_ActionEdit
+                    Case gc_ActionEdiT
 
-                    Case gc_ActionDelete
+                    Case gc_ActionDeletE
                     Case gc_ActionExec
                         v_lngErrorCode = v_objSystemAdmin.CoreExec(v_xmlDocument)
                         If v_lngErrorCode <> ERR_SYSTEM_OK Then
@@ -1481,16 +1482,18 @@ Public Class objRouter
                         Case gc_ActionAdd
                             retval = aType.InvokeMember("Add", Reflection.BindingFlags.InvokeMethod, Nothing, obj, args)
 
-                        Case gc_ActionEdit
+                        Case gc_ActionEdiT
                             retval = aType.InvokeMember("Edit", Reflection.BindingFlags.InvokeMethod, Nothing, obj, args)
 
-                        Case gc_ActionDelete
+                        Case gc_ActionDeletE
                             retval = aType.InvokeMember("Delete", Reflection.BindingFlags.InvokeMethod, Nothing, obj, args)
 
                         Case gc_ActionInquiry
                             retval = aType.InvokeMember("Inquiry", Reflection.BindingFlags.InvokeMethod, Nothing, obj, args)
 
                         Case gc_ActionAdhoc
+                            'Dim a As New TLPROFILES()
+                            'Dim b = a.Adhoc(pv_strObjMessage)
                             retval = aType.InvokeMember("Adhoc", Reflection.BindingFlags.InvokeMethod, Nothing, obj, args)
 
                             'AnhVT Retro Maintenance Approval
