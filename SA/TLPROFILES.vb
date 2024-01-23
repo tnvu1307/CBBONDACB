@@ -642,11 +642,11 @@ Public Class TLPROFILES
             End If
 
             Dim v_strSQL As String
-            'Check before Edit
-            'Check to sure that the user to edit is not the current user
-            If Trim(v_strTellerId) = Trim(v_strTlid) Then
-                Return ERR_SA_TL_EDIT_CURRENT_USR
-            End If
+            ''Check before Edit
+            ''Check to sure that the user to edit is not the current user
+            'If Trim(v_strTellerId) = Trim(v_strTlid) Then
+            '    Return ERR_SA_TL_EDIT_CURRENT_USR
+            'End If
             'Do not allow edit if current teller is not in Head Office or 
             'the user that edited is not in current branch
             If v_strBrid <> v_strBranchId Then
@@ -667,7 +667,7 @@ Public Class TLPROFILES
             v_strSQL = "SELECT PIN FROM TLPROFILES WHERE TLID = '" & v_strTlid & "'"
             v_ds = v_obj.ExecuteSQLReturnDataset(CommandType.Text, v_strSQL)
             If v_ds.Tables(0).Rows.Count > 0 Then
-                v_strOldPIN = v_ds.Tables(0).Rows(0)("PIN")
+                v_strOldPIN = gf_CorrectStringField(v_ds.Tables(0).Rows(0)("PIN"))
             End If
 
             'Update data to database

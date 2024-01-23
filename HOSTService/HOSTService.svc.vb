@@ -469,7 +469,7 @@ Public Class HOSTService
         Dim v_ds As DataSet
         Dim largestTLID = GetLargestTLIDFromTLPROFILES()
         Dim defauleBRID = "0001"
-        Dim defaultTlgroup = "012"
+        Dim defaultTlgroup = "001" 'Phong Cong Nghe Thong Tin
         Dim mv_strTicket As String
 
         Try

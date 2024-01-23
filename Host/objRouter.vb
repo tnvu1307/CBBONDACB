@@ -1492,8 +1492,6 @@ Public Class objRouter
                             retval = aType.InvokeMember("Inquiry", Reflection.BindingFlags.InvokeMethod, Nothing, obj, args)
 
                         Case gc_ActionAdhoc
-                            'Dim a As New TLPROFILES()
-                            'Dim b = a.Adhoc(pv_strObjMessage)
                             retval = aType.InvokeMember("Adhoc", Reflection.BindingFlags.InvokeMethod, Nothing, obj, args)
 
                             'AnhVT Retro Maintenance Approval
