@@ -266,7 +266,7 @@ Public Class OracleHelper
         Dim cn As New OracleConnection(ConnectionString)
 
         Try
-            cn.Open()
+            'cn.Open()
 
             Return ExecuteDataset(cn, CommandType, CommandText, CommandParameters)
         Catch ex As Exception
@@ -414,7 +414,7 @@ Public Class OracleHelper
         Dim cn As New OracleConnection(ConnectionString)
 
         Try
-            cn.Open()
+            'cn.Open()
 
             Return ExecuteReader(cn, CommandType, CommandText, CommandParameters, OracleConnectionOwnership.Internal)
         Catch ex As Exception
