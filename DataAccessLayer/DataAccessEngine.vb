@@ -4,7 +4,6 @@ Imports Oracle.ManagedDataAccess.Types
 Imports System.Configuration
 Imports HostCommonLibrary
 Imports System.IO
-Imports System.Drawing
 
 'TruongLD comment when convert
 'Imports System.EnterpriseServices
