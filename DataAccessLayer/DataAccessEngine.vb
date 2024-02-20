@@ -356,6 +356,11 @@ Public Class DataAccess
                 scmd.Parameters.Add(p)
             Next p
             Conn.Open()
+
+            Dim sessionGlobalization As OracleGlobalization = Conn.GetSessionInfo()
+            sessionGlobalization.DateFormat = gc_FORMAT_DATE_Db
+            Conn.SetSessionInfo(sessionGlobalization)
+
             'TruongLD Add 14/04/2010
             TraceSQLCmd(pv_strStoredName, mv_strModule)
             scmd.ExecuteNonQuery()
