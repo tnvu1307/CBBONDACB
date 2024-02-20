@@ -356,6 +356,11 @@ Public Class DataAccess
                 scmd.Parameters.Add(p)
             Next p
             Conn.Open()
+
+            Dim sessionGlobalization As OracleGlobalization = Conn.GetSessionInfo()
+            sessionGlobalization.DateFormat = gc_FORMAT_DATE_Db
+            Conn.SetSessionInfo(sessionGlobalization)
+
             'TruongLD Add 14/04/2010
             TraceSQLCmd(pv_strStoredName, mv_strModule)
             scmd.ExecuteNonQuery()
@@ -538,6 +543,11 @@ Public Class DataAccess
                 scmd.Parameters.Add(p)
             Next p
             Conn.Open()
+
+            Dim sessionGlobalization As OracleGlobalization = Conn.GetSessionInfo()
+            sessionGlobalization.DateFormat = gc_FORMAT_DATE_Db
+            Conn.SetSessionInfo(sessionGlobalization)
+
             scmd.ExecuteNonQuery()
             Conn.Close()
             Return scmd.Parameters(pv_intOutIndex).Value.ToString
@@ -761,6 +771,11 @@ Public Class DataAccess
     Public Sub UpdateBlobData(ByVal dicParamBlob As Dictionary(Of String, String), ByVal AutoId As String, ByVal objTableName As String)
         Dim Conn As New OracleConnection(ConnectionString)
         Conn.Open()
+
+        Dim sessionGlobalization As OracleGlobalization = Conn.GetSessionInfo()
+        sessionGlobalization.DateFormat = gc_FORMAT_DATE_Db
+        Conn.SetSessionInfo(sessionGlobalization)
+
         Try
             Dim objTableArr As String() = objTableName.Split(".")
             Dim tableName As String = IIf(objTableArr.Length = 2, objTableArr(1), objTableArr(0))
@@ -805,6 +820,11 @@ Public Class DataAccess
     Public Function UpdateBlobData(ByVal data As Byte(), ByVal fieldname As String, ByVal pk_fieldname As String, ByVal pk_value As String, ByVal tableName As String) As Long
         Dim Conn As New OracleConnection(ConnectionString)
         Conn.Open()
+
+        Dim sessionGlobalization As OracleGlobalization = Conn.GetSessionInfo()
+        sessionGlobalization.DateFormat = gc_FORMAT_DATE_Db
+        Conn.SetSessionInfo(sessionGlobalization)
+
         Try
             Dim cmd As OracleCommand = New OracleCommand()
             cmd.Connection = Conn
@@ -840,6 +860,11 @@ Public Class DataAccess
     Public Function DownloadFileFromBlob(ByVal pv_FieldName As String, ByVal pv_pkFieldName As String, ByVal pv_pkValue As String, ByVal pv_TableName As String) As System.Byte()
         Dim Conn As New OracleConnection(ConnectionString)
         Conn.Open()
+
+        Dim sessionGlobalization As OracleGlobalization = Conn.GetSessionInfo()
+        sessionGlobalization.DateFormat = gc_FORMAT_DATE_Db
+        Conn.SetSessionInfo(sessionGlobalization)
+
         Try
             Dim cmd As OracleCommand = New OracleCommand()
             cmd.Connection = Conn

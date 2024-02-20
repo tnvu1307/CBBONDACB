@@ -107,6 +107,11 @@ Public Class OracleHelper
         'Mở kết nối đến CSDL
         If Connection.State <> ConnectionState.Open Then
             Connection.Open()
+
+            Dim sessionGlobalization As OracleGlobalization = Connection.GetSessionInfo()
+            sessionGlobalization.DateFormat = gc_FORMAT_DATE_Db
+            Connection.SetSessionInfo(sessionGlobalization)
+
         End If
 
         'Gán connection cho command
@@ -261,7 +266,7 @@ Public Class OracleHelper
         Dim cn As New OracleConnection(ConnectionString)
 
         Try
-            cn.Open()
+            'cn.Open()
 
             Return ExecuteDataset(cn, CommandType, CommandText, CommandParameters)
         Catch ex As Exception
@@ -409,7 +414,7 @@ Public Class OracleHelper
         Dim cn As New OracleConnection(ConnectionString)
 
         Try
-            cn.Open()
+            'cn.Open()
 
             Return ExecuteReader(cn, CommandType, CommandText, CommandParameters, OracleConnectionOwnership.Internal)
         Catch ex As Exception
