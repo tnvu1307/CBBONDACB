@@ -186,10 +186,8 @@ Public Class CBusLayer
         'Lay thong tin account tu ticket
         Dim newTellerProfile As HOAuthService.CTellerProfile
 
-        'LÆ°u thÃ´ng tin cá»§a NSD hiá»‡n thá»?i
         CurrentTellerProfile.IPAddress = GetIPAddress()
         CurrentTellerProfile.MacAddress = GetMACAddress()
-        Dim strSessionID As String = Nothing
 
         Try
             mv_strTicket = v_jsonMsg
@@ -211,8 +209,6 @@ Public Class CBusLayer
         CurrentTellerProfile.TellerId = newTellerProfile.TellerId
         CurrentTellerProfile.TellerLevel = newTellerProfile.TellerLevel
         CurrentTellerProfile.TellerName = newTellerProfile.TellerName
-        CurrentTellerProfile.TellerFullName = newTellerProfile.TellerFullName
-        'CurrentTellerProfile.TellerExtTel = newTellerProfile._tellerExtTel
         CurrentTellerProfile.TellerPrinterName = newTellerProfile.TellerPrinterName
         CurrentTellerProfile.TellerTitle = newTellerProfile.TellerTitle
         CurrentTellerProfile.BusDate = newTellerProfile.BusDate
@@ -223,11 +219,6 @@ Public Class CBusLayer
         CurrentTellerProfile.NextDate = newTellerProfile.NextDate
         CurrentTellerProfile.CompanyName = newTellerProfile.CompanyName
         CurrentTellerProfile.CompanyCode = newTellerProfile.CompanyCode
-        'locpt TFLEX.SA0002
-        'CurrentTellerProfile.SessionID = strSessionID
-        'log vao common
-        SessionID = strSessionID
-        'SessionExpired = False
         GetLocalTime(st)
 
         Return BusLayerResult.Success

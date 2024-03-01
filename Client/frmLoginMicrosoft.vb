@@ -53,7 +53,9 @@ Public Class frmLoginMicrosoft
         If (wbLoginMicrosoft.Url.AbsoluteUri.StartsWith(_redirectUri)) Then
             Dim authorizeCode = GetParamValue(wbLoginMicrosoft.Url, "code")
 
+            'Call API Microsoft
             _authenMicrosoft = GetResponseAuthen(authorizeCode)
+            _infoAccMicrosoft = GetInfoAccMicrosoft(_authenMicrosoft.access_token)
 
             Me.DialogResult = DialogResult.OK
             Me.Close()
@@ -125,5 +127,30 @@ Public Class frmLoginMicrosoft
         End Using
 
         Return New ResponseAuthenMicrosoft()
+    End Function
+
+    Public Function GetInfoAccMicrosoft(access_token As String) As InfoAccMicrosoft
+        Using client As New HttpClient()
+            Try
+                'accept "ssl" protocol for your request.
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
+
+                'Set Header
+                client.DefaultRequestHeaders.Clear()
+                client.DefaultRequestHeaders.Authorization = New AuthenticationHeaderValue("Bearer", access_token)
+
+                Dim response = client.GetAsync(_urlGetInfoAcc).Result
+
+                If response.IsSuccessStatusCode Then
+                    Return JsonConvert.DeserializeObject(Of InfoAccMicrosoft)(response.Content.ReadAsStringAsync().Result)
+                End If
+            Catch ex As Exception
+                LogError.Write("Error source: " & ex.Source & vbNewLine _
+                & "Error code: System error!" & vbNewLine _
+                & "Error message: " & ex.Message, EventLogEntryType.Error)
+            End Try
+        End Using
+
+        Return New InfoAccMicrosoft()
     End Function
 End Class
