@@ -62,11 +62,11 @@ Namespace HOSTService
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHOSTService/GetFlagSignature", ReplyAction:="http://tempuri.org/IHOSTService/GetFlagSignatureResponse")>  _
         Function GetFlagSignatureAsync(ByVal request As HOSTService.GetFlagSignatureRequest) As System.Threading.Tasks.Task(Of HOSTService.GetFlagSignatureResponse)
         
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHOSTService/InsertOrUpdateAccMicrosoft", ReplyAction:="http://tempuri.org/IHOSTService/InsertOrUpdateAccMicrosoftResponse")>  _
-        Function InsertOrUpdateAccMicrosoft(ByVal request As HOSTService.InsertOrUpdateAccMicrosoftRequest) As HOSTService.InsertOrUpdateAccMicrosoftResponse
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHOSTService/GetTicketAccount", ReplyAction:="http://tempuri.org/IHOSTService/GetTicketAccountResponse")>  _
+        Function GetTicketAccount(ByVal request As HOSTService.GetTicketAccountRequest) As HOSTService.GetTicketAccountResponse
         
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHOSTService/InsertOrUpdateAccMicrosoft", ReplyAction:="http://tempuri.org/IHOSTService/InsertOrUpdateAccMicrosoftResponse")>  _
-        Function InsertOrUpdateAccMicrosoftAsync(ByVal request As HOSTService.InsertOrUpdateAccMicrosoftRequest) As System.Threading.Tasks.Task(Of HOSTService.InsertOrUpdateAccMicrosoftResponse)
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHOSTService/GetTicketAccount", ReplyAction:="http://tempuri.org/IHOSTService/GetTicketAccountResponse")>  _
+        Function GetTicketAccountAsync(ByVal request As HOSTService.GetTicketAccountRequest) As System.Threading.Tasks.Task(Of HOSTService.GetTicketAccountResponse)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHOSTService/GetInfoAuthorMicrosoft", ReplyAction:="http://tempuri.org/IHOSTService/GetInfoAuthorMicrosoftResponse")>  _
         Function GetInfoAuthorMicrosoft(ByVal request As HOSTService.GetInfoAuthorMicrosoftRequest) As HOSTService.GetInfoAuthorMicrosoftResponse
@@ -317,8 +317,8 @@ Namespace HOSTService
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
-     System.ServiceModel.MessageContractAttribute(WrapperName:="InsertOrUpdateAccMicrosoft", WrapperNamespace:="http://tempuri.org/", IsWrapped:=true)>  _
-    Partial Public Class InsertOrUpdateAccMicrosoftRequest
+     System.ServiceModel.MessageContractAttribute(WrapperName:="GetTicketAccount", WrapperNamespace:="http://tempuri.org/", IsWrapped:=true)>  _
+    Partial Public Class GetTicketAccountRequest
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=0)>  _
         Public pv_arrByteMessage() As Byte
@@ -335,11 +335,11 @@ Namespace HOSTService
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
-     System.ServiceModel.MessageContractAttribute(WrapperName:="InsertOrUpdateAccMicrosoftResponse", WrapperNamespace:="http://tempuri.org/", IsWrapped:=true)>  _
-    Partial Public Class InsertOrUpdateAccMicrosoftResponse
+     System.ServiceModel.MessageContractAttribute(WrapperName:="GetTicketAccountResponse", WrapperNamespace:="http://tempuri.org/", IsWrapped:=true)>  _
+    Partial Public Class GetTicketAccountResponse
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=0)>  _
-        Public InsertOrUpdateAccMicrosoftResult As Long
+        Public GetTicketAccountResult As Long
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=1)>  _
         Public pv_arrByteMessage() As Byte
@@ -348,9 +348,9 @@ Namespace HOSTService
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal InsertOrUpdateAccMicrosoftResult As Long, ByVal pv_arrByteMessage() As Byte)
+        Public Sub New(ByVal GetTicketAccountResult As Long, ByVal pv_arrByteMessage() As Byte)
             MyBase.New
-            Me.InsertOrUpdateAccMicrosoftResult = InsertOrUpdateAccMicrosoftResult
+            Me.GetTicketAccountResult = GetTicketAccountResult
             Me.pv_arrByteMessage = pv_arrByteMessage
         End Sub
     End Class
@@ -482,12 +482,12 @@ Namespace HOSTService
             Return MyBase.Channel.GetFlagSignatureAsync(request)
         End Function
         
-        Public Function InsertOrUpdateAccMicrosoft(ByVal request As HOSTService.InsertOrUpdateAccMicrosoftRequest) As HOSTService.InsertOrUpdateAccMicrosoftResponse Implements HOSTService.IHOSTService.InsertOrUpdateAccMicrosoft
-            Return MyBase.Channel.InsertOrUpdateAccMicrosoft(request)
+        Public Function GetTicketAccount(ByVal request As HOSTService.GetTicketAccountRequest) As HOSTService.GetTicketAccountResponse Implements HOSTService.IHOSTService.GetTicketAccount
+            Return MyBase.Channel.GetTicketAccount(request)
         End Function
         
-        Public Function InsertOrUpdateAccMicrosoftAsync(ByVal request As HOSTService.InsertOrUpdateAccMicrosoftRequest) As System.Threading.Tasks.Task(Of HOSTService.InsertOrUpdateAccMicrosoftResponse) Implements HOSTService.IHOSTService.InsertOrUpdateAccMicrosoftAsync
-            Return MyBase.Channel.InsertOrUpdateAccMicrosoftAsync(request)
+        Public Function GetTicketAccountAsync(ByVal request As HOSTService.GetTicketAccountRequest) As System.Threading.Tasks.Task(Of HOSTService.GetTicketAccountResponse) Implements HOSTService.IHOSTService.GetTicketAccountAsync
+            Return MyBase.Channel.GetTicketAccountAsync(request)
         End Function
         
         Public Function GetInfoAuthorMicrosoft(ByVal request As HOSTService.GetInfoAuthorMicrosoftRequest) As HOSTService.GetInfoAuthorMicrosoftResponse Implements HOSTService.IHOSTService.GetInfoAuthorMicrosoft

@@ -498,7 +498,7 @@ Public Class frmXtraLogin
         Dim v_ws As New BDSDeliveryManagement
         Dim v_jsonMsg As String
 
-        ''1. Call HOSTService to get info authorization Microsoft
+        ''1. Call HOSTService to get info for authorization Microsoft
         v_strObjMsg = BuildXMLObjMsg()
         v_lngErr = v_ws.GetInfoAuthorMicrosoft(v_strObjMsg)
 
@@ -511,9 +511,10 @@ Public Class frmXtraLogin
 
         Dim jsonRes = JToken.Parse(v_strObjMsg)
 
-        ''2. Call API Microsoft to get access_token and user_id
+        ''2. Call API Microsoft to get AuthenMicrosoft + InfoAccMicrosoft
         Dim frmLoginMicrosoft As New frmLoginMicrosoft(jsonRes("urlAuthorizeCode").ToString(),
                                                        jsonRes("urlAccessToken").ToString(),
+                                                       jsonRes("urlGetInfoAcc").ToString(),
                                                        jsonRes("redirectUri").ToString(),
                                                        jsonRes("clientId").ToString(),
                                                        jsonRes("clientSecret").ToString(),
@@ -521,23 +522,14 @@ Public Class frmXtraLogin
         Dim frmLoginMicrosoftResult As DialogResult = frmLoginMicrosoft.ShowDialog(Me)
 
         If (frmLoginMicrosoftResult = DialogResult.OK) Then
-            'Get access_token and user_id successful
-            Dim authenMicrosoft = frmLoginMicrosoft.AuthenMicrosoft
+            Dim mergedObject As New JObject
+            mergedObject.Merge(JObject.FromObject(frmLoginMicrosoft.AuthenMicrosoft))
+            mergedObject.Merge(JObject.FromObject(frmLoginMicrosoft.InfoAccMicrosoft))
 
-            ''3. Insert new account or Update accessToken account Microsoft
-            v_jsonMsg = JsonConvert.SerializeObject(authenMicrosoft)
-            v_lngErr = v_ws.InsertOrUpdateAccMicrosoft(v_jsonMsg)
+            v_jsonMsg = mergedObject.ToString()
 
-            If v_lngErr <> ERR_SYSTEM_OK Then
-                GetErrorFromMessage(v_strObjMsg, v_strErrorSource, v_lngErr, v_strErrorMessage, m_BusLayer.AppLanguage)
-                Cursor.Current = Cursors.Default
-                MsgBox(v_strErrorMessage, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, Me.Text)
-
-                Me.Close()
-            End If
-
-            ''4. Get info acc Microsoft + Show frmTLPROFILES (edit) if TLNAME account Microsoft is null"
-            'Get info acc Microsoft
+            ''3. Get info acc in system + Show frmTLPROFILES (edit) if TLNAME account Microsoft is null"
+            'Get info acc in system
             Dim blResult As BusLayerResult = m_BusLayer.LoginMicrosoft(v_jsonMsg)
 
             'If TLNAME is null => Show form fill info account
@@ -576,8 +568,8 @@ Public Class frmXtraLogin
                 Me.Close()
 
             ElseIf blResult = BusLayerResult.AuthenticationFailure Then
-                MsgBox(m_ResourceManager.GetString(gc_SYSERR_INCORRECT_USR_OR_PWD) & " " & m_ResourceManager.GetString(gc_SYSERR_RE_TYPE),
-                   MsgBoxStyle.Information + MsgBoxStyle.OkOnly, gc_ApplicationTitle)
+                MsgBox(m_ResourceManager.GetString("MICROSOFT_ACCOUNT_DOES_NOT_EXIST_IN_THE_SYSTEM"),
+                   MsgBoxStyle.Information, gc_ApplicationTitle)
             End If
         End If
     End Sub

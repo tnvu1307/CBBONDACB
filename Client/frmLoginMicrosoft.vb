@@ -7,9 +7,11 @@ Imports System.Web
 
 Public Class frmLoginMicrosoft
     Private _authenMicrosoft As ResponseAuthenMicrosoft
+    Private _infoAccMicrosoft As InfoAccMicrosoft
 
     Private _urlAuthorizeCode As String
     Private _urlAccessToken As String
+    Private _urlGetInfoAcc As String
     Private _redirectUri As String
     Private _clientId As String
     Private _clientSecret As String
@@ -21,11 +23,12 @@ Public Class frmLoginMicrosoft
         InitializeComponent()
     End Sub
 
-    Public Sub New(urlAuthorizeCode As String, urlAccessToken As String, redirectUri As String, clientId As String, clientSecret As String, scope As String)
+    Public Sub New(urlAuthorizeCode As String, urlAccessToken As String, urlGetInfoAcc As String, redirectUri As String, clientId As String, clientSecret As String, scope As String)
         MyBase.New()
 
         _urlAuthorizeCode = urlAuthorizeCode
         _urlAccessToken = urlAccessToken
+        _urlGetInfoAcc = urlGetInfoAcc
         _redirectUri = redirectUri
         _clientId = clientId
         _clientSecret = clientSecret
@@ -37,6 +40,12 @@ Public Class frmLoginMicrosoft
     Public ReadOnly Property AuthenMicrosoft() As ResponseAuthenMicrosoft
         Get
             Return _authenMicrosoft
+        End Get
+    End Property
+
+    Public ReadOnly Property InfoAccMicrosoft() As InfoAccMicrosoft
+        Get
+            Return _infoAccMicrosoft
         End Get
     End Property
 
