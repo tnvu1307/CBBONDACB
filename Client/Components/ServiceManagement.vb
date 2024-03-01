@@ -163,6 +163,35 @@ Public Class BDSDeliveryManagement
             ws.Close()
         End Try
     End Function
+    Public Function GetSecondsLimitAFK(ByRef pv_strMessage As String) As Long
+        Dim lngError As Long = ERR_SYSTEM_OK
+        Dim ws As New HOSTService.HOSTServiceClient
+        Try
+            'Compress
+            Dim pv_arrByteMessage() As Byte
+            pv_strMessage = TripleDesEncryptData(pv_strMessage)
+            pv_arrByteMessage = ZetaCompressionLibrary.CompressionHelper.CompressString(pv_strMessage)
+
+            'Send to host
+            Dim request As HOSTService.GetSecondsLimitAFKRequest = New HOSTService.GetSecondsLimitAFKRequest
+            request.pv_arrByteMessage = pv_arrByteMessage
+
+            Dim response As HOSTService.GetSecondsLimitAFKResponse = ws.GetSecondsLimitAFK(request)
+            pv_arrByteMessage = response.pv_arrByteMessage
+            lngError = response.GetSecondsLimitAFKResult
+
+            'Decompress
+            pv_strMessage = ZetaCompressionLibrary.CompressionHelper.DecompressString(pv_arrByteMessage)
+            pv_strMessage = TripleDesDecryptData(pv_strMessage)
+
+            Return lngError
+        Catch ex As Exception
+            ws.Abort()
+            Throw ex
+        Finally
+            ws.Close()
+        End Try
+    End Function
 
 End Class
 

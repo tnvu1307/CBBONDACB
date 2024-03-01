@@ -126,4 +126,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetSecondsLimitAFK">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pv_arrByteMessage" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSecondsLimitAFKResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSecondsLimitAFKResult" type="xs:long" />
+        <xs:element minOccurs="0" name="pv_arrByteMessage" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

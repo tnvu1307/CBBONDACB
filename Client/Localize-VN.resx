@@ -338,4 +338,7 @@ Nhấn OK tiếp tục.</value>
   <data name="tabcloseright" xml:space="preserve">
     <value>Đóng tab phía bên phải</value>
   </data>
+  <data name="LIMIT_SECONDS_AFK" xml:space="preserve">
+    <value>Phiên làm việc hiện tại đã kết thúc, vui lòng đăng nhập lại !</value>
+  </data>
 </root>

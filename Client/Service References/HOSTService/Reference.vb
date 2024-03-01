@@ -73,6 +73,12 @@ Namespace HOSTService
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHOSTService/GetInfoAuthorMicrosoft", ReplyAction:="http://tempuri.org/IHOSTService/GetInfoAuthorMicrosoftResponse")>  _
         Function GetInfoAuthorMicrosoftAsync(ByVal request As HOSTService.GetInfoAuthorMicrosoftRequest) As System.Threading.Tasks.Task(Of HOSTService.GetInfoAuthorMicrosoftResponse)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHOSTService/GetSecondsLimitAFK", ReplyAction:="http://tempuri.org/IHOSTService/GetSecondsLimitAFKResponse")>  _
+        Function GetSecondsLimitAFK(ByVal request As HOSTService.GetSecondsLimitAFKRequest) As HOSTService.GetSecondsLimitAFKResponse
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHOSTService/GetSecondsLimitAFK", ReplyAction:="http://tempuri.org/IHOSTService/GetSecondsLimitAFKResponse")>  _
+        Function GetSecondsLimitAFKAsync(ByVal request As HOSTService.GetSecondsLimitAFKRequest) As System.Threading.Tasks.Task(Of HOSTService.GetSecondsLimitAFKResponse)
     End Interface
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
@@ -395,6 +401,46 @@ Namespace HOSTService
         End Sub
     End Class
     
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(WrapperName:="GetSecondsLimitAFK", WrapperNamespace:="http://tempuri.org/", IsWrapped:=true)>  _
+    Partial Public Class GetSecondsLimitAFKRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public pv_arrByteMessage() As Byte
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal pv_arrByteMessage() As Byte)
+            MyBase.New
+            Me.pv_arrByteMessage = pv_arrByteMessage
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(WrapperName:="GetSecondsLimitAFKResponse", WrapperNamespace:="http://tempuri.org/", IsWrapped:=true)>  _
+    Partial Public Class GetSecondsLimitAFKResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public GetSecondsLimitAFKResult As Long
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=1)>  _
+        Public pv_arrByteMessage() As Byte
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal GetSecondsLimitAFKResult As Long, ByVal pv_arrByteMessage() As Byte)
+            MyBase.New
+            Me.GetSecondsLimitAFKResult = GetSecondsLimitAFKResult
+            Me.pv_arrByteMessage = pv_arrByteMessage
+        End Sub
+    End Class
+    
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
     Public Interface IHOSTServiceChannel
         Inherits HOSTService.IHOSTService, System.ServiceModel.IClientChannel
@@ -496,6 +542,14 @@ Namespace HOSTService
         
         Public Function GetInfoAuthorMicrosoftAsync(ByVal request As HOSTService.GetInfoAuthorMicrosoftRequest) As System.Threading.Tasks.Task(Of HOSTService.GetInfoAuthorMicrosoftResponse) Implements HOSTService.IHOSTService.GetInfoAuthorMicrosoftAsync
             Return MyBase.Channel.GetInfoAuthorMicrosoftAsync(request)
+        End Function
+        
+        Public Function GetSecondsLimitAFK(ByVal request As HOSTService.GetSecondsLimitAFKRequest) As HOSTService.GetSecondsLimitAFKResponse Implements HOSTService.IHOSTService.GetSecondsLimitAFK
+            Return MyBase.Channel.GetSecondsLimitAFK(request)
+        End Function
+        
+        Public Function GetSecondsLimitAFKAsync(ByVal request As HOSTService.GetSecondsLimitAFKRequest) As System.Threading.Tasks.Task(Of HOSTService.GetSecondsLimitAFKResponse) Implements HOSTService.IHOSTService.GetSecondsLimitAFKAsync
+            Return MyBase.Channel.GetSecondsLimitAFKAsync(request)
         End Function
     End Class
 End Namespace

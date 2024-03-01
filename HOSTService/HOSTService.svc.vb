@@ -546,4 +546,24 @@ Public Class HOSTService
         Return String.Empty
     End Function
 
+    Public Function GetSecondsLimitAFK(ByRef pv_arrByteMessage As Byte()) As Long Implements IHOSTService.GetSecondsLimitAFK
+        Try
+            Dim pv_strMessage As String
+
+            ''Decompress
+            pv_strMessage = ZetaCompressionLibrary.CompressionHelper.DecompressString(pv_arrByteMessage)
+            pv_strMessage = TripleDesDecryptData(pv_strMessage)
+
+            pv_strMessage = ConfigurationManager.AppSettings("SecondsLimitAFK")
+
+            ''Compress message
+            pv_strMessage = TripleDesEncryptData(pv_strMessage)
+            pv_arrByteMessage = ZetaCompressionLibrary.CompressionHelper.CompressString(pv_strMessage)
+        Catch ex As Exception
+            LogError.WriteException(ex)
+            Return modCommond.ERR_SYSTEM_START
+        End Try
+
+        Return ERR_SYSTEM_OK
+    End Function
 End Class
