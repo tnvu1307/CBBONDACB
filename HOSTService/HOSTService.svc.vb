@@ -441,6 +441,7 @@ Public Class HOSTService
             Dim info As New Dictionary(Of String, String)
             info.Add("urlAuthorizeCode", ConfigurationManager.AppSettings("URLAuthorCodeMicrosoft"))
             info.Add("urlAccessToken", ConfigurationManager.AppSettings("URLAccessTokenMicrosoft"))
+            info.Add("urlGetInfoAcc", ConfigurationManager.AppSettings("URLGetInfoAccMicrosoft"))
             info.Add("redirectUri", ConfigurationManager.AppSettings("RedirectUriMicrosoft"))
             info.Add("clientId", ConfigurationManager.AppSettings("ClientIdMicrosoft"))
             info.Add("clientSecret", ConfigurationManager.AppSettings("ClientSecretMicrosoft"))
@@ -463,50 +464,40 @@ Public Class HOSTService
 
     Public Function GetTicketAccount(ByRef pv_arrByteMessage As Byte()) As Long Implements IHOSTService.GetTicketAccount
         Dim pv_strMessage As String
-        Dim pv_message As ResponseAuthenMicrosoft
+        Dim infoAccMicrosoft As InfoAccMicrosoft
+        Dim authenMicrosoft As ResponseAuthenMicrosoft
         Dim v_bCmd As New BusinessCommand
         Dim v_dal As New DataAccess
         Dim v_ds As DataSet
-        Dim largestTLID = GetLargestTLIDFromTLPROFILES()
-        Dim defauleBRID = "0001"
-        Dim defaultTlgroup = "001" 'Phong Cong Nghe Thong Tin
-        Dim mv_strTicket As String
+        Dim mv_strTicket = String.Empty
 
         Try
             'Decompress
             pv_strMessage = ZetaCompressionLibrary.CompressionHelper.DecompressString(pv_arrByteMessage)
             pv_strMessage = TripleDesDecryptData(pv_strMessage)
 
-            pv_message = JsonConvert.DeserializeObject(Of ResponseAuthenMicrosoft)(pv_strMessage)
+            authenMicrosoft = JsonConvert.DeserializeObject(Of ResponseAuthenMicrosoft)(pv_strMessage)
+            infoAccMicrosoft = JsonConvert.DeserializeObject(Of InfoAccMicrosoft)(pv_strMessage)
 
             v_dal.NewDBInstance(gc_MODULE_HOST)
             v_dal.LogCommand = True
 
             ''Get info account Microsoft
-            v_bCmd.SQLCommand = String.Format("SELECT * FROM TLPROFILES WHERE USERID = '{0}'", pv_message.user_id)
+            v_bCmd.SQLCommand = String.Format("SELECT * FROM TLPROFILES WHERE EMAIL = '{0}'", infoAccMicrosoft.userPrincipalName)
             v_ds = v_dal.ExecuteSQLReturnDataset(v_bCmd)
 
-            'Account does not exist yet
-            If v_ds.Tables(0).Rows.Count <> 1 Then
-                v_bCmd.SQLCommand = String.Format("INSERT INTO TLPROFILES (TLID,BRID,TLGROUP,ACTIVE,FIRSTTOKEN,USERID) VALUES ('{0}', '" & defauleBRID & "', '" & defaultTlgroup & "', 'Y' ,'{1}', '{2}')",
-                                             largestTLID,
-                                             pv_message.access_token,
-                                             pv_message.user_id)
-
-                v_dal.ExecuteSQLReturnDataset(v_bCmd)
-
-                mv_strTicket = Util.EncryptString(defauleBRID & "|" & largestTLID & "|")
-            Else
-
+            If v_ds.Tables(0).Rows.Count = 1 Then
                 Dim tlid = gf_CorrectStringField(v_ds.Tables(0).Rows(0)("TLID"))
                 Dim brid = gf_CorrectStringField(v_ds.Tables(0).Rows(0)("BRID"))
 
                 v_bCmd.SQLCommand = String.Format("UPDATE TLPROFILES SET ACCESSTOKEN = '{0}' WHERE USERID = '{1}'",
-                                              pv_message.access_token,
-                                              pv_message.user_id)
+                                              authenMicrosoft.access_token,
+                                              authenMicrosoft.user_id)
 
                 v_dal.ExecuteSQLReturnDataset(v_bCmd)
                 mv_strTicket = Util.EncryptString(brid & "|" & tlid & "|")
+            Else
+                Return Nothing
             End If
 
             ''Return ticket
@@ -515,7 +506,7 @@ Public Class HOSTService
             pv_arrByteMessage = ZetaCompressionLibrary.CompressionHelper.CompressString(mv_strTicket)
         Catch ex As Exception
             LogError.WriteException(ex)
-            Return modCommond.ERR_SYSTEM_START
+            Return Nothing
         End Try
 
         Return ERR_SYSTEM_OK
