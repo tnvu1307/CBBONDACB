@@ -67,6 +67,10 @@ Public Class BDSDeliveryManagement
 
 
     Public Function Message(ByRef pv_strMessage As String) As Long
+        'Lam moi lai thoi gian con lai co the connect voi HOST
+        frmMDIMain.remainingConnectionTimeToHost = frmMDIMain.secondsLimitAFK
+
+        'Call HOST
         Dim lngError As Long = ERR_SYSTEM_OK
         Dim ws As New HOSTService.HOSTServiceClient
         Try
