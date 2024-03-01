@@ -56,11 +56,11 @@
   <wsdl:message name="IHOSTService_GetFlagSignature_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetFlagSignatureResponse" />
   </wsdl:message>
-  <wsdl:message name="IHOSTService_GetTicketAccount_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetTicketAccount" />
+  <wsdl:message name="IHOSTService_InsertOrUpdateAccMicrosoft_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateAccMicrosoft" />
   </wsdl:message>
-  <wsdl:message name="IHOSTService_GetTicketAccount_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetTicketAccountResponse" />
+  <wsdl:message name="IHOSTService_InsertOrUpdateAccMicrosoft_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateAccMicrosoftResponse" />
   </wsdl:message>
   <wsdl:message name="IHOSTService_GetInfoAuthorMicrosoft_InputMessage">
     <wsdl:part name="parameters" element="tns:GetInfoAuthorMicrosoft" />
@@ -97,9 +97,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IHOSTService/GetFlagSignature" message="tns:IHOSTService_GetFlagSignature_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHOSTService/GetFlagSignatureResponse" message="tns:IHOSTService_GetFlagSignature_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetTicketAccount">
-      <wsdl:input wsaw:Action="http://tempuri.org/IHOSTService/GetTicketAccount" message="tns:IHOSTService_GetTicketAccount_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IHOSTService/GetTicketAccountResponse" message="tns:IHOSTService_GetTicketAccount_OutputMessage" />
+    <wsdl:operation name="InsertOrUpdateAccMicrosoft">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHOSTService/InsertOrUpdateAccMicrosoft" message="tns:IHOSTService_InsertOrUpdateAccMicrosoft_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHOSTService/InsertOrUpdateAccMicrosoftResponse" message="tns:IHOSTService_InsertOrUpdateAccMicrosoft_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetInfoAuthorMicrosoft">
       <wsdl:input wsaw:Action="http://tempuri.org/IHOSTService/GetInfoAuthorMicrosoft" message="tns:IHOSTService_GetInfoAuthorMicrosoft_InputMessage" />
@@ -172,8 +172,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetTicketAccount">
-      <soap12:operation soapAction="http://tempuri.org/IHOSTService/GetTicketAccount" style="document" />
+    <wsdl:operation name="InsertOrUpdateAccMicrosoft">
+      <soap12:operation soapAction="http://tempuri.org/IHOSTService/InsertOrUpdateAccMicrosoft" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

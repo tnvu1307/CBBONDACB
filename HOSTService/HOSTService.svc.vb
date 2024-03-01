@@ -461,7 +461,7 @@ Public Class HOSTService
         Return ERR_SYSTEM_OK
     End Function
 
-    Public Function GetTicketAccount(ByRef pv_arrByteMessage As Byte()) As Long Implements IHOSTService.GetTicketAccount
+    Public Function InsertOrUpdateAccMicrosoft(ByRef pv_arrByteMessage As Byte()) As Long Implements IHOSTService.InsertOrUpdateAccMicrosoft
         Dim pv_strMessage As String
         Dim pv_message As ResponseAuthenMicrosoft
         Dim v_bCmd As New BusinessCommand

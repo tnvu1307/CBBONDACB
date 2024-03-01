@@ -170,20 +170,7 @@ Public Class CBusLayer
         Return ticketResult
     End Function
 
-    Public Function LoginMicrosoft(v_jsonMsg As String) As BusLayerResult
-        Dim v_ws_BDS As New BDSDeliveryManagement
-        Dim v_ws_Auth As New AuthManagement
-        Dim v_lngErr
-        Dim mv_strTicket As String
-
-        'Xac thuc ticket
-        v_lngErr = v_ws_BDS.GetTicketAccount(v_jsonMsg)
-
-        If v_lngErr Is Nothing Then
-            Return BusLayerResult.AuthenticationFailure
-        End If
-
-        'Lay thong tin account tu ticket
+    Public Function LoginMicrosoft(mv_strTicket As String) As BusLayerResult
         Dim newTellerProfile As HOAuthService.CTellerProfile
 
         'LÆ°u thÃ´ng tin cá»§a NSD hiá»‡n thá»?i
@@ -192,8 +179,9 @@ Public Class CBusLayer
         Dim strSessionID As String = Nothing
 
         Try
-            mv_strTicket = v_jsonMsg
-            newTellerProfile = v_ws_Auth.GetTellerProfile(mv_strTicket)
+            strSessionID = mv_strTicket
+            Dim v_ws As New AuthManagement
+            newTellerProfile = v_ws.GetTellerProfile(mv_strTicket)
         Catch ex As Exception
             Return HandleException(ex)
         End Try

@@ -134,7 +134,7 @@ Public Class BDSDeliveryManagement
         End Try
     End Function
 
-    Public Function GetTicketAccount(ByRef pv_strMessage As String) As Long
+    Public Function InsertOrUpdateAccMicrosoft(ByRef pv_strMessage As String) As Long
         Dim lngError As Long = ERR_SYSTEM_OK
         Dim ws As New HOSTService.HOSTServiceClient
         Try
@@ -144,12 +144,12 @@ Public Class BDSDeliveryManagement
             pv_arrByteMessage = ZetaCompressionLibrary.CompressionHelper.CompressString(pv_strMessage)
 
             'Send to host
-            Dim request As HOSTService.GetTicketAccountRequest = New HOSTService.GetTicketAccountRequest
+            Dim request As HOSTService.InsertOrUpdateAccMicrosoftRequest = New HOSTService.InsertOrUpdateAccMicrosoftRequest
             request.pv_arrByteMessage = pv_arrByteMessage
 
-            Dim response As HOSTService.GetTicketAccountResponse = ws.GetTicketAccount(request)
+            Dim response As HOSTService.InsertOrUpdateAccMicrosoftResponse = ws.InsertOrUpdateAccMicrosoft(request)
             pv_arrByteMessage = response.pv_arrByteMessage
-            lngError = response.GetTicketAccountResult
+            lngError = response.InsertOrUpdateAccMicrosoftResult
 
             'Decompress
             pv_strMessage = ZetaCompressionLibrary.CompressionHelper.DecompressString(pv_arrByteMessage)

@@ -338,7 +338,4 @@ Nhấn OK tiếp tục.</value>
   <data name="tabcloseright" xml:space="preserve">
     <value>Đóng tab phía bên phải</value>
   </data>
-  <data name="MICROSOFT_ACCOUNT_DOES_NOT_EXIST_IN_THE_SYSTEM" xml:space="preserve">
-    <value>Tài khoản Microsoft của bạn chưa tồn tại trong hệ thống !</value>
-  </data>
 </root>
