@@ -749,7 +749,7 @@
     <EmbeddedResource Include="frmXtraLOGIN-VN.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>frmXtraLOGIN-VN.Designer.vb</LastGenOutput>
-    </EmbeddedResource>
+          </EmbeddedResource>
     <EmbeddedResource Include="frmXtraLogin.resx">
       <DependentUpon>frmXtraLogin.vb</DependentUpon>
     </EmbeddedResource>
@@ -761,7 +761,7 @@
     <EmbeddedResource Include="Localize-VN.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localize-VN.Designer.vb</LastGenOutput>
-    </EmbeddedResource>
+          </EmbeddedResource>
     <EmbeddedResource Include="MaintenanceForms\frmBRGRP-EN.resx" />
     <EmbeddedResource Include="MaintenanceForms\frmBRGRP-VN.resx" />
     <EmbeddedResource Include="MaintenanceForms\frmBRGRP.resx">
@@ -890,10 +890,10 @@
     <None Include="Service References\HOSTService\_VSTP.HOSTService.GetInfoAuthorMicrosoftResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\HOSTService\_VSTP.HOSTService.GetVersionResponse.datasource">
+    <None Include="Service References\HOSTService\_VSTP.HOSTService.GetTicketAccountResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\HOSTService\_VSTP.HOSTService.InsertOrUpdateAccMicrosoftResponse.datasource">
+    <None Include="Service References\HOSTService\_VSTP.HOSTService.GetVersionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\HOSTService\_VSTP.HOSTService.MessageByteResponse.datasource">

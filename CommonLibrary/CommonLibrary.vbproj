@@ -105,6 +105,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ImageUpload.vb" />
+    <Compile Include="InfoAccMicrosoft.vb" />
     <Compile Include="ObjectMessageObjDataEntry.vb" />
     <Compile Include="DataProtection.vb">
       <SubType>Code</SubType>

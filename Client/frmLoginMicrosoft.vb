@@ -7,9 +7,11 @@ Imports System.Web
 
 Public Class frmLoginMicrosoft
     Private _authenMicrosoft As ResponseAuthenMicrosoft
+    Private _infoAccMicrosoft As InfoAccMicrosoft
 
     Private _urlAuthorizeCode As String
     Private _urlAccessToken As String
+    Private _urlGetInfoAcc As String
     Private _redirectUri As String
     Private _clientId As String
     Private _clientSecret As String
@@ -21,11 +23,12 @@ Public Class frmLoginMicrosoft
         InitializeComponent()
     End Sub
 
-    Public Sub New(urlAuthorizeCode As String, urlAccessToken As String, redirectUri As String, clientId As String, clientSecret As String, scope As String)
+    Public Sub New(urlAuthorizeCode As String, urlAccessToken As String, urlGetInfoAcc As String, redirectUri As String, clientId As String, clientSecret As String, scope As String)
         MyBase.New()
 
         _urlAuthorizeCode = urlAuthorizeCode
         _urlAccessToken = urlAccessToken
+        _urlGetInfoAcc = urlGetInfoAcc
         _redirectUri = redirectUri
         _clientId = clientId
         _clientSecret = clientSecret
@@ -40,11 +43,19 @@ Public Class frmLoginMicrosoft
         End Get
     End Property
 
+    Public ReadOnly Property InfoAccMicrosoft() As InfoAccMicrosoft
+        Get
+            Return _infoAccMicrosoft
+        End Get
+    End Property
+
     Private Sub wbLoginMicrosoft_Navigated(sender As Object, e As WebBrowserNavigatedEventArgs) Handles wbLoginMicrosoft.Navigated
         If (wbLoginMicrosoft.Url.AbsoluteUri.StartsWith(_redirectUri)) Then
             Dim authorizeCode = GetParamValue(wbLoginMicrosoft.Url, "code")
 
+            'Call API Microsoft
             _authenMicrosoft = GetResponseAuthen(authorizeCode)
+            _infoAccMicrosoft = GetInfoAccMicrosoft(_authenMicrosoft.access_token)
 
             Me.DialogResult = DialogResult.OK
             Me.Close()
@@ -116,5 +127,30 @@ Public Class frmLoginMicrosoft
         End Using
 
         Return New ResponseAuthenMicrosoft()
+    End Function
+
+    Public Function GetInfoAccMicrosoft(access_token As String) As InfoAccMicrosoft
+        Using client As New HttpClient()
+            Try
+                'accept "ssl" protocol for your request.
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
+
+                'Set Header
+                client.DefaultRequestHeaders.Clear()
+                client.DefaultRequestHeaders.Authorization = New AuthenticationHeaderValue("Bearer", access_token)
+
+                Dim response = client.GetAsync(_urlGetInfoAcc).Result
+
+                If response.IsSuccessStatusCode Then
+                    Return JsonConvert.DeserializeObject(Of InfoAccMicrosoft)(response.Content.ReadAsStringAsync().Result)
+                End If
+            Catch ex As Exception
+                LogError.Write("Error source: " & ex.Source & vbNewLine _
+                & "Error code: System error!" & vbNewLine _
+                & "Error message: " & ex.Message, EventLogEntryType.Error)
+            End Try
+        End Using
+
+        Return New InfoAccMicrosoft()
     End Function
 End Class

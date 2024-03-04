@@ -26,7 +26,7 @@ Public Interface IHOSTService
     Function GetFlagSignature() As String
 
     <OperationContract()>
-    Function InsertOrUpdateAccMicrosoft(ByRef pv_arrByteMessage As Byte()) As Long
+    Function GetTicketAccount(ByRef pv_arrByteMessage As Byte()) As Long
 
     <OperationContract()>
     Function GetInfoAuthorMicrosoft(ByRef pv_arrByteMessage As Byte()) As Long

@@ -336,4 +336,7 @@ Press ok to continue.</value>
   <data name="tabcloseright" xml:space="preserve">
     <value>Close tab to the right</value>
   </data>
+  <data name="MICROSOFT_ACCOUNT_DOES_NOT_EXIST_IN_THE_SYSTEM" xml:space="preserve">
+    <value>Your Microsoft account does not exist in the system !</value>
+  </data>
 </root>
