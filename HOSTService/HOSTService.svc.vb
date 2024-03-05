@@ -125,8 +125,9 @@ Public Class HOSTService
             If v_lngErr <> ERR_SYSTEM_OK Then
                 v_strErrorMessage = GetErrorMessage(v_lngErr)
                 ReplaceXMLErrorException(pv_strMessage, v_strErrorSource, v_lngErr, v_strErrorMessage)
-
-                LogError.Write("::MessageByte:: ERRCODE: " & v_lngErr & " ERRMSG: " & v_strErrorMessage, "EventLogEntryType.Error")
+                If v_lngErr <> -100011 Then
+                    LogError.Write("::OMessageString:: ERRCODE: " & v_lngErr & " ERRMSG: " & v_strErrorMessage, "EventLogEntryType.Error")
+                End If
             End If
 
             v_xmlDoc.LoadXml(pv_strMessage)
@@ -211,7 +212,9 @@ Public Class HOSTService
                 v_strErrorMessage = GetErrorMessage(v_lngErr)
                 ReplaceXMLErrorException(pv_strMessage, v_strErrorSource, v_lngErr, v_strErrorMessage)
 
-                LogError.Write("::MessageString:: ERRCODE: " & v_lngErr & " ERRMSG: " & v_strErrorMessage, "EventLogEntryType.Error")
+                If v_lngErr <> -100011 Then
+                    LogError.Write("::OMessageString:: ERRCODE: " & v_lngErr & " ERRMSG: " & v_strErrorMessage, "EventLogEntryType.Error")
+                End If
             End If
 
             v_xmlDoc.LoadXml(pv_strMessage)
@@ -273,7 +276,9 @@ Public Class HOSTService
                 v_strErrorMessage = GetErrorMessage(v_lngErr)
                 ReplaceXMLErrorException(pv_strMessage, v_strErrorSource, v_lngErr, v_strErrorMessage)
 
-                LogError.Write("::OMessageByte:: ERRCODE: " & v_lngErr & " ERRMSG: " & v_strErrorMessage, "EventLogEntryType.Error")
+                If v_lngErr <> -100011 Then
+                    LogError.Write("::OMessageString:: ERRCODE: " & v_lngErr & " ERRMSG: " & v_strErrorMessage, "EventLogEntryType.Error")
+                End If
             End If
 
             LogError.Write("::OMessageByte:: [END]" & pv_strMessage)
@@ -328,7 +333,9 @@ Public Class HOSTService
                 v_strErrorMessage = GetErrorMessage(v_lngErr)
                 ReplaceXMLErrorException(pv_strMessage, v_strErrorSource, v_lngErr, v_strErrorMessage)
 
-                LogError.Write("::OMessageString:: ERRCODE: " & v_lngErr & " ERRMSG: " & v_strErrorMessage, "EventLogEntryType.Error")
+                If v_lngErr <> -100011 Then
+                    LogError.Write("::OMessageString:: ERRCODE: " & v_lngErr & " ERRMSG: " & v_strErrorMessage, "EventLogEntryType.Error")
+                End If
             End If
 
             LogError.Write("::OMessageString:: [END]" & pv_strMessage)
