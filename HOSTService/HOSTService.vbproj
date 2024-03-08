@@ -53,6 +53,8 @@
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="System.Text.Encodings.Web" Version="4.5.1" />
+        <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />        
+        <PackageReference Include="System.Security.Cryptography.Pkcs" Version="6.0.3" />
         <PackageReference Include="CoreWCF.Http" Version="1.4.1" />
         <PackageReference Include="CoreWCF.Primitives" Version="1.4.1" />
         <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
