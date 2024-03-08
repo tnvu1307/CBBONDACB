@@ -52,6 +52,7 @@
         <ProjectReference Include="..\SY\SY.vbproj" />
     </ItemGroup>
     <ItemGroup>
+        <PackageReference Include="System.Text.Encodings.Web" Version="4.5.1" />
         <PackageReference Include="CoreWCF.Http" Version="1.4.1" />
         <PackageReference Include="CoreWCF.Primitives" Version="1.4.1" />
         <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
