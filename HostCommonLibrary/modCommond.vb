@@ -977,6 +977,8 @@ HBLLyzovDrt+gCJtV2FUwxgxsZkeuitJBqbFqBWvi2/POOyLsV4=
 -----END RSA PRIVATE KEY-----"
 
     Public Const Signature_KEY As String = "KEY TEST"
+    Public Const AESkey As String = "aesEncryptionKey"
+    Public Const AESivs As String = "encryptionIntVec"
 #End Region
 
 #Region " Object name constants "

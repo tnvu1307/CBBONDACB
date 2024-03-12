@@ -95,12 +95,12 @@ Public Class DataAccess
                         'If ConfigurationManager.AppSettings("ISPROTECTPASSWORD") = "Y" Then
                         '    v_strPassword = DataProtection.UnprotectData(v_strPassword)
                         'End If
-                        Dim NewCrypt = New RSA()
-                        If Not ConfigurationManager.AppSettings(pv_strModule & ".PWDK") Is Nothing Then
-                            If Not String.IsNullOrEmpty(Signature_PrivateKey) Then
-                                v_strPassword = NewCrypt.RsaDecryptWithPrivate(v_strPassword, Signature_PrivateKey)
-                            End If
+                        Dim NewCrypt = New AESscrypto()
+
+                        If Not String.IsNullOrEmpty(AESkey) Then
+                            v_strPassword = NewCrypt.DecryptString(v_strPassword, AESkey, AESivs)
                         End If
+
                     End If
                 Else
                     v_strPassword = String.Empty
