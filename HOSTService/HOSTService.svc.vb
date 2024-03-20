@@ -397,8 +397,18 @@ Public Class HOSTService
         Dim v_strErrorMessage As String
         Dim v_strErrorSource As String
         Dim pv_strMessage As String
+        Dim v_bCmd As New BusinessCommand
+        Dim v_dal As New DataAccess
+        Dim v_ds As DataSet
         Dim v_xmlDoc As XmlDocument = New XmlDocumentEx()
         Dim v_xmlDocumentMessage As XmlDocument = New XmlDocumentEx()
+        Dim urlAuthorCodeMicrosoft = String.Empty
+        Dim urlAccessTokenMicrosoft = String.Empty
+        Dim urlGetInfoAccMicrosoft = String.Empty
+        Dim redirectUriMicrosoft = String.Empty
+        Dim clientIdMicrosoft = String.Empty
+        Dim clientSecretMicrosoft = String.Empty
+        Dim scopeMicrosoftGraph = String.Empty
 
         Try
             'Decompress
@@ -438,14 +448,57 @@ Public Class HOSTService
             End If
 
             'Response
+            'Lay thong tin tu DB truoc
+            v_dal.NewDBInstance(gc_MODULE_HOST)
+            v_dal.LogCommand = True
+
+            v_bCmd.SQLCommand = "SELECT * FROM SYSVAR WHERE VARNAME IN (" +
+                "'URLAuthorCodeMicrosoft'," +
+                "'URLAccessTokenMicrosoft'," +
+                "'URLGetInfoAccMicrosoft'," +
+                "'RedirectUriMicrosoft'," +
+                "'ClientIdMicrosoft'," +
+                "'ClientSecretMicrosoft'," +
+                "'ScopeMicrosoftGraph')"
+            v_ds = v_dal.ExecuteSQLReturnDataset(v_bCmd)
+
+            For Each row As DataRow In v_ds.Tables(0).Rows
+                Select Case row("VARNAME")
+                    Case "URLAuthorCodeMicrosoft"
+                        urlAuthorCodeMicrosoft = gf_CorrectStringField(row("VARVALUE"))
+                    Case "URLAccessTokenMicrosoft"
+                        urlAccessTokenMicrosoft = gf_CorrectStringField(row("VARVALUE"))
+                    Case "URLGetInfoAccMicrosoft"
+                        urlGetInfoAccMicrosoft = gf_CorrectStringField(row("VARVALUE"))
+                    Case "RedirectUriMicrosoft"
+                        redirectUriMicrosoft = gf_CorrectStringField(row("VARVALUE"))
+                    Case "ClientIdMicrosoft"
+                        clientIdMicrosoft = gf_CorrectStringField(row("VARVALUE"))
+                    Case "ClientSecretMicrosoft"
+                        clientSecretMicrosoft = gf_CorrectStringField(row("VARVALUE"))
+                    Case "ScopeMicrosoftGraph"
+                        scopeMicrosoftGraph = gf_CorrectStringField(row("VARVALUE"))
+                End Select
+            Next
+
+            'Neu DB khong co du thi lay them trong file config
+            urlAuthorCodeMicrosoft = If(String.IsNullOrEmpty(urlAuthorCodeMicrosoft), ConfigurationManager.AppSettings("URLAuthorCodeMicrosoft"), urlAuthorCodeMicrosoft)
+            urlAccessTokenMicrosoft = If(String.IsNullOrEmpty(urlAccessTokenMicrosoft), ConfigurationManager.AppSettings("URLAccessTokenMicrosoft"), urlAccessTokenMicrosoft)
+            urlGetInfoAccMicrosoft = If(String.IsNullOrEmpty(urlGetInfoAccMicrosoft), ConfigurationManager.AppSettings("URLGetInfoAccMicrosoft"), urlGetInfoAccMicrosoft)
+            redirectUriMicrosoft = If(String.IsNullOrEmpty(redirectUriMicrosoft), ConfigurationManager.AppSettings("RedirectUriMicrosoft"), redirectUriMicrosoft)
+            clientIdMicrosoft = If(String.IsNullOrEmpty(clientIdMicrosoft), ConfigurationManager.AppSettings("ClientIdMicrosoft"), clientIdMicrosoft)
+            clientSecretMicrosoft = If(String.IsNullOrEmpty(clientSecretMicrosoft), ConfigurationManager.AppSettings("ClientSecretMicrosoft"), clientSecretMicrosoft)
+            scopeMicrosoftGraph = If(String.IsNullOrEmpty(scopeMicrosoftGraph), ConfigurationManager.AppSettings("ScopeMicrosoftGraph"), scopeMicrosoftGraph)
+
+            'Gui Response di
             Dim info As New Dictionary(Of String, String)
-            info.Add("urlAuthorizeCode", ConfigurationManager.AppSettings("URLAuthorCodeMicrosoft"))
-            info.Add("urlAccessToken", ConfigurationManager.AppSettings("URLAccessTokenMicrosoft"))
-            info.Add("urlGetInfoAcc", ConfigurationManager.AppSettings("URLGetInfoAccMicrosoft"))
-            info.Add("redirectUri", ConfigurationManager.AppSettings("RedirectUriMicrosoft"))
-            info.Add("clientId", ConfigurationManager.AppSettings("ClientIdMicrosoft"))
-            info.Add("clientSecret", ConfigurationManager.AppSettings("ClientSecretMicrosoft"))
-            info.Add("scope", ConfigurationManager.AppSettings("ScopeMicrosoftGraph"))
+            info.Add("urlAuthorizeCode", urlAuthorCodeMicrosoft)
+            info.Add("urlAccessToken", urlAccessTokenMicrosoft)
+            info.Add("urlGetInfoAcc", urlGetInfoAccMicrosoft)
+            info.Add("redirectUri", redirectUriMicrosoft)
+            info.Add("clientId", clientIdMicrosoft)
+            info.Add("clientSecret", clientSecretMicrosoft)
+            info.Add("scope", scopeMicrosoftGraph)
 
             pv_strMessage = JsonConvert.SerializeObject(info)
 
@@ -538,14 +591,30 @@ Public Class HOSTService
     End Function
 
     Public Function GetSecondsLimitAFK(ByRef pv_arrByteMessage As Byte()) As Long Implements IHOSTService.GetSecondsLimitAFK
-        Try
-            Dim pv_strMessage As String
 
+        Dim pv_strMessage As String
+        Dim secondsLimitAFK = String.Empty
+        Dim v_bCmd As New BusinessCommand
+        Dim v_dal As New DataAccess
+        Dim v_ds As DataSet
+        Try
             ''Decompress
             pv_strMessage = ZetaCompressionLibrary.CompressionHelper.DecompressString(pv_arrByteMessage)
             pv_strMessage = TripleDesDecryptData(pv_strMessage)
 
-            pv_strMessage = ConfigurationManager.AppSettings("SecondsLimitAFK")
+            'Lay thong tin tu db truoc
+            v_dal.NewDBInstance(gc_MODULE_HOST)
+            v_dal.LogCommand = True
+
+            v_bCmd.SQLCommand = "SELECT * FROM SYSVAR WHERE VARNAME = 'SecondsLimitAFK'"
+            v_ds = v_dal.ExecuteSQLReturnDataset(v_bCmd)
+
+            If v_ds.Tables(0).Rows.Count = 1 Then
+                secondsLimitAFK = gf_CorrectStringField(v_ds.Tables(0).Rows(0)("VARVALUE"))
+            End If
+
+            'Neu db khong co thi lay trong config
+            pv_strMessage = If(String.IsNullOrEmpty(secondsLimitAFK), ConfigurationManager.AppSettings("SecondsLimitAFK"), secondsLimitAFK)
 
             ''Compress message
             pv_strMessage = TripleDesEncryptData(pv_strMessage)
